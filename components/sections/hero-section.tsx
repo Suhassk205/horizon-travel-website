@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ChevronDown, Calendar, Plane, Car, Mountain, Train, Bus, Package, Ship } from "lucide-react"
+import { ChevronDown, Calendar, Plane, Car, Mountain, Train, Bus, Package, Ship, Hotel } from "lucide-react"
 import { Checkbox } from "@/components/ui/checkbox"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -168,7 +168,12 @@ export function HeroSection() {
                   height: "54px",
                 }}
               >
-                <div className="flex items-center justify-center">
+                <div className="flex items-center gap-2">
+                  <Hotel
+                    className={`${activeCategory === "Hotels" ? "text-black" : "text-white"} transition-colors duration-300 ease-in-out`}
+                    size={16}
+                    strokeWidth={1.5}
+                  />
                   <span
                     className={`text-sm font-medium ${activeCategory === "Hotels" ? "text-black" : "text-white"} transition-colors duration-300 ease-in-out`}
                   >
