@@ -148,7 +148,9 @@ export function HeroSection() {
                     strokeWidth={1.5}
                   />
                   <span
-                    className={`text-sm font-medium ${activeCategory === "Packages" ? "text-black" : "text-white"} transition-colors duration-300 ease-in-out`}
+                    className={`text-sm font-medium ${
+                      activeCategory === "Packages" ? "text-black" : "text-white"
+                    } transition-colors duration-300 ease-in-out`}
                   >
                     Packages
                   </span>
@@ -168,9 +170,16 @@ export function HeroSection() {
                   height: "54px",
                 }}
               >
-                <div className="flex items-center justify-center">
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/images/icon-hotel.png"
+                    alt="Hotels"
+                    className={`w-4 h-4 ${activeCategory === "Hotels" ? "" : "filter-invert"}`}
+                  />
                   <span
-                    className={`text-sm font-medium ${activeCategory === "Hotels" ? "text-black" : "text-white"} transition-colors duration-300 ease-in-out`}
+                    className={`text-sm font-medium ${
+                      activeCategory === "Hotels" ? "text-black" : "text-white"
+                    } transition-colors duration-300 ease-in-out`}
                   >
                     Hotels
                   </span>
@@ -191,14 +200,7 @@ export function HeroSection() {
                 }}
               >
                 <div className="flex items-center gap-2">
-                  <Car
-                    className={`
-                      ${activeCategory === "Cabs" ? "text-black" : "text-white"}
-                      transition-colors duration-300 ease-in-out
-                    `}
-                    size={16}
-                    strokeWidth={1.5}
-                  />
+                  <img src="/images/icon-cab.png" alt="Cabs" className={`w-4 h-4 ${activeCategory === "Cabs" ? "" : "filter-invert"}`} />
                   <span
                     className={`
                       text-sm font-medium
@@ -225,13 +227,10 @@ export function HeroSection() {
                 }}
               >
                 <div className="flex items-center gap-2">
-                  <Mountain
-                    className={`
-                      ${activeCategory === "Activities" ? "text-black" : "text-white"}
-                      transition-colors duration-300 ease-in-out
-                    `}
-                    size={16}
-                    strokeWidth={1.5}
+                  <img
+                    src="/images/icon-activities.png"
+                    alt="Activities"
+                    className={`w-4 h-4 ${activeCategory === "Activities" ? "" : "filter-invert"}`}
                   />
                   <span
                     className={`
@@ -259,13 +258,10 @@ export function HeroSection() {
                 }}
               >
                 <div className="flex items-center gap-2">
-                  <Train
-                    className={`
-                      ${activeCategory === "Trains" ? "text-black" : "text-white"}
-                      transition-colors duration-300 ease-in-out
-                    `}
-                    size={16}
-                    strokeWidth={1.5}
+                  <img
+                    src="/images/icon-train.png"
+                    alt="Trains"
+                    className={`w-4 h-4 ${activeCategory === "Trains" ? "" : "filter-invert"}`}
                   />
                   <span
                     className={`
@@ -293,13 +289,10 @@ export function HeroSection() {
                 }}
               >
                 <div className="flex items-center gap-2">
-                  <Bus
-                    className={`
-                      ${activeCategory === "Buses" ? "text-black" : "text-white"}
-                      transition-colors duration-300 ease-in-out
-                    `}
-                    size={16}
-                    strokeWidth={1.5}
+                  <img
+                    src="/images/icon-bus.png"
+                    alt="Buses"
+                    className={`w-4 h-4 ${activeCategory === "Buses" ? "" : "filter-invert"}`}
                   />
                   <span
                     className={`
@@ -327,13 +320,10 @@ export function HeroSection() {
                 }}
               >
                 <div className="flex items-center gap-2">
-                  <Plane
-                    className={`
-                      ${activeCategory === "Flights" ? "text-black" : "text-white"}
-                      transition-colors duration-300 ease-in-out
-                    `}
-                    size={16}
-                    strokeWidth={1.5}
+                  <img
+                    src="/images/icon-flight.png"
+                    alt="Flights"
+                    className={`w-4 h-4 ${activeCategory === "Flights" ? "" : "filter-invert"}`}
                   />
                   <span
                     className={`
@@ -361,13 +351,10 @@ export function HeroSection() {
                 }}
               >
                 <div className="flex items-center gap-2">
-                  <Ship
-                    className={`
-                      ${activeCategory === "Cruise" ? "text-black" : "text-white"}
-                      transition-colors duration-300 ease-in-out
-                    `}
-                    size={16}
-                    strokeWidth={1.5}
+                  <img
+                    src="/images/icon-cruise.png"
+                    alt="Cruise"
+                    className={`w-4 h-4 ${activeCategory === "Cruise" ? "" : "filter-invert"}`}
                   />
                   <span
                     className={`
