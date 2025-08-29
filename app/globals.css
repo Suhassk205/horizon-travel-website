@@ -249,3 +249,18 @@
   }
 }
 
+/* Custom styles for hero section input fields */
+.hero-input-field {
+  color: #1E1E1E !important;
+  font-size: 16px !important;
+  font-family: 'Gilroy' !important;
+  font-weight: 500 !important;
+}
+
+.hero-input-field::placeholder {
+  color: #1E1E1E !important;
+  font-size: 16px !important;
+  font-family: 'Gilroy' !important;
+  font-weight: 500 !important;
+}
+

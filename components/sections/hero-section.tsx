@@ -97,6 +97,9 @@ export function HeroSection() {
   const [showDiscountPopup, setShowDiscountPopup] = useState(false)
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
   const [translateY, setTranslateY] = useState(0)
+  const [addFlightChecked, setAddFlightChecked] = useState(false)
+  const [addFlightHotelChecked, setAddFlightHotelChecked] = useState(false)
+  const [addCabHotelChecked, setAddCabHotelChecked] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -314,7 +317,7 @@ export function HeroSection() {
                 className="flex items-center justify-center cursor-pointer"
                 onClick={() => setActiveCategory("Packages")}
                 style={{
-                  background: activeCategory === "Packages" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  background: activeCategory === "Packages" ? "#CEDDE7" : "#0101018F",
                   borderRadius: "10px 10px 0 0",
                   width: "152px",
                   padding: "10px 30px 15px 30px",
@@ -346,7 +349,7 @@ export function HeroSection() {
                 className="flex items-center justify-center cursor-pointer"
                 onClick={() => setActiveCategory("Hotels")}
                 style={{
-                  background: activeCategory === "Hotels" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  background: activeCategory === "Hotels" ? "#CEDDE7" : "#0101018F",
                   borderRadius: "10px 10px 0 0",
                   width: "152px",
                   padding: "10px 30px 15px 30px",
@@ -377,7 +380,7 @@ export function HeroSection() {
                 className="flex items-center justify-center cursor-pointer"
                 onClick={() => setActiveCategory("Cabs")}
                 style={{
-                  background: activeCategory === "Cabs" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  background: activeCategory === "Cabs" ? "#CEDDE7" : "#0101018F",
                   borderRadius: "10px 10px 0 0",
                   width: "152px",
                   padding: "10px 30px 15px 30px",
@@ -408,7 +411,7 @@ export function HeroSection() {
                 className="flex items-center justify-center cursor-pointer"
                 onClick={() => setActiveCategory("Activities")}
                 style={{
-                  background: activeCategory === "Activities" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  background: activeCategory === "Activities" ? "#CEDDE7" : "#0101018F",
                   borderRadius: "10px 10px 0 0",
                   width: "152px",
                   padding: "10px 30px 15px 30px",
@@ -439,7 +442,7 @@ export function HeroSection() {
                 className="flex items-center justify-center cursor-pointer"
                 onClick={() => setActiveCategory("Trains")}
                 style={{
-                  background: activeCategory === "Trains" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  background: activeCategory === "Trains" ? "#CEDDE7" : "#0101018F",
                   borderRadius: "10px 10px 0 0",
                   width: "152px",
                   padding: "10px 30px 15px 30px",
@@ -470,7 +473,7 @@ export function HeroSection() {
                 className="flex items-center justify-center cursor-pointer"
                 onClick={() => setActiveCategory("Buses")}
                 style={{
-                  background: activeCategory === "Buses" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  background: activeCategory === "Buses" ? "#CEDDE7" : "#0101018F",
                   borderRadius: "10px 10px 0 0",
                   width: "152px",
                   padding: "10px 30px 15px 30px",
@@ -501,7 +504,7 @@ export function HeroSection() {
                 className="flex items-center justify-center cursor-pointer"
                 onClick={() => setActiveCategory("Flights")}
                 style={{
-                  background: activeCategory === "Flights" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  background: activeCategory === "Flights" ? "#CEDDE7" : "#0101018F",
                   borderRadius: "10px 10px 0 0",
                   width: "152px",
                   padding: "10px 30px 15px 30px",
@@ -532,7 +535,7 @@ export function HeroSection() {
                 className="flex items-center justify-center cursor-pointer"
                 onClick={() => setActiveCategory("Cruise")}
                 style={{
-                  background: activeCategory === "Cruise" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  background: activeCategory === "Cruise" ? "#CEDDE7" : "#0101018F",
                   borderRadius: "10px 10px 0 0",
                   width: "152px",
                   padding: "10px 30px 15px 30px",
@@ -562,7 +565,7 @@ export function HeroSection() {
             {/* Search Form Row - Directly connected below */}
             <div
               className="rounded-lg shadow-xl"
-              style={{
+                  style={{
                 width: "1280px",
                 height: "89px",
                 gap: "10px",
@@ -581,12 +584,12 @@ export function HeroSection() {
                     >
                       Search Your Desired Hotels
                     </label>
-                    <input
-                      type="text"
-                      placeholder="Enter hotel name"
-                      className="text-sm outline-none w-full bg-transparent"
-                      style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
-                    />
+                                          <input
+                        type="text"
+                        placeholder="Enter hotel name"
+                        className="outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
+                      />
                   </div>
 
                   {/* Check-In */}
@@ -601,8 +604,8 @@ export function HeroSection() {
                       <input
                         type="text"
                         placeholder="DD-MM"
-                        className="text-sm outline-none w-full bg-transparent"
-                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        className="outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                       />
                       <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                     </div>
@@ -620,8 +623,8 @@ export function HeroSection() {
                       <input
                         type="text"
                         placeholder="DD-MM"
-                        className="text-sm outline-none w-full bg-transparent"
-                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        className="outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                       />
                       <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                     </div>
@@ -638,20 +641,34 @@ export function HeroSection() {
                     <input
                       type="text"
                       placeholder="2 Traveler, 1 Room"
-                      className="text-sm outline-none w-full bg-transparent"
-                      style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      className="outline-none w-full bg-transparent"
+                      style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                     />
-                  </div>
+          </div>
 
                   {/* Search Button */}
                   <div
-                    className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base"
-                    style={{ width: "190px", height: "54px" }}
+                    style={{
+                      width: "180px",
+                      height: "54px",
+                      paddingLeft: 10,
+                      paddingRight: 10,
+                      paddingTop: 26,
+                      paddingBottom: 26,
+                      background: "#29383E",
+                      borderRadius: 8,
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: 4,
+                      display: "inline-flex",
+                      cursor: "pointer",
+                    }}
                     onClick={handleSearch}
                   >
-                    <span style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
+                    <div style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
                       Search
-                    </span>
+                    </div>
                   </div>
                 </div>
               ) : activeCategory === "Cabs" ? (
@@ -669,8 +686,8 @@ export function HeroSection() {
                         <input
                           type="text"
                           placeholder="Select Pickup"
-                          className="text-sm outline-none w-full bg-transparent"
-                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                          className="outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                         />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                       </div>
@@ -688,8 +705,8 @@ export function HeroSection() {
                         <input
                           type="text"
                           placeholder="Same as Pickup"
-                          className="text-sm outline-none w-full bg-transparent"
-                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                          className="outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                         />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                       </div>
@@ -707,8 +724,8 @@ export function HeroSection() {
                         <input
                           type="text"
                           placeholder="DD-MM"
-                          className="text-sm outline-none w-full bg-transparent"
-                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                          className="outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                         />
                         <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                       </div>
@@ -726,8 +743,8 @@ export function HeroSection() {
                         <input
                           type="text"
                           placeholder="DD-MM"
-                          className="text-sm outline-none w-full bg-transparent"
-                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                          className="outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                         />
                         <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                       </div>
@@ -745,8 +762,8 @@ export function HeroSection() {
                         <input
                           type="text"
                           placeholder="HH:MM AM"
-                          className="text-sm outline-none w-full bg-transparent"
-                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                          className="outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                         />
                         <ChevronDown size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                       </div>
@@ -764,8 +781,8 @@ export function HeroSection() {
                         <input
                           type="text"
                           placeholder="HH:MM AM"
-                          className="text-sm outline-none w-full bg-transparent"
-                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                          className="outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                         />
                         <ChevronDown size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                       </div>
@@ -782,20 +799,34 @@ export function HeroSection() {
                       <input
                         type="text"
                         placeholder="1 Traveler"
-                        className="text-sm outline-none w-full bg-transparent"
-                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        className="outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                       />
                     </div>
 
                     {/* Search Button */}
                     <div
-                      className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base"
-                      style={{ width: "143px", height: "54px" }}
+                      style={{
+                        width: "180px",
+                        height: "54px",
+                        paddingLeft: 10,
+                        paddingRight: 10,
+                        paddingTop: 26,
+                        paddingBottom: 26,
+                        background: "#29383E",
+                        borderRadius: 8,
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        gap: 4,
+                        display: "inline-flex",
+                        cursor: "pointer",
+                      }}
                       onClick={handleSearch}
                     >
-                      <span style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
+                      <div style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
                         Search
-                      </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -812,8 +843,8 @@ export function HeroSection() {
                     <input
                       type="text"
                       placeholder="Enter activity name"
-                      className="text-sm outline-none w-full bg-transparent"
-                      style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                       className="outline-none w-full bg-transparent"
+                       style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                     />
                   </div>
 
@@ -829,8 +860,8 @@ export function HeroSection() {
                       <input
                         type="text"
                         placeholder="2 Travellers"
-                        className="text-sm outline-none w-full bg-transparent"
-                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        className="outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                       />
                       <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                     </div>
@@ -838,13 +869,27 @@ export function HeroSection() {
 
                   {/* Search Button */}
                   <div
-                    className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base"
-                    style={{ width: "134px", height: "54px" }}
+                    style={{
+                      width: "180px",
+                      height: "54px",
+                      paddingLeft: 10,
+                      paddingRight: 10,
+                      paddingTop: 26,
+                      paddingBottom: 26,
+                      background: "#29383E",
+                      borderRadius: 8,
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: 4,
+                      display: "inline-flex",
+                      cursor: "pointer",
+                    }}
                     onClick={handleSearch}
                   >
-                    <span style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
+                    <div style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
                       Search
-                    </span>
+                    </div>
                   </div>
                 </div>
               ) : activeCategory === "Buses" ? (
@@ -862,7 +907,7 @@ export function HeroSection() {
                         type="text"
                         placeholder="Select leaving Location"
                         className="text-sm outline-none w-full bg-transparent"
-                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important", wordWrap: "break-word !important" }}
                       />
                       <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                     </div>
@@ -896,7 +941,7 @@ export function HeroSection() {
                         type="text"
                         placeholder="Select Destination"
                         className="text-sm outline-none w-full bg-transparent"
-                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important", wordWrap: "break-word !important" }}
                       />
                       <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                     </div>
@@ -942,13 +987,27 @@ export function HeroSection() {
 
                   {/* Search Button */}
                   <div
-                    className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base"
-                    style={{ width: "134px", height: "54px" }}
+                    style={{
+                      width: "180px",
+                      height: "54px",
+                      paddingLeft: 10,
+                      paddingRight: 10,
+                      paddingTop: 26,
+                      paddingBottom: 26,
+                      background: "#29383E",
+                      borderRadius: 8,
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: 4,
+                      display: "inline-flex",
+                      cursor: "pointer",
+                    }}
                     onClick={handleSearch}
                   >
-                    <span style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
+                    <div style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
                       Search
-                    </span>
+                    </div>
                   </div>
                 </div>
               ) : activeCategory === "Cruise" ? (
@@ -1031,13 +1090,27 @@ export function HeroSection() {
 
                   {/* Search Button */}
                   <div
-                    className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base"
-                    style={{ width: "172px", height: "54px" }}
+                    style={{
+                      width: "180px",
+                      height: "54px",
+                      paddingLeft: 10,
+                      paddingRight: 10,
+                      paddingTop: 26,
+                      paddingBottom: 26,
+                      background: "#29383E",
+                      borderRadius: 8,
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: 4,
+                      display: "inline-flex",
+                      cursor: "pointer",
+                    }}
                     onClick={handleSearch}
                   >
-                    <span style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
+                    <div style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
                       Search
-                    </span>
+                    </div>
                   </div>
                 </div>
               ) : activeCategory === "Flights" ? (
@@ -1045,7 +1118,7 @@ export function HeroSection() {
                   {/* Main Search Form */}
                   <div className="flex p-3 gap-1">
                     {/* Leaving From */}
-                    <div className="flex bg-white rounded-md px-3 py-2 h-[54px] flex-col gap-y-0 flex-grow-[2.5] min-w-0">
+                    <div className="flex bg-white rounded-md px-3 py-2 h-[54px] flex-col gap-y-0 min-w-0" style={{ width: "280px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1057,7 +1130,7 @@ export function HeroSection() {
                           type="text"
                           placeholder="Select leaving Location"
                           className="text-sm outline-none w-full bg-transparent"
-                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                          style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important", wordWrap: "break-word !important" }}
                         />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                       </div>
@@ -1079,7 +1152,7 @@ export function HeroSection() {
                     </div>
 
                     {/* Going To */}
-                    <div className="flex flex-col bg-white rounded-md py-2 px-4 h-14 flex-grow-[2.5] min-w-0">
+                    <div className="flex flex-col bg-white rounded-md py-2 px-4 h-14 min-w-0" style={{ width: "280px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1091,14 +1164,14 @@ export function HeroSection() {
                           type="text"
                           placeholder="Select Destination"
                           className="text-sm outline-none w-full bg-transparent"
-                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                          style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important", wordWrap: "break-word !important" }}
                         />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                       </div>
                     </div>
 
                     {/* Depart */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] flex-grow-[1.5] min-w-0">
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] min-w-0" style={{ width: "150px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1117,7 +1190,7 @@ export function HeroSection() {
                     </div>
 
                     {/* Travelers */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] flex-grow-[1.5] min-w-0">
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] min-w-0" style={{ width: "150px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1136,7 +1209,7 @@ export function HeroSection() {
                     </div>
 
                     {/* Class Type */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] flex-grow-[1.5] min-w-0">
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] min-w-0" style={{ width: "150px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1156,12 +1229,27 @@ export function HeroSection() {
 
                     {/* Search Button */}
                     <div
-                      className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base flex-grow-[2] h-[54px]"
+                      style={{
+                        width: "180px",
+                        height: "54px",
+                        paddingLeft: 10,
+                        paddingRight: 10,
+                        paddingTop: 26,
+                        paddingBottom: 26,
+                        background: "#29383E",
+                        borderRadius: 8,
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        gap: 4,
+                        display: "inline-flex",
+                        cursor: "pointer",
+                      }}
                       onClick={handleSearch}
                     >
-                      <span style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
+                      <div style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
                         Search
-                      </span>
+                      </div>
                     </div>
                   </div>
                   {/* Moved Fare Category Checkboxes */}
@@ -1231,209 +1319,268 @@ export function HeroSection() {
                   </div>
                 </div>
               ) : (
-                <div>
                   <div className="flex p-3 gap-1">
                     {/* Default form for other categories */}
                     {/* Leaving From */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "202px" }}>
-                      <label
-                        className="text-xs mb-1"
-                        style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
-                      >
-                        Leaving From
-                      </label>
+                    <label
+                      htmlFor="packages-leaving-from"
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Leaving From
+                    </label>
                       <div className="flex items-center justify-between">
-                        <input
-                          type="text"
-                          placeholder="Select leaving Location"
-                          className="text-sm outline-none w-full bg-transparent"
-                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
-                        />
+                      <input
+                        type="text"
+                        id="packages-leaving-from"
+                        name="packages-leaving-from"
+                        placeholder="Select leaving Location"
+                        className="outline-none w-full bg-transparent hero-input-field"
+                      />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                       </div>
                     </div>
 
                     {/* Destination */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "202px" }}>
-                      <label
-                        className="text-xs mb-1"
-                        style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
-                      >
-                        Destination
-                      </label>
+                    <label
+                      htmlFor="packages-destination"
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Destination
+                    </label>
                       <div className="flex items-center justify-between">
-                        <input
-                          type="text"
-                          placeholder="Select Destination"
-                          className="text-sm outline-none w-full bg-transparent"
-                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
-                        />
+                      <input
+                        type="text"
+                        id="packages-destination"
+                        name="packages-destination"
+                        placeholder="Select Destination"
+                        className="outline-none w-full bg-transparent hero-input-field"
+                      />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                     </div>
                   </div>
 
                   {/* Theme */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "172px" }}>
-                    <label
-                      className="text-xs mb-1"
-                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
-                    >
-                      Theme
-                    </label>
+                  <label
+                    htmlFor="packages-theme"
+                    className="text-xs mb-1"
+                    style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                  >
+                    Theme
+                  </label>
                     <div className="flex items-center justify-between">
-                      <input
-                        type="text"
-                        placeholder="Solo Travel"
-                        className="text-sm outline-none w-full bg-transparent"
-                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
-                      />
+                    <input
+                      type="text"
+                      id="packages-theme"
+                      name="packages-theme"
+                      placeholder="Solo Travel"
+                      className="outline-none w-full bg-transparent hero-input-field"
+                    />
                       <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                     </div>
                   </div>
 
                   {/* From Date */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "151px" }}>
-                    <label
-                      className="text-xs mb-1"
-                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
-                    >
-                      From
-                    </label>
+                  <label
+                    htmlFor="packages-from-date"
+                    className="text-xs mb-1"
+                    style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                  >
+                    From
+                  </label>
                     <div className="flex items-center justify-between">
-                      <input
-                        type="text"
-                        placeholder="DD-MM"
-                        className="text-sm outline-none w-full bg-transparent"
-                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
-                      />
+                    <input
+                      type="text"
+                      id="packages-from-date"
+                      name="packages-from-date"
+                      placeholder="DD-MM"
+                      className="outline-none w-full bg-transparent hero-input-field"
+                    />
                       <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                   </div>
                 </div>
 
                   {/* To Date */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "151px" }}>
-                    <label
-                      className="text-xs mb-1"
-                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
-                    >
-                      To
-                    </label>
+                  <label
+                    htmlFor="packages-to-date"
+                    className="text-xs mb-1"
+                    style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                  >
+                    To
+                  </label>
                     <div className="flex items-center justify-between">
-                      <input
-                        type="text"
-                        placeholder="DD-MM"
-                        className="text-sm outline-none w-full bg-transparent"
-                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
-                      />
+                    <input
+                      type="text"
+                      id="packages-to-date"
+                      name="packages-to-date"
+                      placeholder="DD-MM"
+                      className="outline-none w-full bg-transparent hero-input-field"
+                    />
                       <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                     </div>
                   </div>
 
                   {/* Travelers */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "172px" }}>
-                    <label
-                      className="text-xs mb-1"
-                      style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
-                    >
-                      Travelers
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="2 Traveler, 1 Room"
-                      className="text-sm outline-none w-full bg-transparent"
-                      style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
-                    />
+                  <label
+                    htmlFor="packages-travelers"
+                    className="text-xs mb-1"
+                    style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                  >
+                    Travelers
+                  </label>
+                  <input
+                    type="text"
+                    id="packages-travelers"
+                    name="packages-travelers"
+                    placeholder="2 Traveler, 1 Room"
+                    className="outline-none w-full bg-transparent hero-input-field"
+                  />
                 </div>
 
                   {/* Search Button */}
                   <div
-                    className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base"
-                    style={{ width: "162px", height: "54px" }}
+                  style={{
+                    width: "180px",
+                    height: "54px",
+                    paddingLeft: 10,
+                    paddingRight: 10,
+                    paddingTop: 26,
+                    paddingBottom: 26,
+                    background: "#29383E",
+                    borderRadius: 8,
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: 4,
+                    display: "inline-flex",
+                    cursor: "pointer",
+                  }}
                     onClick={handleSearch}
                   >
-                    <span
-                      style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}
-                    >
-                      Search
-                    </span>
+                  <div style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
+                    Search
+                  </div>
                   </div>
                   
                 </div>
+              )}
+            </div>
+
                 {activeCategory === "Packages" && (
                     <div
-                      className="mt-2 p-3"
+                className="self-start"
                       style={{
-                        background: "rgba(1, 1, 1, 0.56)",
-                        borderRadius: "8px",
-                        width: "fit-content",
-                      }}
-                    >
-                      <div className="flex items-center">
-                        <Checkbox
-                          id="add-flight"
-                          className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
-                        />
-                        <label
-                          htmlFor="add-flight"
-                          className="text-sm text-white ml-2 font-medium font-gilroy cursor-pointer"
-                        >
+                  paddingLeft: 10,
+                  paddingRight: 10,
+                  background: "rgba(1, 1, 1, 0.60)",
+                  borderRadius: 10,
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  gap: 15,
+                  display: "inline-flex",
+                  cursor: "pointer",
+                  marginTop: "8px",
+                }}
+                onClick={() => setAddFlightChecked(!addFlightChecked)}
+              >
+                <div style={{ padding: 10, justifyContent: "flex-start", alignItems: "center", gap: 10, display: "flex" }}>
+                  <div
+                    style={{
+                      width: 20,
+                      height: 20,
+                      borderRadius: 4,
+                      border: "2px white solid",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      backgroundColor: addFlightChecked ? "white" : "transparent",
+                      transition: "background-color 150ms",
+                    }}
+                  >
+                    {addFlightChecked && (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6L9 17L4 12" stroke="#29383E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </div>
+                  <div style={{ color: "white", fontSize: 18, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}>
                           Add a flight
-                        </label>
+                  </div>
                       </div>
                     </div>
                   )}
                   {activeCategory === "Hotels" && (
-  <div className="flex items-center mt-2 self-start space-x-4">
     <div
-      className="p-3"
+                className="flex items-center mt-2 self-start space-x-4 p-3 self-start"
       style={{
-        background: "rgba(1, 1, 1, 0.56)",
-        borderRadius: "8px",
+                  background: "rgba(1, 1, 1, 0.60)",
+                  borderRadius: "10px",
         width: "fit-content",
       }}
     >
-      <div className="flex items-center">
-        <Checkbox
-          id="add-flight-hotel"
-          className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
-        />
-        <label
-          htmlFor="add-flight-hotel"
-          className="text-sm text-white ml-2 font-medium font-gilroy cursor-pointer"
-        >
+                <div
+                  className="flex items-center gap-2.5 cursor-pointer"
+                  onClick={() => setAddFlightHotelChecked(!addFlightHotelChecked)}
+                >
+                  <div
+                    style={{
+                      width: 20,
+                      height: 20,
+                      borderRadius: 4,
+                      border: "2px white solid",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      backgroundColor: addFlightHotelChecked ? "white" : "transparent",
+                      transition: "background-color 150ms",
+                    }}
+                  >
+                    {addFlightHotelChecked && (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6L9 17L4 12" stroke="#29383E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </div>
+                  <div style={{ color: "white", fontSize: 18, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}>
           Add a flight
-        </label>
       </div>
     </div>
+                <div className="flex items-center gap-2.5 cursor-pointer" onClick={() => setAddCabHotelChecked(!addCabHotelChecked)}>
     <div
-      className="p-3"
       style={{
-        background: "rgba(1, 1, 1, 0.56)",
-        borderRadius: "8px",
-        width: "fit-content",
-      }}
-    >
-      <div className="flex items-center">
-        <Checkbox
-          id="add-cab-hotel"
-          className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
-        />
-        <label
-          htmlFor="add-cab-hotel"
-          className="text-sm text-white ml-2 font-medium font-gilroy cursor-pointer"
-        >
+                      width: 20,
+                      height: 20,
+                      borderRadius: 4,
+                      border: "2px white solid",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      backgroundColor: addCabHotelChecked ? "white" : "transparent",
+                      transition: "background-color 150ms",
+                    }}
+                  >
+                    {addCabHotelChecked && (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6L9 17L4 12" stroke="#29383E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </div>
+                  <div style={{ color: "white", fontSize: 18, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}>
           Add a cab
-        </label>
       </div>
     </div>
   </div>
 )}
                 </div>
-              )}
             </div>
           </div>
-        </div>
-      </div>
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-50 to-transparent z-20" />
     </div>
   )
