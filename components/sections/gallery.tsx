@@ -4,12 +4,33 @@ import Image from "next/image"
 
 export function Gallery() {
   return (
-    <section className="py-20 bg-white overflow-hidden">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold font-gilroy text-gray-900 mb-4">Gallery</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-gilroy">
+          <h2
+            className="mb-4"
+            style={{
+              color: "#16242A",
+              fontSize: "42px",
+              fontFamily: "Gilroy",
+              fontWeight: "600",
+              wordWrap: "break-word",
+            }}
+          >
+            Gallery
+          </h2>
+          <p
+            className="max-w-2xl mx-auto"
+            style={{
+              color: "#29383E",
+              fontSize: "18px",
+              fontFamily: "Gilroy",
+              fontWeight: "500",
+              lineHeight: "32px",
+              wordWrap: "break-word",
+            }}
+          >
             Have a look at the beautiful images of our happy customers
           </p>
         </div>

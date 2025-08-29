@@ -5,16 +5,33 @@ export function CustomizeBooking() {
   return (
     <section className="relative w-full py-16 overflow-hidden bg-white">
       <div className="text-center mb-12">
-        <h2 
-          className="text-4xl font-bold font-gilroy text-gray-900 leading-tight mb-4"
+        <h2
+          className="mb-4"
+          style={{
+            color: "#16242A",
+            fontSize: "42px",
+            fontFamily: "Gilroy",
+            fontWeight: "600",
+            lineHeight: "64px",
+            wordWrap: "break-word",
+          }}
         >
           Customize Your Booking
         </h2>
-        <p 
-          className="text-lg text-[#29383E] max-w-4xl mx-auto font-gilroy"
+        <p
+          className="max-w-3xl mx-auto mb-8"
+          style={{
+            color: "#29383E",
+            fontSize: "18px",
+            fontFamily: "Gilroy",
+            fontWeight: "500",
+            lineHeight: "32px",
+            wordWrap: "break-word",
+          }}
         >
           Customize every aspect of your journey to fit your budget, schedule, and group dynamics.
         </p>
+        
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

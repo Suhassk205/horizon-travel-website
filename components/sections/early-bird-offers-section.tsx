@@ -19,8 +19,28 @@ export function EarlyBirdOffersSection() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-gilroy text-[#16242a] mb-4">Explore Our Early Bird Offers</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-gilroy">
+          <h2
+            className="mb-4"
+            style={{
+              color: "#16242A",
+              fontSize: "42px",
+              fontFamily: "Gilroy",
+              fontWeight: "600",
+              wordWrap: "break-word",
+            }}
+          >
+            Explore Our Early Bird Offers
+          </h2>
+          <p
+            style={{
+              color: "black",
+              fontSize: "18px",
+              fontFamily: "Gilroy",
+              fontWeight: "500",
+              wordWrap: "break-word",
+            }}
+            className="max-w-3xl mx-auto"
+          >
             Grab our early bird offer deals and enjoy your vacation with multiple benefits
           </p>
         </div>
@@ -50,18 +70,17 @@ export function EarlyBirdOffersSection() {
                   <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
                 </div>
 
-                {/* Duration Badge */}
-                <div className="absolute top-1/3 left-4 bg-black/70 text-white px-3 py-1 rounded-md">
-                  <span className="text-sm font-gilroy font-medium">6N/7D</span>
-                </div>
-
                 {/* Content Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  {/* Duration Badge */}
+                  <div className="w-fit bg-black/70 text-white px-3 py-1 rounded-md mb-2">
+                    <span className="text-sm font-gilroy font-medium">6N/7D</span>
+                  </div>
                   <h3 className="text-2xl font-bold font-gilroy text-white mb-1">Shimla, Kullu, Manali in Winters</h3>
                   <p className="text-gray-200 mb-4 font-gilroy">Himachal Pradesh</p>
 
                   {/* Package Details */}
-                  <div className="grid grid-cols-4 gap-2 mb-4 border-t border-gray-600 pt-4">
+                  <div className="grid grid-cols-4 gap-2 mb-4">
                     <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
                       <Plane className="w-5 h-5 text-[#ff6b00] mb-1" />
                       <span className="text-xs font-gilroy text-gray-300">2 Flights</span>
@@ -119,18 +138,17 @@ export function EarlyBirdOffersSection() {
                   <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
                 </div>
 
-                {/* Duration Badge */}
-                <div className="absolute top-1/3 left-4 bg-black/70 text-white px-3 py-1 rounded-md">
-                  <span className="text-sm font-gilroy font-medium">6N/7D</span>
-                </div>
-
                 {/* Content Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  {/* Duration Badge */}
+                  <div className="w-fit bg-black/70 text-white px-3 py-1 rounded-md mb-2">
+                    <span className="text-sm font-gilroy font-medium">6N/7D</span>
+                  </div>
                   <h3 className="text-2xl font-bold font-gilroy text-white mb-1">The Desert Odyssey</h3>
                   <p className="text-gray-200 mb-4 font-gilroy">Rajasthan</p>
 
                   {/* Package Details */}
-                  <div className="grid grid-cols-4 gap-2 mb-4 border-t border-gray-600 pt-4">
+                  <div className="grid grid-cols-4 gap-2 mb-4">
                     <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
                       <Plane className="w-5 h-5 text-[#ff6b00] mb-1" />
                       <span className="text-xs font-gilroy text-gray-300">2 Flights</span>
@@ -180,18 +198,17 @@ export function EarlyBirdOffersSection() {
                   <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
                 </div>
 
-                {/* Duration Badge */}
-                <div className="absolute top-1/3 left-4 bg-black/70 text-white px-3 py-1 rounded-md">
-                  <span className="text-sm font-gilroy font-medium">5N/6D</span>
-                </div>
-
                 {/* Content Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  {/* Duration Badge */}
+                  <div className="w-fit bg-black/70 text-white px-3 py-1 rounded-md mb-2">
+                    <span className="text-sm font-gilroy font-medium">5N/6D</span>
+                  </div>
                   <h3 className="text-2xl font-bold font-gilroy text-white mb-1">Coastal Paradise</h3>
                   <p className="text-gray-200 mb-4 font-gilroy">Goa</p>
 
                   {/* Package Details */}
-                  <div className="grid grid-cols-4 gap-2 mb-4 border-t border-gray-600 pt-4">
+                  <div className="grid grid-cols-4 gap-2 mb-4">
                     <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
                       <Plane className="w-5 h-5 text-[#ff6b00] mb-1" />
                       <span className="text-xs font-gilroy text-gray-300">2 Flights</span>
@@ -241,18 +258,17 @@ export function EarlyBirdOffersSection() {
                   <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
                 </div>
 
-                {/* Duration Badge */}
-                <div className="absolute top-1/3 left-4 bg-black/70 text-white px-3 py-1 rounded-md">
-                  <span className="text-sm font-gilroy font-medium">7N/8D</span>
-                </div>
-
                 {/* Content Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  {/* Duration Badge */}
+                  <div className="w-fit bg-black/70 text-white px-3 py-1 rounded-md mb-2">
+                    <span className="text-sm font-gilroy font-medium">7N/8D</span>
+                  </div>
                   <h3 className="text-2xl font-bold font-gilroy text-white mb-1">Mountain Retreat</h3>
                   <p className="text-gray-200 mb-4 font-gilroy">Kashmir</p>
 
                   {/* Package Details */}
-                  <div className="grid grid-cols-4 gap-2 mb-4 border-t border-gray-600 pt-4">
+                  <div className="grid grid-cols-4 gap-2 mb-4">
                     <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
                       <Plane className="w-5 h-5 text-[#ff6b00] mb-1" />
                       <span className="text-xs font-gilroy text-gray-300">2 Flights</span>
@@ -302,18 +318,17 @@ export function EarlyBirdOffersSection() {
                   <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
                 </div>
 
-                {/* Duration Badge */}
-                <div className="absolute top-1/3 left-4 bg-black/70 text-white px-3 py-1 rounded-md">
-                  <span className="text-sm font-gilroy font-medium">5N/6D</span>
-                </div>
-
                 {/* Content Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  {/* Duration Badge */}
+                  <div className="w-fit bg-black/70 text-white px-3 py-1 rounded-md mb-2">
+                    <span className="text-sm font-gilroy font-medium">5N/6D</span>
+                  </div>
                   <h3 className="text-2xl font-bold font-gilroy text-white mb-1">Tropical Island Escape</h3>
                   <p className="text-gray-200 mb-4 font-gilroy">Andaman & Nicobar</p>
 
                   {/* Package Details */}
-                  <div className="grid grid-cols-4 gap-2 mb-4 border-t border-gray-600 pt-4">
+                  <div className="grid grid-cols-4 gap-2 mb-4">
                     <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
                       <Plane className="w-5 h-5 text-[#ff6b00] mb-1" />
                       <span className="text-xs font-gilroy text-gray-300">2 Flights</span>
@@ -349,7 +364,7 @@ export function EarlyBirdOffersSection() {
           {/* Navigation Arrow - Right */}
           <button
             onClick={() => scroll("right")}
-            className="absolute top-1/3 -right-4 transform -translate-y-1/2 bg-[#FF6A00] text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors shadow-lg z-10"
+            className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-[#FF6A00] text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors shadow-lg z-10"
             aria-label="Next offers"
           >
             <ArrowRight className="w-6 h-6 text-white" />

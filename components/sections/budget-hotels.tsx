@@ -71,12 +71,32 @@ export function BudgetHotels() {
   }
 
   return (
-    <section className="py-16 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20">
+      <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="font-gilroy font-semibold text-[#16242a] text-[40px] tracking-[-1.68px] leading-[normal] mb-4">Top Budget-Friendly Hotels</h2>
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto font-gilroy">
+          <h2
+            className="mb-4"
+            style={{
+              color: "#16242A",
+              fontSize: "42px",
+              fontFamily: "Gilroy",
+              fontWeight: "600",
+              wordWrap: "break-word",
+            }}
+          >
+            Top Budget-Friendly Hotels
+          </h2>
+          <p
+            className="max-w-3xl mx-auto"
+            style={{
+              color: "black",
+              fontSize: "18px",
+              fontFamily: "Gilroy",
+              fontWeight: "500",
+              wordWrap: "break-word",
+            }}
+          >
             Explore Our Hand-Curated Selection of Budget Hotels Offering Unbeatable Value and Comfort
           </p>
         </div>

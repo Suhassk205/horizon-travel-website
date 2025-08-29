@@ -54,7 +54,7 @@ export function SecurePay() {
               }}
             >
               <Image
-                src="/images/Payment Method Icons 1.png"
+                src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d945ebb8-0bf3-4872-b52b-cc3ee83e1311"
                 alt="Visa"
                 layout="fill"
                 objectFit="contain"
@@ -87,7 +87,7 @@ export function SecurePay() {
               }}
             >
               <Image
-                src="/images/Payment Method 3.png"
+                src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f042dd45-7d7b-408f-941e-6131cdac186b"
                 alt="Mastercard"
                 layout="fill"
                 objectFit="contain"
@@ -103,7 +103,7 @@ export function SecurePay() {
               }}
             >
               <Image
-                src="/images/Payment Method Icons 4.png"
+                src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c0ddd588-66ea-413f-947c-5dd4593174c3"
                 alt="American Express"
                 layout="fill"
                 objectFit="contain"
@@ -119,7 +119,7 @@ export function SecurePay() {
               }}
             >
               <Image
-                src="/images/Payment Method Icon 5.png"
+                src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/73c8b1e6-907d-4a44-8499-7ecec2e707ee"
                 alt="Google Pay"
                 layout="fill"
                 objectFit="contain"
@@ -135,7 +135,7 @@ export function SecurePay() {
               }}
             >
               <Image
-                src="/images/Payment Method Icons 6.png"
+                src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/87da238d-ff14-4a53-9844-f04808379326"
                 alt="PayPal"
                 layout="fill"
                 objectFit="contain"

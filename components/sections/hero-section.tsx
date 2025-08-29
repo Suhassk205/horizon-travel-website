@@ -562,8 +562,8 @@ export function HeroSection() {
             {/* Search Form Row - Directly connected below */}
             <div
               className="rounded-lg shadow-xl"
-                  style={{
-                width: "1162px", // Adjusted width to align with category buttons
+              style={{
+                width: "1280px",
                 height: "89px",
                 gap: "10px",
                 borderRadius: "10px",
@@ -575,33 +575,73 @@ export function HeroSection() {
                 <div className="flex p-3 gap-1">
                   {/* Search Your Desired Hotels */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "445px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Search Your Desired Hotels</label>
-                    <input type="text" placeholder="Enter hotel name" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Search Your Desired Hotels
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter hotel name"
+                      className="text-sm outline-none w-full bg-transparent"
+                      style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    />
                   </div>
 
                   {/* Check-In */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "195px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Check-In</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Check-In
+                    </label>
                     <div className="flex items-center justify-between">
-                      <input type="text" placeholder="DD-MM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <input
+                        type="text"
+                        placeholder="DD-MM"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                       <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                     </div>
                   </div>
 
                   {/* Check-Out */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "195px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Check-Out</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Check-Out
+                    </label>
                     <div className="flex items-center justify-between">
-                      <input type="text" placeholder="DD-MM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <input
+                        type="text"
+                        placeholder="DD-MM"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                       <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                     </div>
                   </div>
 
                   {/* Travellers */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "195px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Travellers</label>
-                    <input type="text" placeholder="2 Traveler, 1 Room" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
-          </div>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Travellers
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="2 Traveler, 1 Room"
+                      className="text-sm outline-none w-full bg-transparent"
+                      style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    />
+                  </div>
 
                   {/* Search Button */}
                   <div
@@ -609,7 +649,9 @@ export function HeroSection() {
                     style={{ width: "190px", height: "54px" }}
                     onClick={handleSearch}
                   >
-                    <span className="text-sm">Search</span>
+                    <span style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
+                      Search
+                    </span>
                   </div>
                 </div>
               ) : activeCategory === "Cabs" ? (
@@ -617,62 +659,132 @@ export function HeroSection() {
                   <div className="flex p-3 gap-1">
                     {/* Pickup */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "190px" }}>
-                      <label className="text-xs text-gray-500 mb-1">Pickup</label>
+                      <label
+                        className="text-xs mb-1"
+                        style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      >
+                        Pickup
+                      </label>
                       <div className="flex items-center justify-between">
-                        <input type="text" placeholder="Select Pickup" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <input
+                          type="text"
+                          placeholder="Select Pickup"
+                          className="text-sm outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                       </div>
                     </div>
 
                     {/* Drop-Off */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "190px" }}>
-                      <label className="text-xs text-gray-500 mb-1">Drop-Off</label>
+                      <label
+                        className="text-xs mb-1"
+                        style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      >
+                        Drop-Off
+                      </label>
                       <div className="flex items-center justify-between">
-                        <input type="text" placeholder="Same as Pickup" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <input
+                          type="text"
+                          placeholder="Same as Pickup"
+                          className="text-sm outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                       </div>
                     </div>
 
                     {/* Pickup Date */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "139px" }}>
-                      <label className="text-xs text-gray-500 mb-1">Pickup Date</label>
+                      <label
+                        className="text-xs mb-1"
+                        style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      >
+                        Pickup Date
+                      </label>
                       <div className="flex items-center justify-between">
-                        <input type="text" placeholder="DD-MM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <input
+                          type="text"
+                          placeholder="DD-MM"
+                          className="text-sm outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        />
                         <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                       </div>
                     </div>
 
                     {/* Drop-Off Date */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "139px" }}>
-                      <label className="text-xs text-gray-500 mb-1">Drop-Off Date</label>
+                      <label
+                        className="text-xs mb-1"
+                        style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      >
+                        Drop-Off Date
+                      </label>
                       <div className="flex items-center justify-between">
-                        <input type="text" placeholder="DD-MM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <input
+                          type="text"
+                          placeholder="DD-MM"
+                          className="text-sm outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        />
                         <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                       </div>
                     </div>
 
                     {/* Pickup Time */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "139px" }}>
-                      <label className="text-xs text-gray-500 mb-1">Pickup Time</label>
+                      <label
+                        className="text-xs mb-1"
+                        style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      >
+                        Pickup Time
+                      </label>
                       <div className="flex items-center justify-between">
-                        <input type="text" placeholder="HH:MM AM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <input
+                          type="text"
+                          placeholder="HH:MM AM"
+                          className="text-sm outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        />
                         <ChevronDown size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                       </div>
                     </div>
 
                     {/* Drop-Off Time */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "139px" }}>
-                      <label className="text-xs text-gray-500 mb-1">Drop-Off Time</label>
+                      <label
+                        className="text-xs mb-1"
+                        style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      >
+                        Drop-Off Time
+                      </label>
                       <div className="flex items-center justify-between">
-                        <input type="text" placeholder="HH:MM AM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <input
+                          type="text"
+                          placeholder="HH:MM AM"
+                          className="text-sm outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        />
                         <ChevronDown size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                       </div>
                     </div>
 
                     {/* Travelers */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "129px" }}>
-                      <label className="text-xs text-gray-500 mb-1">Travelers</label>
-                      <input type="text" placeholder="1 Traveler" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <label
+                        className="text-xs mb-1"
+                        style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      >
+                        Travelers
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="1 Traveler"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                     </div>
 
                     {/* Search Button */}
@@ -681,7 +793,9 @@ export function HeroSection() {
                       style={{ width: "143px", height: "54px" }}
                       onClick={handleSearch}
                     >
-                      <span className="text-sm">Search</span>
+                      <span style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
+                        Search
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -689,19 +803,35 @@ export function HeroSection() {
                 <div className="flex p-3 gap-1">
                   {/* Search Your Desired Activity */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "850px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Search your desired activity</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Search your desired activity
+                    </label>
                     <input
                       type="text"
                       placeholder="Enter activity name"
-                      className="text-sm text-gray-800 outline-none w-full bg-transparent"
+                      className="text-sm outline-none w-full bg-transparent"
+                      style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
                     />
                   </div>
 
                   {/* Travellers */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "256px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Travellers</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Travellers
+                    </label>
                     <div className="flex items-center justify-between">
-                      <input type="text" placeholder="2 Travellers" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <input
+                        type="text"
+                        placeholder="2 Travellers"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                       <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                     </div>
                   </div>
@@ -712,16 +842,28 @@ export function HeroSection() {
                     style={{ width: "134px", height: "54px" }}
                     onClick={handleSearch}
                   >
-                    <span className="text-sm">Search</span>
+                    <span style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
+                      Search
+                    </span>
                   </div>
                 </div>
               ) : activeCategory === "Buses" ? (
                 <div className="flex p-3 gap-1">
                   {/* Leaving From */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "309px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Leaving From</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Leaving From
+                    </label>
                     <div className="flex items-center justify-between">
-                      <input type="text" placeholder="Select leaving Location" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <input
+                        type="text"
+                        placeholder="Select leaving Location"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                       <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                     </div>
                   </div>
@@ -743,27 +885,57 @@ export function HeroSection() {
 
                   {/* Destination */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "309px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Destination</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Destination
+                    </label>
                     <div className="flex items-center justify-between">
-                      <input type="text" placeholder="Select Destination" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <input
+                        type="text"
+                        placeholder="Select Destination"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                       <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                     </div>
                   </div>
 
                   {/* Departure */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "209px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Departure</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Departure
+                    </label>
                     <div className="flex items-center justify-between">
-                      <input type="text" placeholder="DD-MM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <input
+                        type="text"
+                        placeholder="DD-MM"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                       <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                   </div>
                 </div>
 
                   {/* Travellers */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "209px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Travellers</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Travellers
+                    </label>
                     <div className="flex items-center justify-between">
-                      <input type="text" placeholder="2 Travellers" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <input
+                        type="text"
+                        placeholder="2 Travellers"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                       <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                     </div>
                   </div>
@@ -774,43 +946,85 @@ export function HeroSection() {
                     style={{ width: "134px", height: "54px" }}
                     onClick={handleSearch}
                   >
-                    <span className="text-sm">Search</span>
+                    <span style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
+                      Search
+                    </span>
                   </div>
                 </div>
               ) : activeCategory === "Cruise" ? (
                 <div className="flex p-3 gap-1">
                   {/* Leaving From */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "287px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Leaving From</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Leaving From
+                    </label>
                     <div className="flex items-center justify-between">
-                      <input type="text" placeholder="Select leaving Location" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <input
+                        type="text"
+                        placeholder="Select leaving Location"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                       <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                     </div>
                   </div>
 
                   {/* Destination */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "287px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Destination</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Destination
+                    </label>
                     <div className="flex items-center justify-between">
-                      <input type="text" placeholder="Select Destination" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <input
+                        type="text"
+                        placeholder="Select Destination"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                       <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                     </div>
                   </div>
 
                   {/* Month */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "237px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Month</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Month
+                    </label>
                     <div className="flex items-center justify-between">
-                      <input type="text" placeholder="Select Travel Month" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <input
+                        type="text"
+                        placeholder="Select Travel Month"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                       <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                   </div>
                 </div>
 
                   {/* Travelers */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "237px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Travelers</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Travelers
+                    </label>
                     <div className="flex items-center justify-between">
-                      <input type="text" placeholder="2 Traveler, 1 Cabin" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <input
+                        type="text"
+                        placeholder="2 Traveler, 1 Cabin"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                       <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                     </div>
                   </div>
@@ -821,7 +1035,9 @@ export function HeroSection() {
                     style={{ width: "172px", height: "54px" }}
                     onClick={handleSearch}
                   >
-                    <span className="text-sm">Search</span>
+                    <span style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
+                      Search
+                    </span>
                   </div>
                 </div>
               ) : activeCategory === "Flights" ? (
@@ -830,9 +1046,19 @@ export function HeroSection() {
                   <div className="flex p-3 gap-1">
                     {/* Leaving From */}
                     <div className="flex bg-white rounded-md px-3 py-2 h-[54px] flex-col gap-y-0 flex-grow-[2.5] min-w-0">
-                      <label className="text-xs text-gray-500 mb-1">Leaving From</label>
+                      <label
+                        className="text-xs mb-1"
+                        style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      >
+                        Leaving From
+                      </label>
                       <div className="flex items-center justify-between">
-                        <input type="text" placeholder="Select leaving Location" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <input
+                          type="text"
+                          placeholder="Select leaving Location"
+                          className="text-sm outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                       </div>
                     </div>
@@ -854,36 +1080,76 @@ export function HeroSection() {
 
                     {/* Going To */}
                     <div className="flex flex-col bg-white rounded-md py-2 px-4 h-14 flex-grow-[2.5] min-w-0">
-                      <label className="text-xs text-gray-500 mb-1">Going To</label>
+                      <label
+                        className="text-xs mb-1"
+                        style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      >
+                        Going To
+                      </label>
                       <div className="flex items-center justify-between">
-                        <input type="text" placeholder="Select Destination" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <input
+                          type="text"
+                          placeholder="Select Destination"
+                          className="text-sm outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                       </div>
                     </div>
 
                     {/* Depart */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] flex-grow-[1.5] min-w-0">
-                      <label className="text-xs text-gray-500 mb-1">Depart</label>
+                      <label
+                        className="text-xs mb-1"
+                        style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      >
+                        Depart
+                      </label>
                       <div className="flex items-center justify-between">
-                        <input type="text" placeholder="24-06" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <input
+                          type="text"
+                          placeholder="24-06"
+                          className="text-sm outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        />
                         <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                       </div>
                     </div>
 
                     {/* Travelers */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] flex-grow-[1.5] min-w-0">
-                      <label className="text-xs text-gray-500 mb-1">Travelers</label>
+                      <label
+                        className="text-xs mb-1"
+                        style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      >
+                        Travelers
+                      </label>
                       <div className="flex items-center justify-between">
-                        <input type="text" placeholder="1 Traveler" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <input
+                          type="text"
+                          placeholder="1 Traveler"
+                          className="text-sm outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                       </div>
                     </div>
 
                     {/* Class Type */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] flex-grow-[1.5] min-w-0">
-                      <label className="text-xs text-gray-500 mb-1">Class Type</label>
+                      <label
+                        className="text-xs mb-1"
+                        style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      >
+                        Class Type
+                      </label>
                       <div className="flex items-center justify-between">
-                        <input type="text" placeholder="Economy" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <input
+                          type="text"
+                          placeholder="Economy"
+                          className="text-sm outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                 </div>
               </div>
@@ -893,7 +1159,9 @@ export function HeroSection() {
                       className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base flex-grow-[2] h-[54px]"
                       onClick={handleSearch}
                     >
-                      <span className="text-sm">Search</span>
+                      <span style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}>
+                        Search
+                      </span>
                     </div>
                   </div>
                   {/* Moved Fare Category Checkboxes */}
@@ -968,53 +1236,113 @@ export function HeroSection() {
                     {/* Default form for other categories */}
                     {/* Leaving From */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "202px" }}>
-                      <label className="text-xs text-gray-500 mb-1">Leaving From</label>
+                      <label
+                        className="text-xs mb-1"
+                        style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      >
+                        Leaving From
+                      </label>
                       <div className="flex items-center justify-between">
-                        <input type="text" placeholder="Select leaving Location" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <input
+                          type="text"
+                          placeholder="Select leaving Location"
+                          className="text-sm outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                       </div>
                     </div>
 
                     {/* Destination */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "202px" }}>
-                      <label className="text-xs text-gray-500 mb-1">Destination</label>
+                      <label
+                        className="text-xs mb-1"
+                        style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      >
+                        Destination
+                      </label>
                       <div className="flex items-center justify-between">
-                        <input type="text" placeholder="Select Destination" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <input
+                          type="text"
+                          placeholder="Select Destination"
+                          className="text-sm outline-none w-full bg-transparent"
+                          style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                        />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                     </div>
                   </div>
 
                   {/* Theme */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "172px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Theme</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Theme
+                    </label>
                     <div className="flex items-center justify-between">
-                      <input type="text" placeholder="Solo Travel" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <input
+                        type="text"
+                        placeholder="Solo Travel"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                       <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                     </div>
                   </div>
 
                   {/* From Date */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "151px" }}>
-                    <label className="text-xs text-gray-500 mb-1">From</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      From
+                    </label>
                     <div className="flex items-center justify-between">
-                      <input type="text" placeholder="DD-MM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <input
+                        type="text"
+                        placeholder="DD-MM"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                       <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                   </div>
                 </div>
 
                   {/* To Date */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "151px" }}>
-                    <label className="text-xs text-gray-500 mb-1">To</label>
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      To
+                    </label>
                     <div className="flex items-center justify-between">
-                      <input type="text" placeholder="DD-MM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <input
+                        type="text"
+                        placeholder="DD-MM"
+                        className="text-sm outline-none w-full bg-transparent"
+                        style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                      />
                       <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
                     </div>
                   </div>
 
                   {/* Travelers */}
                   <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "172px" }}>
-                    <label className="text-xs text-gray-500 mb-1">Travelers</label>
-                    <input type="text" placeholder="2 Traveler, 1 Room" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                    <label
+                      className="text-xs mb-1"
+                      style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    >
+                      Travelers
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="2 Traveler, 1 Room"
+                      className="text-sm outline-none w-full bg-transparent"
+                      style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
+                    />
                 </div>
 
                   {/* Search Button */}
@@ -1023,7 +1351,11 @@ export function HeroSection() {
                     style={{ width: "162px", height: "54px" }}
                     onClick={handleSearch}
                   >
-                    <span className="text-sm">Search</span>
+                    <span
+                      style={{ color: "white", fontSize: 16, fontFamily: "Gilroy", fontWeight: "600", wordWrap: "break-word" }}
+                    >
+                      Search
+                    </span>
                   </div>
                   
                 </div>
@@ -1102,7 +1434,7 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent z-20 pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-50 to-transparent z-20" />
     </div>
   )
 }

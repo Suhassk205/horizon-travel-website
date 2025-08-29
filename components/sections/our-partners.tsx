@@ -38,7 +38,18 @@ export function OurPartners() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-gilroy text-gray-900 mb-4">Our Partners</h2>
+          <h2
+            className="mb-4"
+            style={{
+              color: "#16242A",
+              fontSize: "42px",
+              fontFamily: "Gilroy",
+              fontWeight: "600",
+              wordWrap: "break-word",
+            }}
+          >
+            Our Partners
+          </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto font-gilroy">
             Connecting and Growing with Our Trusted Network of Partners
           </p>

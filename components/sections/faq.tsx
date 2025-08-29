@@ -52,10 +52,30 @@ export function FAQ() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section - Exact Figma Typography */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold font-gilroy text-[#16242A] mb-2 tracking-[-0.02em] leading-[64px]">
+          <h2
+            className="mb-4"
+            style={{
+              color: "#16242A",
+              fontSize: "42px",
+              fontFamily: "Gilroy",
+              fontWeight: "600",
+              lineHeight: "64px",
+              wordWrap: "break-word",
+            }}
+          >
             Frequently Asked Questions
           </h2>
-          <p className="text-lg font-medium text-[#293A3E] max-w-3xl mx-auto font-gilroy leading-[32px]">
+          <p
+            className="max-w-2xl mx-auto"
+            style={{
+              color: "#29383E",
+              fontSize: "18px",
+              fontFamily: "Gilroy",
+              fontWeight: "500",
+              lineHeight: "32px",
+              wordWrap: "break-word",
+            }}
+          >
             Have any questions? Find all your answers in the frequently asked questions.
           </p>
         </div>

@@ -105,7 +105,17 @@ const ExclusiveDealsSection = () => {
   return (
     <section className="py-20 px-4 bg-gray-50">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold font-gilroy text-center text-[#16242A] mb-8">
+        <h2 
+          className="text-center mb-8"
+          style={{
+            color: '#16242A',
+            fontSize: '42px',
+            fontFamily: 'Gilroy',
+            fontWeight: '600',
+            lineHeight: '64px',
+            wordWrap: 'break-word'
+          }}
+        >
           Exclusive Deals & Offers
         </h2>
         <div className="bg-white rounded-2xl p-6 max-w-7xl mx-auto">

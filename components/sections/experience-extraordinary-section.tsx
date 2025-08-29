@@ -20,7 +20,19 @@ export function ExperienceExtraordinarySection() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold font-gilroy text-gray-900 mb-4">Experience the Extraordinary</h2>
+          <h2 
+            className="mb-4"
+            style={{
+              color: '#16242A',
+              fontSize: '42px',
+              fontFamily: 'Gilroy',
+              fontWeight: '600',
+              lineHeight: '64px',
+              wordWrap: 'break-word'
+            }}
+          >
+            Experience the Extraordinary
+          </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto font-gilroy">
             Immerse yourself in extraordinary journeys tailored to your style
           </p>
@@ -42,11 +54,58 @@ export function ExperienceExtraordinarySection() {
                   className="w-full h-full object-cover rounded-3xl"
                 />
                 <div className="absolute bottom-0 left-0 p-8 text-white">
-                  <h3 className="text-3xl md:text-4xl font-bold font-gilroy mb-3">Solo/Group Female Travelers</h3>
-                  <p className="text-lg mb-6 text-gray-200 font-gilroy">Your safety and peace of mind are our utmost priorities</p>
-                  <button className="bg-[#ff6a00] hover:bg-[#e55a00] text-white px-8 py-3 rounded-full font-gilroy font-medium transition-colors">
-                    Explore Now
-                  </button>
+                  <h3 
+                    className="mb-3"
+                    style={{
+                      color: 'white',
+                      fontSize: '42px',
+                      fontFamily: 'Gilroy',
+                      fontWeight: '600',
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Solo/Group Female Travelers
+                  </h3>
+                  <p 
+                    className="mb-6"
+                    style={{
+                      color: 'white',
+                      fontSize: '18px',
+                      fontFamily: 'Gilroy',
+                      fontWeight: '500',
+                      lineHeight: '32px',
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Your safety and peace of mind are our utmost priorities
+                  </p>
+                  <div 
+                    style={{
+                      paddingLeft: '24px', 
+                      paddingRight: '24px', 
+                      paddingTop: '16px', 
+                      paddingBottom: '16px', 
+                      background: '#FF6A00', 
+                      borderRadius: '10px', 
+                      justifyContent: 'center', 
+                      alignItems: 'center', 
+                      display: 'inline-flex'
+                    }}
+                  >
+                    <div 
+                      style={{
+                        textAlign: 'center', 
+                        color: 'white', 
+                        fontSize: '14px', 
+                        fontFamily: 'Gilroy', 
+                        fontWeight: '500', 
+                        textTransform: 'capitalize', 
+                        wordWrap: 'break-word'
+                      }}
+                    >
+                      Explore Now
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -59,11 +118,58 @@ export function ExperienceExtraordinarySection() {
                   className="w-full h-full object-cover rounded-3xl"
                 />
                 <div className="absolute bottom-0 left-0 p-8 text-white">
-                  <h3 className="text-3xl md:text-4xl font-bold font-gilroy mb-3">Adventure Seekers</h3>
-                  <p className="text-lg mb-6 text-gray-200 font-gilroy">Thrilling experiences for the bold and adventurous</p>
-                  <button className="bg-[#ff6a00] hover:bg-[#e55a00] text-white px-8 py-3 rounded-full font-gilroy font-medium transition-colors">
-                    Explore Now
-                  </button>
+                  <h3 
+                    className="mb-3"
+                    style={{
+                      color: 'white',
+                      fontSize: '42px',
+                      fontFamily: 'Gilroy',
+                      fontWeight: '600',
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Adventure Seekers
+                  </h3>
+                  <p 
+                    className="mb-6"
+                    style={{
+                      color: 'white',
+                      fontSize: '18px',
+                      fontFamily: 'Gilroy',
+                      fontWeight: '500',
+                      lineHeight: '32px',
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Thrilling experiences for the bold and adventurous
+                  </p>
+                  <div 
+                    style={{
+                      paddingLeft: '24px', 
+                      paddingRight: '24px', 
+                      paddingTop: '16px', 
+                      paddingBottom: '16px', 
+                      background: '#FF6A00', 
+                      borderRadius: '10px', 
+                      justifyContent: 'center', 
+                      alignItems: 'center', 
+                      display: 'inline-flex'
+                    }}
+                  >
+                    <div 
+                      style={{
+                        textAlign: 'center', 
+                        color: 'white', 
+                        fontSize: '14px', 
+                        fontFamily: 'Gilroy', 
+                        fontWeight: '500', 
+                        textTransform: 'capitalize', 
+                        wordWrap: 'break-word'
+                      }}
+                    >
+                      Explore Now
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -76,11 +182,58 @@ export function ExperienceExtraordinarySection() {
                   className="w-full h-full object-cover rounded-3xl"
                 />
                 <div className="absolute bottom-0 left-0 p-8 text-white">
-                  <h3 className="text-3xl md:text-4xl font-bold font-gilroy mb-3">Luxury Escapes</h3>
-                  <p className="text-lg mb-6 text-gray-200 font-gilroy">Indulge in premium experiences and world-class service</p>
-                  <button className="bg-[#ff6a00] hover:bg-[#e55a00] text-white px-8 py-3 rounded-full font-gilroy font-medium transition-colors">
-                    Explore Now
-                  </button>
+                  <h3 
+                    className="mb-3"
+                    style={{
+                      color: 'white',
+                      fontSize: '42px',
+                      fontFamily: 'Gilroy',
+                      fontWeight: '600',
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Luxury Escapes
+                  </h3>
+                  <p 
+                    className="mb-6"
+                    style={{
+                      color: 'white',
+                      fontSize: '18px',
+                      fontFamily: 'Gilroy',
+                      fontWeight: '500',
+                      lineHeight: '32px',
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Indulge in premium experiences and world-class service
+                  </p>
+                  <div 
+                    style={{
+                      paddingLeft: '24px', 
+                      paddingRight: '24px', 
+                      paddingTop: '16px', 
+                      paddingBottom: '16px', 
+                      background: '#FF6A00', 
+                      borderRadius: '10px', 
+                      justifyContent: 'center', 
+                      alignItems: 'center', 
+                      display: 'inline-flex'
+                    }}
+                  >
+                    <div 
+                      style={{
+                        textAlign: 'center', 
+                        color: 'white', 
+                        fontSize: '14px', 
+                        fontFamily: 'Gilroy', 
+                        fontWeight: '500', 
+                        textTransform: 'capitalize', 
+                        wordWrap: 'break-word'
+                      }}
+                    >
+                      Explore Now
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -93,11 +246,58 @@ export function ExperienceExtraordinarySection() {
                   className="w-full h-full object-cover rounded-3xl"
                 />
                 <div className="absolute bottom-0 left-0 p-8 text-white">
-                  <h3 className="text-3xl md:text-4xl font-bold font-gilroy mb-3">Family Adventures</h3>
-                  <p className="text-lg mb-6 text-gray-200 font-gilroy">Creating unforgettable memories for the whole family</p>
-                  <button className="bg-[#ff6a00] hover:bg-[#e55a00] text-white px-8 py-3 rounded-full font-gilroy font-medium transition-colors">
-                    Explore Now
-                  </button>
+                  <h3 
+                    className="mb-3"
+                    style={{
+                      color: 'white',
+                      fontSize: '42px',
+                      fontFamily: 'Gilroy',
+                      fontWeight: '600',
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Family Adventures
+                  </h3>
+                  <p 
+                    className="mb-6"
+                    style={{
+                      color: 'white',
+                      fontSize: '18px',
+                      fontFamily: 'Gilroy',
+                      fontWeight: '500',
+                      lineHeight: '32px',
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Creating unforgettable memories for the whole family
+                  </p>
+                  <div 
+                    style={{
+                      paddingLeft: '24px', 
+                      paddingRight: '24px', 
+                      paddingTop: '16px', 
+                      paddingBottom: '16px', 
+                      background: '#FF6A00', 
+                      borderRadius: '10px', 
+                      justifyContent: 'center', 
+                      alignItems: 'center', 
+                      display: 'inline-flex'
+                    }}
+                  >
+                    <div 
+                      style={{
+                        textAlign: 'center', 
+                        color: 'white', 
+                        fontSize: '14px', 
+                        fontFamily: 'Gilroy', 
+                        fontWeight: '500', 
+                        textTransform: 'capitalize', 
+                        wordWrap: 'break-word'
+                      }}
+                    >
+                      Explore Now
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -110,11 +310,58 @@ export function ExperienceExtraordinarySection() {
                   className="w-full h-full object-cover rounded-3xl"
                 />
                 <div className="absolute bottom-0 left-0 p-8 text-white">
-                  <h3 className="text-3xl md:text-4xl font-bold font-gilroy mb-3">Cultural Immersion</h3>
-                  <p className="text-lg mb-6 text-gray-200 font-gilroy">Discover rich heritage and authentic local experiences</p>
-                  <button className="bg-[#ff6a00] hover:bg-[#e55a00] text-white px-8 py-3 rounded-full font-gilroy font-medium transition-colors">
-                    Explore Now
-                  </button>
+                  <h3 
+                    className="mb-3"
+                    style={{
+                      color: 'white',
+                      fontSize: '42px',
+                      fontFamily: 'Gilroy',
+                      fontWeight: '600',
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Cultural Immersion
+                  </h3>
+                  <p 
+                    className="mb-6"
+                    style={{
+                      color: 'white',
+                      fontSize: '18px',
+                      fontFamily: 'Gilroy',
+                      fontWeight: '500',
+                      lineHeight: '32px',
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Discover rich heritage and authentic local experiences
+                  </p>
+                  <div 
+                    style={{
+                      paddingLeft: '24px', 
+                      paddingRight: '24px', 
+                      paddingTop: '16px', 
+                      paddingBottom: '16px', 
+                      background: '#FF6A00', 
+                      borderRadius: '10px', 
+                      justifyContent: 'center', 
+                      alignItems: 'center', 
+                      display: 'inline-flex'
+                    }}
+                  >
+                    <div 
+                      style={{
+                        textAlign: 'center', 
+                        color: 'white', 
+                        fontSize: '14px', 
+                        fontFamily: 'Gilroy', 
+                        fontWeight: '500', 
+                        textTransform: 'capitalize', 
+                        wordWrap: 'break-word'
+                      }}
+                    >
+                      Explore Now
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -127,11 +374,58 @@ export function ExperienceExtraordinarySection() {
                   className="w-full h-full object-cover rounded-3xl"
                 />
                 <div className="absolute bottom-0 left-0 p-8 text-white">
-                  <h3 className="text-3xl md:text-4xl font-bold font-gilroy mb-3">Wellness Retreats</h3>
-                  <p className="text-lg mb-6 text-gray-200 font-gilroy">Rejuvenate your mind, body, and soul</p>
-                  <button className="bg-[#ff6a00] hover:bg-[#e55a00] text-white px-8 py-3 rounded-full font-gilroy font-medium transition-colors">
-                    Explore Now
-                  </button>
+                  <h3 
+                    className="mb-3"
+                    style={{
+                      color: 'white',
+                      fontSize: '42px',
+                      fontFamily: 'Gilroy',
+                      fontWeight: '600',
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Wellness Retreats
+                  </h3>
+                  <p 
+                    className="mb-6"
+                    style={{
+                      color: 'white',
+                      fontSize: '18px',
+                      fontFamily: 'Gilroy',
+                      fontWeight: '500',
+                      lineHeight: '32px',
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Rejuvenate your mind, body, and soul
+                  </p>
+                  <div 
+                    style={{
+                      paddingLeft: '24px', 
+                      paddingRight: '24px', 
+                      paddingTop: '16px', 
+                      paddingBottom: '16px', 
+                      background: '#FF6A00', 
+                      borderRadius: '10px', 
+                      justifyContent: 'center', 
+                      alignItems: 'center', 
+                      display: 'inline-flex'
+                    }}
+                  >
+                    <div 
+                      style={{
+                        textAlign: 'center', 
+                        color: 'white', 
+                        fontSize: '14px', 
+                        fontFamily: 'Gilroy', 
+                        fontWeight: '500', 
+                        textTransform: 'capitalize', 
+                        wordWrap: 'break-word'
+                      }}
+                    >
+                      Explore Now
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

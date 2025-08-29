@@ -37,13 +37,33 @@ const blogData = [
 
 export function BlogsSection() {
   return (
-    <section className="py-16 bg-[#F3F5F7]">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-4 text-[#16242A]">
+    <section className="py-20 px-4 bg-gray-50">
+      <div className="container mx-auto">
+        <div className="text-center mb-12">
+          <h2
+            className="mb-4"
+            style={{
+              color: "#16242A",
+              fontSize: "42px",
+              fontFamily: "Gilroy",
+              fontWeight: "600",
+              lineHeight: "64px",
+              wordWrap: "break-word",
+            }}
+          >
             Phoenix Fly Blogs
           </h2>
-          <p className="text-lg max-w-3xl mx-auto text-[#717171]">
+          <p
+            className="max-w-2xl mx-auto"
+            style={{
+              color: "#29383E",
+              fontSize: "18px",
+              fontFamily: "Gilroy",
+              fontWeight: "500",
+              lineHeight: "32px",
+              wordWrap: "break-word",
+            }}
+          >
             Get travel tips, destination guides, and real stories from explorers around the globe
           </p>
         </div>

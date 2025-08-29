@@ -33,8 +33,29 @@ export function FeaturesSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         {/* Header Section */}
         <div className="text-center mb-16 relative z-20 mt-12">
-          <h2 className="text-[42px] font-bold font-gilroy leading-none text-black mb-6">We offer the Best</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed font-gilroy">
+          <h2
+            className="mb-6"
+            style={{
+              color: "#16242A",
+              fontSize: "42px",
+              fontFamily: "Gilroy",
+              fontWeight: "600",
+              wordWrap: "break-word",
+            }}
+          >
+            We offer the Best
+          </h2>
+          <p
+            className="mb-8"
+            style={{
+              color: "#29383E",
+              fontSize: "18px",
+              fontFamily: "Gilroy",
+              fontWeight: "500",
+              lineHeight: "32px",
+              wordWrap: "break-word",
+            }}
+          >
             Trust us to offer the best and take your travel experience to the next level
           </p>
         </div>

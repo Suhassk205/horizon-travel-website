@@ -98,8 +98,28 @@ export function ExploreThemesSection() {
     <section className="bg-gray-50 py-20">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold font-gilroy text-[#16242A]">Explore Our Themes</h2>
-          <p className="text-lg text-gray-600 mt-2 font-gilroy">
+          <h2 
+            style={{
+              color: '#16242A',
+              fontSize: '42px',
+              fontFamily: 'Gilroy',
+              fontWeight: '600',
+              wordWrap: 'break-word'
+            }}
+          >
+            Explore Our Themes
+          </h2>
+          <p 
+            className="mt-2"
+            style={{
+              color: '#16242A',
+              fontSize: '18px',
+              fontFamily: 'Gilroy',
+              fontWeight: '500',
+              lineHeight: '32px',
+              wordWrap: 'break-word'
+            }}
+          >
             Choose from various themes that are hand curated
           </p>
         </div>
@@ -119,8 +139,30 @@ export function ExploreThemesSection() {
                     objectFit="cover"
                   />
                 </div>
-                <h3 className="text-xl font-bold font-gilroy text-[#16242A]">{theme.title}</h3>
-                <p className="text-gray-600 font-gilroy">{theme.description}</p>
+                <h3 
+                  style={{
+                    color: '#16242A',
+                    fontSize: '20px',
+                    fontFamily: 'Gilroy',
+                    fontWeight: '600',
+                    lineHeight: '34px',
+                    wordWrap: 'break-word'
+                  }}
+                >
+                  {theme.title}
+                </h3>
+                <p 
+                  style={{
+                    color: '#16242A',
+                    fontSize: '16px',
+                    fontFamily: 'Gilroy',
+                    fontWeight: '500',
+                    lineHeight: '26px',
+                    wordWrap: 'break-word'
+                  }}
+                >
+                  {theme.description}
+                </p>
               </div>
             ))}
           </div>

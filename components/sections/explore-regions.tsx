@@ -92,8 +92,29 @@ const ExploreRegions = () => {
     <section className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden">
       {/* Header Section */}
       <div className="text-center py-16 px-4">
-        <h2 className="text-4xl md:text-5xl font-bold font-gilroy text-gray-900 mb-4">Explore The World</h2>
-        <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto font-gilroy">
+        <h2
+          className="mb-4"
+          style={{
+            color: "#16242A",
+            fontSize: "42px",
+            fontFamily: "Gilroy",
+            fontWeight: "600",
+            wordWrap: "break-word",
+          }}
+        >
+          Explore The World
+        </h2>
+        <p
+          className="mb-8 max-w-4xl mx-auto"
+          style={{
+            color: "#29383E",
+            fontSize: "18px",
+            fontFamily: "Gilroy",
+            fontWeight: "500",
+            lineHeight: "32px",
+            wordWrap: "break-word",
+          }}
+        >
           Browse top domestic and international travel experiences tailored for every kind of traveler.
         </p>
 

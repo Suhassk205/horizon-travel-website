@@ -97,8 +97,29 @@ export function ExplorePackages() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold font-gilroy text-gray-900 mb-2">Explore Best Packages</h2>
-          <p className="text-gray-600 font-medium font-gilroy text-sm">
+          <h2
+            className="mb-2"
+            style={{
+              color: "#16242A",
+              fontSize: "42px",
+              fontFamily: "Gilroy",
+              fontWeight: "600",
+              lineHeight: "64px",
+              wordWrap: "break-word",
+            }}
+          >
+            Explore Best Packages
+          </h2>
+          <p
+            style={{
+              color: "#29383E",
+              fontSize: "18px",
+              fontFamily: "Gilroy",
+              fontWeight: "500",
+              lineHeight: "32px",
+              wordWrap: "break-word",
+            }}
+          >
             Embark on a mesmerizing journey to explore the top destinations
           </p>
         </div>
