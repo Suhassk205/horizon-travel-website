@@ -1,0 +1,1108 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import Image from "next/image"
+import { useRouter } from "next/navigation"
+import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
+import {
+  ChevronDown,
+  Search,
+  User,
+  Menu,
+  X,
+  Star,
+  Clock,
+  MapPin,
+  Calendar,
+  Users,
+  Briefcase,
+  Heart,
+  Plane,
+  Building2,
+  Car,
+  Mountain,
+  Ticket,
+  Ship,
+  Activity,
+  ChevronRight,
+  ChevronLeft,
+  Package,
+} from "lucide-react"
+
+const exploreExtraordinaryItems = [
+  { id: 1, name: "Adventure" },
+  { id: 2, name: "Beaches" },
+  { id: 3, name: "Mountains" },
+  { id: 4, name: "Heritage" },
+  { id: 5, name: "Honeymoon" },
+  { id: 6, name: "Wildlife" },
+]
+
+const offersDropdownItems = [
+  {
+    id: 1,
+    title: "Early Bird Offer",
+    description: "Book now and get 20% off",
+    image: "/images/offer1.png",
+  },
+  {
+    id: 2,
+    title: "Last Minute Deals",
+    description: "Up to 30% off on selected packages",
+    image: "/images/offer2.png",
+  },
+]
+
+type Region = {
+  id: string
+  title: string
+}
+
+type Regions = {
+  india: Region[]
+  international: Region[]
+}
+
+const regions: Regions = {
+  india: [
+    { id: "goa", title: "Goa" },
+    { id: "kerala", title: "Kerala" },
+    { id: "rajasthan", title: "Rajasthan" },
+    { id: "himachal", title: "Himachal Pradesh" },
+    { id: "andaman", title: "Andaman & Nicobar" },
+    { id: "ladakh", title: "Ladakh" },
+  ],
+  international: [
+    { id: "dubai", title: "Dubai" },
+    { id: "thailand", title: "Thailand" },
+    { id: "maldives", title: "Maldives" },
+    { id: "europe", title: "Europe" },
+    { id: "bali", title: "Bali" },
+    { id: "singapore", title: "Singapore" },
+  ],
+}
+
+const heroTexts = ["DISCOVER", "EXPLORE", "TRAVEL"]
+
+export function HeroSection() {
+  const router = useRouter()
+  const [showDestinationDropdown, setShowDestinationDropdown] = useState(false)
+  const [showExploreExtraordinaryDropdown, setShowExploreExtraordinaryDropdown] = useState(false)
+  const [showOffersDropdown, setShowOffersDropdown] = useState(false)
+  const [activeDestinationTab, setActiveDestinationTab] = useState("india")
+  const [activeCategory, setActiveCategory] = useState("Packages")
+  const [flightType, setFlightType] = useState("one-way")
+  const [fareCategory, setFareCategory] = useState("regular-fares")
+  const [showDiscountPopup, setShowDiscountPopup] = useState(false)
+  const [currentTextIndex, setCurrentTextIndex] = useState(0)
+  const [translateY, setTranslateY] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Start slide out (up)
+      setTranslateY(-100) // Slide up
+      setTimeout(() => {
+        // Update text and reset position to slide in from bottom
+        setCurrentTextIndex((prev) => (prev + 1) % heroTexts.length)
+        setTranslateY(100) // Position off-screen bottom
+        // After a very short delay, start slide in
+        setTimeout(() => {
+          setTranslateY(0) // Slide to center
+        }, 50) // Small delay to ensure CSS transition applies from 100%
+      }, 500) // Duration of slide out animation
+    }, 3000) // Total cycle time
+
+    return () => clearInterval(interval)
+  }, [heroTexts.length]) // Add heroTexts.length to dependency array
+
+  // Effect for automatic discount pop-up
+  useEffect(() => {
+    const popupInterval = setInterval(() => {
+      setShowDiscountPopup((prev) => !prev) // Toggle the pop-up visibility
+    }, 2000) // Toggle every 2 seconds
+
+    return () => clearInterval(popupInterval) // Cleanup on component unmount
+  }, [])
+
+  const displayedRegions =
+    activeDestinationTab === "all"
+      ? [...regions.india, ...regions.international]
+      : regions[activeDestinationTab as keyof typeof regions]
+
+  const handleSearch = () => {
+    console.log("Search button clicked!")
+  }
+
+  return (
+    <div className="relative">
+      {/* Background Image - This will be removed or replaced based on new design */}
+      <div
+        className="absolute inset-0 bg-cover bg-top bg-no-repeat"
+        style={{
+          backgroundImage: "url('/winter-landscape.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/20"></div>
+      </div>
+
+      {/* New Header */}
+      <header className="relative z-10">
+        <nav className="flex items-center justify-between px-12 py-4">
+          <div className="flex items-center space-x-2">
+            <img src="/images/horizon-logo1.jpeg" alt="Horizon Logo" className="w-8 h-8 object-contain" />
+            <span className="text-2xl font-bold font-gilroy text-[#16242A]">Horizon</span>
+          </div>
+
+          <div className="flex items-center space-x-8">
+            {/* Navigation Links */}
+            <div
+              className="flex items-center space-x-1 text-[#16242A] cursor-pointer hover:opacity-80 transition-opacity"
+              onClick={() => setShowDestinationDropdown(!showDestinationDropdown)}
+            >
+              <span className="text-base font-semibold font-gilroy leading-[30px]">Destination</span>
+              <ChevronDown className="w-5 h-5" />
+            </div>
+
+            <div className="relative">
+              <div
+                className="flex items-center space-x-1 text-[#16242A] cursor-pointer hover:opacity-80 transition-opacity"
+                onClick={() => setShowExploreExtraordinaryDropdown(!showExploreExtraordinaryDropdown)}
+              >
+                <span className="text-base font-semibold font-gilroy leading-[30px]">Explore Extraordinary</span>
+                <ChevronDown className="w-5 h-5" />
+              </div>
+              {/* Dropdown for Explore Extraordinary remains the same */}
+            </div>
+
+            <div className="relative">
+              <div
+                className="flex items-center space-x-1 text-[#16242A] cursor-pointer hover:opacity-80 transition-opacity"
+                onClick={() => setShowOffersDropdown(!showOffersDropdown)}
+              >
+                <span className="text-base font-semibold font-gilroy leading-[30px]">Offers</span>
+                <ChevronDown className="w-5 h-5" />
+              </div>
+              {/* Dropdown for Offers remains the same */}
+            </div>
+
+            <span className="text-base text-[#16242A] font-semibold font-gilroy leading-[30px] cursor-pointer hover:opacity-80">
+              Support
+            </span>
+            <span className="text-base text-[#16242A] font-semibold font-gilroy leading-[30px] cursor-pointer hover:opacity-80">
+              Review & Ratings
+            </span>
+            <span className="text-base text-[#16242A] font-semibold font-gilroy leading-[30px] cursor-pointer hover:opacity-80">
+              About Us
+            </span>
+             <span className="text-base text-[#16242A] font-semibold font-gilroy leading-[30px] cursor-pointer hover:opacity-80">
+              Blogs
+            </span>
+          </div>
+
+          <div className="flex items-center space-x-4">
+            {/* Signup Button with Pop-up */}
+            <div className="relative">
+              <Button
+                className="bg-[#29383E] hover:bg-[#1f2b30] text-white px-6 h-10 rounded-lg font-semibold font-gilroy text-sm transition-colors flex items-center justify-center"
+              >
+                Signup
+              </Button>
+              <div
+                className={`absolute top-12 -left-4 p-2.5 bg-[#FFEFDF] rounded-[10px] flex items-center gap-2.5 shadow-lg w-[255px] transition-all duration-300 ease-in-out before:content-[''] before:absolute before:bottom-full before:left-8 before:border-8 before:border-transparent before:border-b-[#FFEFDF] ${
+                  showDiscountPopup
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 -translate-y-4 pointer-events-none"
+                }`}
+              >
+                <div className="w-10 h-10 bg-[#FF6A00] rounded-full flex items-center justify-center">
+                  <Image
+                    src="/images/iconamoon_discount-fill.png"
+                    alt="Discount"
+                    width={24}
+                    height={24}
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-base font-bold font-gilroy text-[#FF6A00]">Flat 20% OFF</span>
+                  <span className="text-sm font-normal font-gilroy text-[#FF6A00]">
+                    On your First Booking
+                  </span>
+                </div>
+              </div>
+            </div>
+            <Button
+              className="bg-[#29383e]/40 text-[#16242A] px-6 h-10 rounded-lg font-semibold font-gilroy text-sm backdrop-blur-[3px] flex items-center justify-center hover:bg-[#29383e]/60 transition-colors"
+            >
+              Login
+            </Button>
+          </div>
+        </nav>
+      </header>
+
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Destination Dropdown Menu */}
+        <div
+          className={`absolute left-1/2 transform -translate-x-1/2 top-[80px] p-6 bg-white rounded-lg shadow-lg z-50 w-[800px] transition-all duration-300 ease-in-out ${
+            showDestinationDropdown
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-4 pointer-events-none"
+          }`}
+        >
+          <div className="flex space-x-6 mb-6">
+            <button
+              className={`text-lg font-semibold font-gilroy ${
+                activeDestinationTab === "india" ? "text-[#E06A00]" : "text-gray-500"
+              }`}
+              onClick={() => setActiveDestinationTab("india")}
+            >
+              India
+            </button>
+            <button
+              className={`text-lg font-semibold font-gilroy ${
+                activeDestinationTab === "international" ? "text-[#E06A00]" : "text-gray-500"
+              }`}
+              onClick={() => setActiveDestinationTab("international")}
+            >
+              International
+            </button>
+            <button
+              className={`text-lg font-semibold font-gilroy ${
+                activeDestinationTab === "all" ? "text-[#E06A00]" : "text-gray-500"
+              }`}
+              onClick={() => setActiveDestinationTab("all")}
+            >
+              All
+            </button>
+          </div>
+          <div className="grid grid-cols-3 gap-x-8 gap-y-4">
+            {displayedRegions.map((region: Region) => (
+              <div
+                key={region.id}
+                className="flex items-center space-x-2 text-gray-800 cursor-pointer hover:text-[#E06A00]"
+              >
+                <ChevronRight className="w-4 h-4 text-gray-500" />
+                <span className="text-base font-medium font-gilroy">{region.title}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Hero Section */}
+        <div className={`flex flex-col items-center justify-center px-6 pt-10 pb-40`}>
+          <h2 className="text-white text-center tracking-wide font-semibold font-gilroy text-2xl">One Adventure At A Time</h2>
+          <div className="h-[200px] overflow-hidden mb-16 flex items-center justify-center">
+            <h1
+              className={`text-white leading-none tracking-wide uppercase text-center font-bold font-gilroy transition-transform duration-500 ease-in-out`}
+              style={{ 
+                transform: `translateY(${translateY}%)`,
+                fontSize: '180px',
+                lineHeight: '1',
+              }}
+            >
+              {heroTexts[currentTextIndex]}
+            </h1>
+          </div>
+
+          {/* Combined Travel Categories and Search Form */}
+          <div className="flex flex-col">
+            {/* Travel Categories Row - Small gaps between items */}
+            <div className="flex gap-x-1.5">
+              {/* Packages */}
+              <div
+                className="flex items-center justify-center cursor-pointer"
+                onClick={() => setActiveCategory("Packages")}
+                style={{
+                  background: activeCategory === "Packages" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  borderRadius: "10px 10px 0 0",
+                  width: "152px",
+                  padding: "10px 30px 15px 30px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "10px",
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <Package
+                    className={`${
+                      activeCategory === "Packages" ? "text-black" : "text-white"
+                    }`}
+                    size={20}
+                    strokeWidth={1.5}
+                  />
+                  <span
+                    className={`text-base font-medium font-gilroy ${
+                      activeCategory === "Packages" ? "text-black" : "text-white"
+                    }`}
+                  >
+                    Packages
+                  </span>
+                </div>
+              </div>
+
+              {/* Hotels */}
+              <div
+                className="flex items-center justify-center cursor-pointer"
+                onClick={() => setActiveCategory("Hotels")}
+                style={{
+                  background: activeCategory === "Hotels" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  borderRadius: "10px 10px 0 0",
+                  width: "152px",
+                  padding: "10px 30px 15px 30px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "10px",
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/images/icon-hotel.png"
+                    alt="Hotel icon"
+                    className="w-5 h-5"
+                    style={{ filter: activeCategory === "Hotels" ? "none" : "brightness(0) invert(1)" }}
+                  />
+                  <span
+                    className={`text-base font-medium font-gilroy ${
+                      activeCategory === "Hotels" ? "text-black" : "text-white"
+                    }`}
+                  >
+                    Hotels
+                  </span>
+                </div>
+              </div>
+
+              {/* Cabs */}
+              <div
+                className="flex items-center justify-center cursor-pointer"
+                onClick={() => setActiveCategory("Cabs")}
+                style={{
+                  background: activeCategory === "Cabs" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  borderRadius: "10px 10px 0 0",
+                  width: "152px",
+                  padding: "10px 30px 15px 30px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "10px",
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/images/icon-cab.png"
+                    alt="Cab icon"
+                    className="w-5 h-5"
+                    style={{ filter: activeCategory === "Cabs" ? "none" : "brightness(0) invert(1)" }}
+                  />
+                  <span
+                    className={`text-base font-medium font-gilroy ${
+                      activeCategory === "Cabs" ? "text-black" : "text-white"
+                    }`}
+                  >
+                    Cabs
+                  </span>
+                </div>
+              </div>
+
+              {/* Activities */}
+              <div
+                className="flex items-center justify-center cursor-pointer"
+                onClick={() => setActiveCategory("Activities")}
+                style={{
+                  background: activeCategory === "Activities" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  borderRadius: "10px 10px 0 0",
+                  width: "152px",
+                  padding: "10px 30px 15px 30px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "10px",
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/images/icon-activities.png"
+                    alt="Activities icon"
+                    className="w-5 h-5"
+                    style={{ filter: activeCategory === "Activities" ? "none" : "brightness(0) invert(1)" }}
+                  />
+                  <span
+                    className={`text-base font-medium font-gilroy ${
+                      activeCategory === "Activities" ? "text-black" : "text-white"
+                    }`}
+                  >
+                    Activities
+                  </span>
+                </div>
+              </div>
+
+              {/* Trains */}
+              <div
+                className="flex items-center justify-center cursor-pointer"
+                onClick={() => setActiveCategory("Trains")}
+                style={{
+                  background: activeCategory === "Trains" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  borderRadius: "10px 10px 0 0",
+                  width: "152px",
+                  padding: "10px 30px 15px 30px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "10px",
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/images/icon-train.png"
+                    alt="Train icon"
+                    className="w-5 h-5"
+                    style={{ filter: activeCategory === "Trains" ? "none" : "brightness(0) invert(1)" }}
+                  />
+                  <span
+                    className={`text-base font-medium font-gilroy ${
+                      activeCategory === "Trains" ? "text-black" : "text-white"
+                    }`}
+                  >
+                    Trains
+                  </span>
+                </div>
+              </div>
+
+              {/* Buses */}
+              <div
+                className="flex items-center justify-center cursor-pointer"
+                onClick={() => setActiveCategory("Buses")}
+                style={{
+                  background: activeCategory === "Buses" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  borderRadius: "10px 10px 0 0",
+                  width: "152px",
+                  padding: "10px 30px 15px 30px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "10px",
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/images/icon-bus.png"
+                    alt="Bus icon"
+                    className="w-5 h-5"
+                    style={{ filter: activeCategory === "Buses" ? "none" : "brightness(0) invert(1)" }}
+                  />
+                  <span
+                    className={`text-base font-medium font-gilroy ${
+                      activeCategory === "Buses" ? "text-black" : "text-white"
+                    }`}
+                  >
+                    Buses
+                  </span>
+                </div>
+              </div>
+
+              {/* Flights */}
+              <div
+                className="flex items-center justify-center cursor-pointer"
+                onClick={() => setActiveCategory("Flights")}
+                style={{
+                  background: activeCategory === "Flights" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  borderRadius: "10px 10px 0 0",
+                  width: "152px",
+                  padding: "10px 30px 15px 30px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "10px",
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/images/icon-flight.png"
+                    alt="Plane icon"
+                    className="w-5 h-5"
+                    style={{ filter: activeCategory === "Flights" ? "none" : "brightness(0) invert(1)" }}
+                  />
+                  <span
+                    className={`text-base font-medium font-gilroy ${
+                      activeCategory === "Flights" ? "text-black" : "text-white"
+                    }`}
+                  >
+                    Flights
+                  </span>
+                </div>
+              </div>
+
+              {/* Cruise */}
+              <div
+                className="flex items-center justify-center cursor-pointer"
+                onClick={() => setActiveCategory("Cruise")}
+                style={{
+                  background: activeCategory === "Cruise" ? "#CEDDE7" : "rgba(1, 1, 1, 0.56)",
+                  borderRadius: "10px 10px 0 0",
+                  width: "152px",
+                  padding: "10px 30px 15px 30px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "10px",
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/images/icon-cruise.png"
+                    alt="Cruise icon"
+                    className="w-5 h-5"
+                    style={{ filter: activeCategory === "Cruise" ? "none" : "brightness(0) invert(1)" }}
+                  />
+                  <span
+                    className={`text-base font-medium font-gilroy ${
+                      activeCategory === "Cruise" ? "text-black" : "text-white"
+                    }`}
+                  >
+                    Cruise
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Search Form Row - Directly connected below */}
+            <div
+              className="rounded-lg shadow-xl"
+                  style={{
+                width: "1162px", // Adjusted width to align with category buttons
+                height: "89px",
+                gap: "10px",
+                borderRadius: "10px",
+                padding: "10px",
+                background: "#CEDDE7",
+              }}
+            >
+              {activeCategory === "Hotels" ? (
+                <div className="flex p-3 gap-1">
+                  {/* Search Your Desired Hotels */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "445px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Search Your Desired Hotels</label>
+                    <input type="text" placeholder="Enter hotel name" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                  </div>
+
+                  {/* Check-In */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "195px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Check-In</label>
+                    <div className="flex items-center justify-between">
+                      <input type="text" placeholder="DD-MM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                    </div>
+                  </div>
+
+                  {/* Check-Out */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "195px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Check-Out</label>
+                    <div className="flex items-center justify-between">
+                      <input type="text" placeholder="DD-MM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                    </div>
+                  </div>
+
+                  {/* Travellers */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "195px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Travellers</label>
+                    <input type="text" placeholder="2 Traveler, 1 Room" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+          </div>
+
+                  {/* Search Button */}
+                  <div
+                    className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base"
+                    style={{ width: "190px", height: "54px" }}
+                    onClick={handleSearch}
+                  >
+                    <span className="text-sm">Search</span>
+                  </div>
+                </div>
+              ) : activeCategory === "Cabs" ? (
+                <div className="flex flex-col">
+                  <div className="flex p-3 gap-1">
+                    {/* Pickup */}
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "190px" }}>
+                      <label className="text-xs text-gray-500 mb-1">Pickup</label>
+                      <div className="flex items-center justify-between">
+                        <input type="text" placeholder="Select Pickup" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                      </div>
+                    </div>
+
+                    {/* Drop-Off */}
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "190px" }}>
+                      <label className="text-xs text-gray-500 mb-1">Drop-Off</label>
+                      <div className="flex items-center justify-between">
+                        <input type="text" placeholder="Same as Pickup" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                      </div>
+                    </div>
+
+                    {/* Pickup Date */}
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "139px" }}>
+                      <label className="text-xs text-gray-500 mb-1">Pickup Date</label>
+                      <div className="flex items-center justify-between">
+                        <input type="text" placeholder="DD-MM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                      </div>
+                    </div>
+
+                    {/* Drop-Off Date */}
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "139px" }}>
+                      <label className="text-xs text-gray-500 mb-1">Drop-Off Date</label>
+                      <div className="flex items-center justify-between">
+                        <input type="text" placeholder="DD-MM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                      </div>
+                    </div>
+
+                    {/* Pickup Time */}
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "139px" }}>
+                      <label className="text-xs text-gray-500 mb-1">Pickup Time</label>
+                      <div className="flex items-center justify-between">
+                        <input type="text" placeholder="HH:MM AM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <ChevronDown size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                      </div>
+                    </div>
+
+                    {/* Drop-Off Time */}
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "139px" }}>
+                      <label className="text-xs text-gray-500 mb-1">Drop-Off Time</label>
+                      <div className="flex items-center justify-between">
+                        <input type="text" placeholder="HH:MM AM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <ChevronDown size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                      </div>
+                    </div>
+
+                    {/* Travelers */}
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "129px" }}>
+                      <label className="text-xs text-gray-500 mb-1">Travelers</label>
+                      <input type="text" placeholder="1 Traveler" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                    </div>
+
+                    {/* Search Button */}
+                    <div
+                      className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base"
+                      style={{ width: "143px", height: "54px" }}
+                      onClick={handleSearch}
+                    >
+                      <span className="text-sm">Search</span>
+                    </div>
+                  </div>
+                </div>
+              ) : activeCategory === "Activities" ? (
+                <div className="flex p-3 gap-1">
+                  {/* Search Your Desired Activity */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "850px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Search your desired activity</label>
+                    <input
+                      type="text"
+                      placeholder="Enter activity name"
+                      className="text-sm text-gray-800 outline-none w-full bg-transparent"
+                    />
+                  </div>
+
+                  {/* Travellers */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "256px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Travellers</label>
+                    <div className="flex items-center justify-between">
+                      <input type="text" placeholder="2 Travellers" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                    </div>
+                  </div>
+
+                  {/* Search Button */}
+                  <div
+                    className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base"
+                    style={{ width: "134px", height: "54px" }}
+                    onClick={handleSearch}
+                  >
+                    <span className="text-sm">Search</span>
+                  </div>
+                </div>
+              ) : activeCategory === "Buses" ? (
+                <div className="flex p-3 gap-1">
+                  {/* Leaving From */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "309px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Leaving From</label>
+                    <div className="flex items-center justify-between">
+                      <input type="text" placeholder="Select leaving Location" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                    </div>
+                  </div>
+
+                  {/* Swap Icon */}
+                  <div className="flex items-center justify-center" style={{ width: "40px", height: "54px" }}>
+                    <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M7 16L17 16M17 16L13 12M17 16L13 20M17 8L7 8M7 8L11 4M7 8L11 12"
+                          stroke="white"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                  </div>
+                </div>
+
+                  {/* Destination */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "309px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Destination</label>
+                    <div className="flex items-center justify-between">
+                      <input type="text" placeholder="Select Destination" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                    </div>
+                  </div>
+
+                  {/* Departure */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "209px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Departure</label>
+                    <div className="flex items-center justify-between">
+                      <input type="text" placeholder="DD-MM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                  </div>
+                </div>
+
+                  {/* Travellers */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "209px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Travellers</label>
+                    <div className="flex items-center justify-between">
+                      <input type="text" placeholder="2 Travellers" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                    </div>
+                  </div>
+
+                  {/* Search Button */}
+                  <div
+                    className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base"
+                    style={{ width: "134px", height: "54px" }}
+                    onClick={handleSearch}
+                  >
+                    <span className="text-sm">Search</span>
+                  </div>
+                </div>
+              ) : activeCategory === "Cruise" ? (
+                <div className="flex p-3 gap-1">
+                  {/* Leaving From */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "287px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Leaving From</label>
+                    <div className="flex items-center justify-between">
+                      <input type="text" placeholder="Select leaving Location" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                    </div>
+                  </div>
+
+                  {/* Destination */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "287px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Destination</label>
+                    <div className="flex items-center justify-between">
+                      <input type="text" placeholder="Select Destination" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                    </div>
+                  </div>
+
+                  {/* Month */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "237px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Month</label>
+                    <div className="flex items-center justify-between">
+                      <input type="text" placeholder="Select Travel Month" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                  </div>
+                </div>
+
+                  {/* Travelers */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "237px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Travelers</label>
+                    <div className="flex items-center justify-between">
+                      <input type="text" placeholder="2 Traveler, 1 Cabin" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                    </div>
+                  </div>
+
+                  {/* Search Button */}
+                  <div
+                    className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base"
+                    style={{ width: "172px", height: "54px" }}
+                    onClick={handleSearch}
+                  >
+                    <span className="text-sm">Search</span>
+                  </div>
+                </div>
+              ) : activeCategory === "Flights" ? (
+                <div className="flex flex-col">
+                  {/* Main Search Form */}
+                  <div className="flex p-3 gap-1">
+                    {/* Leaving From */}
+                    <div className="flex bg-white rounded-md px-3 py-2 h-[54px] flex-col gap-y-0 flex-grow-[2.5] min-w-0">
+                      <label className="text-xs text-gray-500 mb-1">Leaving From</label>
+                      <div className="flex items-center justify-between">
+                        <input type="text" placeholder="Select leaving Location" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                      </div>
+                    </div>
+
+                    {/* Swap Icon */}
+                    <div className="flex items-center justify-center w-10 h-[54px]">
+                      <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M7 16L17 16M17 16L13 12M17 16L13 20M17 8L7 8M7 8L11 4M7 8L11 12"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Going To */}
+                    <div className="flex flex-col bg-white rounded-md py-2 px-4 h-14 flex-grow-[2.5] min-w-0">
+                      <label className="text-xs text-gray-500 mb-1">Going To</label>
+                      <div className="flex items-center justify-between">
+                        <input type="text" placeholder="Select Destination" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                      </div>
+                    </div>
+
+                    {/* Depart */}
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] flex-grow-[1.5] min-w-0">
+                      <label className="text-xs text-gray-500 mb-1">Depart</label>
+                      <div className="flex items-center justify-between">
+                        <input type="text" placeholder="24-06" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                      </div>
+                    </div>
+
+                    {/* Travelers */}
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] flex-grow-[1.5] min-w-0">
+                      <label className="text-xs text-gray-500 mb-1">Travelers</label>
+                      <div className="flex items-center justify-between">
+                        <input type="text" placeholder="1 Traveler" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                      </div>
+                    </div>
+
+                    {/* Class Type */}
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] flex-grow-[1.5] min-w-0">
+                      <label className="text-xs text-gray-500 mb-1">Class Type</label>
+                      <div className="flex items-center justify-between">
+                        <input type="text" placeholder="Economy" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                </div>
+              </div>
+
+                    {/* Search Button */}
+                    <div
+                      className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base flex-grow-[2] h-[54px]"
+                      onClick={handleSearch}
+                    >
+                      <span className="text-sm">Search</span>
+                    </div>
+                  </div>
+                  {/* Moved Fare Category Checkboxes */}
+                  <div
+                    className="flex justify-start space-x-4 p-3 mt-3" // Added mt-3 class
+                    style={{
+                      background: "rgba(1, 1, 1, 0.56)",
+                      borderRadius: "8px",
+                      width: "fit-content",
+                    }}
+                  >
+                    <div className="flex items-center space-x-2">
+                      <Checkbox
+                        id="regular-fares"
+                        checked={fareCategory === "regular-fares"}
+                        onCheckedChange={() => setFareCategory("regular-fares")}
+                        className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
+                      />
+                      <label htmlFor="regular-fares" className="text-sm font-medium font-gilroy text-white cursor-pointer">
+                        Regular Fares
+                      </label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Checkbox
+                        id="armed-forces-fares"
+                        checked={fareCategory === "armed-forces-fares"}
+                        onCheckedChange={() => setFareCategory("armed-forces-fares")}
+                        className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
+                      />
+                      <label htmlFor="armed-forces-fares" className="text-sm font-medium font-gilroy text-white cursor-pointer">
+                        Armed Forces Fares
+                      </label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Checkbox
+                        id="student-fares"
+                        checked={fareCategory === "student-fares"}
+                        onCheckedChange={() => setFareCategory("student-fares")}
+                        className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
+                      />
+                      <label htmlFor="student-fares" className="text-sm font-medium font-gilroy text-white cursor-pointer">
+                        Student Fares
+                      </label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Checkbox
+                        id="senior-citizen-fares"
+                        checked={fareCategory === "senior-citizen-fares"}
+                        onCheckedChange={() => setFareCategory("senior-citizen-fares")}
+                        className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
+                      />
+                      <label htmlFor="senior-citizen-fares" className="text-sm font-medium font-gilroy text-white cursor-pointer">
+                        Senior Citizen Fares
+                      </label>
+                </div>
+                    <div className="flex items-center space-x-2">
+                      <Checkbox
+                        id="doctor-nurses-fares"
+                        checked={fareCategory === "doctor-nurses-fares"}
+                        onCheckedChange={() => setFareCategory("doctor-nurses-fares")}
+                        className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
+                      />
+                      <label htmlFor="doctor-nurses-fares" className="text-sm font-medium font-gilroy text-white cursor-pointer">
+                        Doctor & Nurses Fares
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  <div className="flex p-3 gap-1">
+                    {/* Default form for other categories */}
+                    {/* Leaving From */}
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "202px" }}>
+                      <label className="text-xs text-gray-500 mb-1">Leaving From</label>
+                      <div className="flex items-center justify-between">
+                        <input type="text" placeholder="Select leaving Location" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                      </div>
+                    </div>
+
+                    {/* Destination */}
+                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "202px" }}>
+                      <label className="text-xs text-gray-500 mb-1">Destination</label>
+                      <div className="flex items-center justify-between">
+                        <input type="text" placeholder="Select Destination" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                        <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                    </div>
+                  </div>
+
+                  {/* Theme */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "172px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Theme</label>
+                    <div className="flex items-center justify-between">
+                      <input type="text" placeholder="Solo Travel" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
+                    </div>
+                  </div>
+
+                  {/* From Date */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "151px" }}>
+                    <label className="text-xs text-gray-500 mb-1">From</label>
+                    <div className="flex items-center justify-between">
+                      <input type="text" placeholder="DD-MM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                  </div>
+                </div>
+
+                  {/* To Date */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "151px" }}>
+                    <label className="text-xs text-gray-500 mb-1">To</label>
+                    <div className="flex items-center justify-between">
+                      <input type="text" placeholder="DD-MM" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                      <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                    </div>
+                  </div>
+
+                  {/* Travelers */}
+                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "172px" }}>
+                    <label className="text-xs text-gray-500 mb-1">Travelers</label>
+                    <input type="text" placeholder="2 Traveler, 1 Room" className="text-sm text-gray-800 outline-none w-full bg-transparent" />
+                </div>
+
+                  {/* Search Button */}
+                  <div
+                    className="flex items-center justify-center bg-[#29383E] rounded-r-lg text-white font-bold font-gilroy text-base"
+                    style={{ width: "162px", height: "54px" }}
+                    onClick={handleSearch}
+                  >
+                    <span className="text-sm">Search</span>
+                  </div>
+                  
+                </div>
+                {activeCategory === "Packages" && (
+                    <div
+                      className="mt-2 p-3"
+                      style={{
+                        background: "rgba(1, 1, 1, 0.56)",
+                        borderRadius: "8px",
+                        width: "fit-content",
+                      }}
+                    >
+                      <div className="flex items-center">
+                        <Checkbox
+                          id="add-flight"
+                          className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
+                        />
+                        <label
+                          htmlFor="add-flight"
+                          className="text-sm text-white ml-2 font-medium font-gilroy cursor-pointer"
+                        >
+                          Add a flight
+                        </label>
+                      </div>
+                    </div>
+                  )}
+                  {activeCategory === "Hotels" && (
+  <div className="flex items-center mt-2 self-start space-x-4">
+    <div
+      className="p-3"
+      style={{
+        background: "rgba(1, 1, 1, 0.56)",
+        borderRadius: "8px",
+        width: "fit-content",
+      }}
+    >
+      <div className="flex items-center">
+        <Checkbox
+          id="add-flight-hotel"
+          className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
+        />
+        <label
+          htmlFor="add-flight-hotel"
+          className="text-sm text-white ml-2 font-medium font-gilroy cursor-pointer"
+        >
+          Add a flight
+        </label>
+      </div>
+    </div>
+    <div
+      className="p-3"
+      style={{
+        background: "rgba(1, 1, 1, 0.56)",
+        borderRadius: "8px",
+        width: "fit-content",
+      }}
+    >
+      <div className="flex items-center">
+        <Checkbox
+          id="add-cab-hotel"
+          className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
+        />
+        <label
+          htmlFor="add-cab-hotel"
+          className="text-sm text-white ml-2 font-medium font-gilroy cursor-pointer"
+        >
+          Add a cab
+        </label>
+      </div>
+    </div>
+  </div>
+)}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent z-20 pointer-events-none" />
+    </div>
+  )
+}
