@@ -148,7 +148,7 @@ export function Footer() {
               <path d="M154.171 8.11456C156.509 8.11456 158.398 8.85839 159.839 10.3461C161.28 11.8337 162 13.8759 162 16.4726V28.9284H157.596V16.9189C157.596 15.4041 157.188 14.2411 156.373 13.4296C155.557 12.6181 154.443 12.2124 153.029 12.2124C151.48 12.2124 150.229 12.6993 149.278 13.673C148.326 14.6197 147.851 16.0804 147.851 18.0549V28.9284H143.447V8.64201H147.851V11.2387C149.183 9.15593 151.29 8.11456 154.171 8.11456Z" fill="#16242A"/>
             </svg>
           </div>
-          <p className="text-lg font-semibold text-[#16242A] text-center max-w-3xl leading-[24px] tracking-[-0.02em] font-gilroy">
+          <p className="text-center max-w-3xl font-gilroy" style={{ color: "#16242A", fontSize: "18px", fontFamily: "Gilroy", fontWeight: "400", lineHeight: "24px", letterSpacing: "-0.36px", textTransform: "capitalize" }}>
             For the dreamers, explorers, and memory-makers — your journey starts here.
           </p>
         </div>
