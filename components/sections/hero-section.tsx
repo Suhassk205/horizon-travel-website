@@ -312,45 +312,89 @@ export function HeroSection() {
           <div className="flex flex-col">
             {activeCategory === "Flights" && (
               <div
-                className="flex justify-start space-x-4 p-3 mb-1"
+                className="flex items-center flex-wrap gap-x-6 gap-y-3 p-3 mb-1"
                 style={{
                   background: "rgba(1, 1, 1, 0.56)",
                   borderRadius: "8px",
                   width: "fit-content",
                 }}
               >
-                <div className="flex items-center space-x-2">
-                  <Checkbox
-                    id="one-way"
-                    checked={flightType === "one-way"}
-                    onCheckedChange={() => setFlightType("one-way")}
-                    className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
-                  />
-                  <label htmlFor="one-way" className="text-sm font-medium font-gilroy text-white cursor-pointer">
+                {/* One Way */}
+                <div className="flex items-center gap-2.5 cursor-pointer" onClick={() => setFlightType("one-way")}>
+                  <div
+                    style={{
+                      width: 20,
+                      height: 20,
+                      borderRadius: 4,
+                      border: "2px white solid",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      backgroundColor: flightType === "one-way" ? "white" : "transparent",
+                      transition: "background-color 150ms",
+                    }}
+                  >
+                    {flightType === "one-way" && (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6L9 17L4 12" stroke="#29383E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </div>
+                  <div style={{ color: "white", fontSize: 18, fontFamily: "Gilroy", fontWeight: "500" }}>
                     One Way
-                  </label>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Checkbox
-                    id="round-trip"
-                    checked={flightType === "round-trip"}
-                    onCheckedChange={() => setFlightType("round-trip")}
-                    className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
-                  />
-                  <label htmlFor="round-trip" className="text-sm font-medium font-gilroy text-white cursor-pointer">
+
+                {/* Round Trip */}
+                <div className="flex items-center gap-2.5 cursor-pointer" onClick={() => setFlightType("round-trip")}>
+                  <div
+                    style={{
+                      width: 20,
+                      height: 20,
+                      borderRadius: 4,
+                      border: "2px white solid",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      backgroundColor: flightType === "round-trip" ? "white" : "transparent",
+                      transition: "background-color 150ms",
+                    }}
+                  >
+                    {flightType === "round-trip" && (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6L9 17L4 12" stroke="#29383E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </div>
+                  <div style={{ color: "white", fontSize: 18, fontFamily: "Gilroy", fontWeight: "500" }}>
                     Round Trip
-                  </label>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Checkbox
-                    id="multi-city"
-                    checked={flightType === "multi-city"}
-                    onCheckedChange={() => setFlightType("multi-city")}
-                    className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
-                  />
-                  <label htmlFor="multi-city" className="text-sm font-medium font-gilroy text-white cursor-pointer">
+
+                {/* Multi-City */}
+                <div className="flex items-center gap-2.5 cursor-pointer" onClick={() => setFlightType("multi-city")}>
+                  <div
+                    style={{
+                      width: 20,
+                      height: 20,
+                      borderRadius: 4,
+                      border: "2px white solid",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      backgroundColor: flightType === "multi-city" ? "white" : "transparent",
+                      transition: "background-color 150ms",
+                    }}
+                  >
+                    {flightType === "multi-city" && (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6L9 17L4 12" stroke="#29383E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </div>
+                  <div style={{ color: "white", fontSize: 18, fontFamily: "Gilroy", fontWeight: "500" }}>
                     Multi-City
-                  </label>
+                  </div>
                 </div>
               </div>
             )}
@@ -1213,7 +1257,6 @@ export function HeroSection() {
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
                       </div>
                     </div>
-
                     {/* Depart */}
                     <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] min-w-0" style={{ width: "150px" }}>
                       <label
@@ -1268,8 +1311,8 @@ export function HeroSection() {
                           style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
                         />
                         <ChevronDown size={12} className="text-gray-400 ml-1 flex-shrink-0" />
-                </div>
-              </div>
+                      </div>
+                    </div>
 
                     {/* Search Button */}
                     <div
@@ -1296,69 +1339,157 @@ export function HeroSection() {
                       </div>
                     </div>
                   </div>
-                  {/* Moved Fare Category Checkboxes */}
+                  {/* Fare Category Selection */}
                   <div
-                    className="flex justify-start space-x-4 p-3 mt-3" // Added mt-3 class
+                    className="flex flex-wrap items-center gap-x-6 gap-y-3 p-3 mt-3"
                     style={{
-                      background: "rgba(1, 1, 1, 0.56)",
-                      borderRadius: "8px",
-                      width: "fit-content",
+                      background: "rgba(1, 1, 1, 0.60)",
+                      borderRadius: "10px",
                     }}
                   >
-                    <div className="flex items-center space-x-2">
-                      <Checkbox
-                        id="regular-fares"
-                        checked={fareCategory === "regular-fares"}
-                        onCheckedChange={() => setFareCategory("regular-fares")}
-                        className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
-                      />
-                      <label htmlFor="regular-fares" className="text-sm font-medium font-gilroy text-white cursor-pointer">
+                    {/* Regular Fares */}
+                    <div
+                      className="flex items-center gap-2.5 cursor-pointer"
+                      onClick={() => setFareCategory("regular-fares")}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 20,
+                          borderRadius: 4,
+                          border: "2px white solid",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          backgroundColor: fareCategory === "regular-fares" ? "white" : "transparent",
+                          transition: "background-color 150ms",
+                        }}
+                      >
+                        {fareCategory === "regular-fares" && (
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="#29383E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                      </div>
+                      <div style={{ color: "white", fontSize: 18, fontFamily: "Gilroy", fontWeight: "500" }}>
                         Regular Fares
-                      </label>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox
-                        id="armed-forces-fares"
-                        checked={fareCategory === "armed-forces-fares"}
-                        onCheckedChange={() => setFareCategory("armed-forces-fares")}
-                        className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
-                      />
-                      <label htmlFor="armed-forces-fares" className="text-sm font-medium font-gilroy text-white cursor-pointer">
+
+                    {/* Armed Forces Fares */}
+                    <div
+                      className="flex items-center gap-2.5 cursor-pointer"
+                      onClick={() => setFareCategory("armed-forces-fares")}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 20,
+                          borderRadius: 4,
+                          border: "2px white solid",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          backgroundColor: fareCategory === "armed-forces-fares" ? "white" : "transparent",
+                          transition: "background-color 150ms",
+                        }}
+                      >
+                        {fareCategory === "armed-forces-fares" && (
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="#29383E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                      </div>
+                      <div style={{ color: "white", fontSize: 18, fontFamily: "Gilroy", fontWeight: "500" }}>
                         Armed Forces Fares
-                      </label>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox
-                        id="student-fares"
-                        checked={fareCategory === "student-fares"}
-                        onCheckedChange={() => setFareCategory("student-fares")}
-                        className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
-                      />
-                      <label htmlFor="student-fares" className="text-sm font-medium font-gilroy text-white cursor-pointer">
+
+                    {/* Student Fares */}
+                    <div
+                      className="flex items-center gap-2.5 cursor-pointer"
+                      onClick={() => setFareCategory("student-fares")}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 20,
+                          borderRadius: 4,
+                          border: "2px white solid",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          backgroundColor: fareCategory === "student-fares" ? "white" : "transparent",
+                          transition: "background-color 150ms",
+                        }}
+                      >
+                        {fareCategory === "student-fares" && (
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="#29383E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                      </div>
+                      <div style={{ color: "white", fontSize: 18, fontFamily: "Gilroy", fontWeight: "500" }}>
                         Student Fares
-                      </label>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox
-                        id="senior-citizen-fares"
-                        checked={fareCategory === "senior-citizen-fares"}
-                        onCheckedChange={() => setFareCategory("senior-citizen-fares")}
-                        className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
-                      />
-                      <label htmlFor="senior-citizen-fares" className="text-sm font-medium font-gilroy text-white cursor-pointer">
+
+                    {/* Senior Citizen Fares */}
+                    <div
+                      className="flex items-center gap-2.5 cursor-pointer"
+                      onClick={() => setFareCategory("senior-citizen-fares")}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 20,
+                          borderRadius: 4,
+                          border: "2px white solid",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          backgroundColor: fareCategory === "senior-citizen-fares" ? "white" : "transparent",
+                          transition: "background-color 150ms",
+                        }}
+                      >
+                        {fareCategory === "senior-citizen-fares" && (
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="#29383E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                      </div>
+                      <div style={{ color: "white", fontSize: 18, fontFamily: "Gilroy", fontWeight: "500" }}>
                         Senior Citizen Fares
-                      </label>
-                </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox
-                        id="doctor-nurses-fares"
-                        checked={fareCategory === "doctor-nurses-fares"}
-                        onCheckedChange={() => setFareCategory("doctor-nurses-fares")}
-                        className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
-                      />
-                      <label htmlFor="doctor-nurses-fares" className="text-sm font-medium font-gilroy text-white cursor-pointer">
+                      </div>
+                    </div>
+
+                    {/* Doctor & Nurses Fares */}
+                    <div
+                      className="flex items-center gap-2.5 cursor-pointer"
+                      onClick={() => setFareCategory("doctor-nurses-fares")}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 20,
+                          borderRadius: 4,
+                          border: "2px white solid",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          backgroundColor: fareCategory === "doctor-nurses-fares" ? "white" : "transparent",
+                          transition: "background-color 150ms",
+                        }}
+                      >
+                        {fareCategory === "doctor-nurses-fares" && (
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="#29383E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                      </div>
+                      <div style={{ color: "white", fontSize: 18, fontFamily: "Gilroy", fontWeight: "500" }}>
                         Doctor & Nurses Fares
-                      </label>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1517,7 +1648,7 @@ export function HeroSection() {
               )}
             </div>
 
-                {activeCategory === "Packages" && (
+            {activeCategory === "Packages" && (
                     <div
                 className="self-start"
                       style={{
