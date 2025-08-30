@@ -100,9 +100,27 @@ export function EarlyBirdOffersSection() {
                   </div>
 
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-3xl font-bold font-gilroy">
-                      <span className="text-[#ff6b00]">₹</span> <span className="text-white">5,999</span>
-                    </span>
+                    <div className="flex items-center">
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="36" 
+                        height="37" 
+                        viewBox="0 0 36 37" 
+                        fill="none"
+                        style={{ width: '36px', height: '36px' }}
+                      >
+                        <path 
+                          d="M27 7.84094H10.5H15C16.5913 7.84094 18.1174 8.47308 19.2426 9.5983C20.3679 10.7235 21 12.2496 21 13.8409C21 15.4322 20.3679 16.9584 19.2426 18.0836C18.1174 19.2088 16.5913 19.8409 15 19.8409H10.5L19.5 28.8409M10.5 13.8409H27" 
+                          stroke="#F56600" 
+                          strokeWidth="3" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      <span className="text-white text-3xl font-bold font-gilroy ml-1">
+                        5,999
+                      </span>
+                    </div>
                     <span className="text-gray-300 line-through font-gilroy text-sm">₹12,999</span>
                     <span className="text-gray-300 text-sm font-gilroy">Per Person</span>
                   </div>
@@ -168,9 +186,27 @@ export function EarlyBirdOffersSection() {
                   </div>
 
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-3xl font-bold font-gilroy">
-                      <span className="text-[#ff6b00]">₹</span> <span className="text-white">5,999</span>
-                    </span>
+                    <div className="flex items-center">
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="36" 
+                        height="37" 
+                        viewBox="0 0 36 37" 
+                        fill="none"
+                        style={{ width: '36px', height: '36px' }}
+                      >
+                        <path 
+                          d="M27 7.84094H10.5H15C16.5913 7.84094 18.1174 8.47308 19.2426 9.5983C20.3679 10.7235 21 12.2496 21 13.8409C21 15.4322 20.3679 16.9584 19.2426 18.0836C18.1174 19.2088 16.5913 19.8409 15 19.8409H10.5L19.5 28.8409M10.5 13.8409H27" 
+                          stroke="#F56600" 
+                          strokeWidth="3" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      <span className="text-white text-3xl font-bold font-gilroy ml-1">
+                        5,999
+                      </span>
+                    </div>
                     <span className="text-gray-300 line-through font-gilroy text-sm">₹12,999</span>
                     <span className="text-gray-300 text-sm font-gilroy">Per Person</span>
                   </div>
@@ -228,9 +264,27 @@ export function EarlyBirdOffersSection() {
                   </div>
 
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-3xl font-bold font-gilroy">
-                      <span className="text-[#ff6b00]">₹</span> <span className="text-white">4,999</span>
-                    </span>
+                    <div className="flex items-center">
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="36" 
+                        height="37" 
+                        viewBox="0 0 36 37" 
+                        fill="none"
+                        style={{ width: '36px', height: '36px' }}
+                      >
+                        <path 
+                          d="M27 7.84094H10.5H15C16.5913 7.84094 18.1174 8.47308 19.2426 9.5983C20.3679 10.7235 21 12.2496 21 13.8409C21 15.4322 20.3679 16.9584 19.2426 18.0836C18.1174 19.2088 16.5913 19.8409 15 19.8409H10.5L19.5 28.8409M10.5 13.8409H27" 
+                          stroke="#F56600" 
+                          strokeWidth="3" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      <span className="text-white text-3xl font-bold font-gilroy ml-1">
+                        4,999
+                      </span>
+                    </div>
                     <span className="text-gray-300 line-through font-gilroy text-sm">₹10,999</span>
                     <span className="text-gray-300 text-sm font-gilroy">Per Person</span>
                   </div>
@@ -288,9 +342,27 @@ export function EarlyBirdOffersSection() {
                   </div>
 
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-3xl font-bold font-gilroy">
-                      <span className="text-[#ff6b00]">₹</span> <span className="text-white">7,999</span>
-                    </span>
+                    <div className="flex items-center">
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="36" 
+                        height="37" 
+                        viewBox="0 0 36 37" 
+                        fill="none"
+                        style={{ width: '36px', height: '36px' }}
+                      >
+                        <path 
+                          d="M27 7.84094H10.5H15C16.5913 7.84094 18.1174 8.47308 19.2426 9.5983C20.3679 10.7235 21 12.2496 21 13.8409C21 15.4322 20.3679 16.9584 19.2426 18.0836C18.1174 19.2088 16.5913 19.8409 15 19.8409H10.5L19.5 28.8409M10.5 13.8409H27" 
+                          stroke="#F56600" 
+                          strokeWidth="3" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      <span className="text-white text-3xl font-bold font-gilroy ml-1">
+                        7,999
+                      </span>
+                    </div>
                     <span className="text-gray-300 line-through font-gilroy text-sm">₹15,999</span>
                     <span className="text-gray-300 text-sm font-gilroy">Per Person</span>
                   </div>
@@ -348,9 +420,27 @@ export function EarlyBirdOffersSection() {
                   </div>
 
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-3xl font-bold font-gilroy">
-                      <span className="text-[#ff6b00]">₹</span> <span className="text-white">12,999</span>
-                    </span>
+                    <div className="flex items-center">
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="36" 
+                        height="37" 
+                        viewBox="0 0 36 37" 
+                        fill="none"
+                        style={{ width: '36px', height: '36px' }}
+                      >
+                        <path 
+                          d="M27 7.84094H10.5H15C16.5913 7.84094 18.1174 8.47308 19.2426 9.5983C20.3679 10.7235 21 12.2496 21 13.8409C21 15.4322 20.3679 16.9584 19.2426 18.0836C18.1174 19.2088 16.5913 19.8409 15 19.8409H10.5L19.5 28.8409M10.5 13.8409H27" 
+                          stroke="#F56600" 
+                          strokeWidth="3" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      <span className="text-white text-3xl font-bold font-gilroy ml-1">
+                        12,999
+                      </span>
+                    </div>
                     <span className="text-gray-300 line-through font-gilroy text-sm">₹18,999</span>
                     <span className="text-gray-300 text-sm font-gilroy">Per Person</span>
                   </div>

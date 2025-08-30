@@ -88,7 +88,7 @@ export function BudgetHotels() {
             Top Budget-Friendly Hotels
           </h2>
           <p
-            className="max-w-3xl mx-auto"
+            className="max-w-4xl mx-auto"
             style={{
               color: "black",
               fontSize: "18px",
@@ -170,15 +170,15 @@ export function BudgetHotels() {
                   </div>
 
                   {/* Price and Booking Info */}
-                  <div className="flex justify-between items-start mb-2">
+                  <div className="flex justify-between items-start mb-0">
                     {/* Price Section */}
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-0">
                       <div className="w-9 h-9 flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
                           <path d="M27.6323 7.5H11.1323H15.6323C17.2236 7.5 18.7497 8.13214 19.875 9.25736C21.0002 10.3826 21.6323 11.9087 21.6323 13.5C21.6323 15.0913 21.0002 16.6174 19.875 17.7426C18.7497 18.8679 17.2236 19.5 15.6323 19.5H11.1323L20.1323 28.5M11.1323 13.5H27.6323" stroke="#F56600" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
-                      <div className="flex items-baseline gap-2">
+                      <div className="flex items-baseline gap-0">
                         <span
                           style={{
                             color: "#16242A",
@@ -207,8 +207,8 @@ export function BudgetHotels() {
 
                     {/* Booking Fees */}
                     <div className="text-right">
-                      <div className="flex items-center gap-2 mb-1">
-                        <div className="w-5.5 h-5.5 flex items-center justify-center">
+                      <div className="flex items-center">
+                        <div className="w-5.5 h-5.5 flex items-center justify-center mr-0">
                           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 37 36" fill="none">
                             <path d="M27.6323 7.5H11.1323H15.6323C17.2236 7.5 18.7497 8.13214 19.875 9.25736C21.0002 10.3826 21.6323 11.9087 21.6323 13.5C21.6323 15.0913 21.0002 16.6174 19.875 17.7426C18.7497 18.8679 17.2236 19.5 15.6323 19.5H11.1323L20.1323 28.5M11.1323 13.5H27.6323" stroke="#F56600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
@@ -225,62 +225,42 @@ export function BudgetHotels() {
                         >
                           {hotel.bookingFees}
                         </span>
+                        <span
+                          style={{
+                            color: "#004849",
+                            fontSize: "16px",
+                            fontFamily: "Gilroy, sans-serif",
+                            fontWeight: "500",
+                            lineHeight: "18.75px",
+                            marginLeft: "8px",
+                          }}
+                        >
+                          Booking Fees
+                        </span>
                       </div>
-                      <p
-                        style={{
-                          color: "#004849",
-                          fontSize: "16px",
-                          fontFamily: "Gilroy, sans-serif",
-                          fontWeight: "500",
-                          lineHeight: "18.75px",
-                        }}
-                      >
-                        Booking Fees
-                      </p>
                     </div>
                   </div>
 
-                  {/* Includes Taxes */}
-                  <p
-                    style={{
-                      color: "#004849",
-                      fontSize: "16px",
-                      fontFamily: "Gilroy, sans-serif",
-                      fontWeight: "500",
-                      lineHeight: "19.41px",
-                      marginBottom: "8px",
-                      textAlign: "left",
-                    }}
-                  >
-                    Includes taxes
-                  </p>
-
-                  {/* Book Now Button */}
-                  <div className="flex justify-end">
-                    <button
-                      className="bg-[#F56600] hover:bg-[#e05a00] text-white rounded-[5px] transition-colors"
+                  {/* Bottom Section with Includes Taxes and Book Now Button */}
+                  <div className="flex justify-between items-end -mt-2">
+                    {/* Includes Taxes */}
+                    <p
                       style={{
-                        display: "flex",
-                        width: "111.519px",
-                        height: "48.411px",
-                        padding: "20px 40px",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        gap: "4px",
-                        flexShrink: "0",
-                        borderRadius: "5px",
-                        background: "#F56600",
-                        color: "#FFF",
-                        fontFamily: "Gilroy-SemiBold",
+                        color: "#004849",
                         fontSize: "16px",
-                        fontStyle: "normal",
-                        fontWeight: "400",
-                        lineHeight: "normal",
+                        fontFamily: "Gilroy, sans-serif",
+                        fontWeight: "500",
+                        lineHeight: "19.41px",
+                        textAlign: "left",
                       }}
                     >
+                      Includes taxes
+                    </p>
+
+                    {/* Book Now Button */}
+                    <Button className="bg-[#ff6600] hover:bg-[#e55a00] text-white px-4 py-1.5 text-sm rounded-lg font-gilroy font-medium shadow-lg">
                       Book Now
-                    </button>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -298,20 +278,10 @@ export function BudgetHotels() {
         </div>
 
         {/* Explore More Button */}
-        <div className="text-center mt-12">
-          <Button 
-            className="bg-[#F66600] hover:bg-[#e05a00] text-white px-10 py-4 rounded-[10px] uppercase"
-            style={{
-              fontSize: "16px",
-              fontFamily: "Gilroy, sans-serif",
-              fontWeight: "600",
-              width: "172px",
-              height: "52px",
-              letterSpacing: "-0.32px",
-            }}
-          >
+        <div className="flex justify-center mt-12">
+          <button className="bg-[#ff6b00] hover:bg-[#e55a00] text-white px-8 py-3 rounded-md font-gilroy font-medium transition-colors text-lg">
             Explore More
-          </Button>
+          </button>
         </div>
       </div>
     </section>

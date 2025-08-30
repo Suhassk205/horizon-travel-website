@@ -130,7 +130,25 @@ function ExclusiveDealsSection() {
               <p className="text-gray-200 mb-4">New Delhi</p>
 
               <div className="flex items-center gap-4 mb-2">
-                <div className="flex items-center text-white text-2xl font-bold">₹ 5,999</div>
+                <div className="flex items-center text-white text-2xl font-bold">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" 
+                    height="24" 
+                    viewBox="0 0 36 37" 
+                    fill="none"
+                    style={{ width: '24px', height: '24px' }}
+                  >
+                    <path 
+                      d="M27 7.84094H10.5H15C16.5913 7.84094 18.1174 8.47308 19.2426 9.5983C20.3679 10.7235 21 12.2496 21 13.8409C21 15.4322 20.3679 16.9584 19.2426 18.0836C18.1174 19.2088 16.5913 19.8409 15 19.8409H10.5L19.5 28.8409M10.5 13.8409H27" 
+                      stroke="#F56600" 
+                      strokeWidth="3" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-1">5,999</span>
+                </div>
                 <div className="flex items-center gap-2">
                   <span className="text-gray-300 line-through text-sm">₹12,999</span>
                   <span className="text-gray-200 text-sm">Per Person</span>
@@ -196,7 +214,25 @@ function ExclusiveDealsSection() {
               </div>
 
               <div className="flex items-center gap-4 mb-2">
-                <div className="flex items-center text-white text-2xl font-bold">₹ 10,999</div>
+                <div className="flex items-center text-white text-2xl font-bold">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" 
+                    height="24" 
+                    viewBox="0 0 36 37" 
+                    fill="none"
+                    style={{ width: '24px', height: '24px' }}
+                  >
+                    <path 
+                      d="M27 7.84094H10.5H15C16.5913 7.84094 18.1174 8.47308 19.2426 9.5983C20.3679 10.7235 21 12.2496 21 13.8409C21 15.4322 20.3679 16.9584 19.2426 18.0836C18.1174 19.2088 16.5913 19.8409 15 19.8409H10.5L19.5 28.8409M10.5 13.8409H27" 
+                      stroke="#F56600" 
+                      strokeWidth="3" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-1">10,999</span>
+                </div>
                 <div className="flex items-center gap-2">
                   <span className="text-gray-300 line-through text-sm">₹12,999</span>
                   <span className="text-gray-200 text-sm">Per Person</span>
@@ -249,7 +285,25 @@ function ExclusiveDealsSection() {
               </div>
 
               <div className="flex items-center gap-4 mb-2">
-                <div className="flex items-center text-white text-2xl font-bold">₹ 10,999</div>
+                <div className="flex items-center text-white text-2xl font-bold">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" 
+                    height="24" 
+                    viewBox="0 0 36 37" 
+                    fill="none"
+                    style={{ width: '24px', height: '24px' }}
+                  >
+                    <path 
+                      d="M27 7.84094H10.5H15C16.5913 7.84094 18.1174 8.47308 19.2426 9.5983C20.3679 10.7235 21 12.2496 21 13.8409C21 15.4322 20.3679 16.9584 19.2426 18.0836C18.1174 19.2088 16.5913 19.8409 15 19.8409H10.5L19.5 28.8409M10.5 13.8409H27" 
+                      stroke="#F56600" 
+                      strokeWidth="3" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-1">10,999</span>
+                </div>
                 <div className="flex items-center gap-2">
                   <span className="text-gray-300 line-through text-sm">₹12,999</span>
                   <span className="text-gray-200 text-sm">Per Person</span>
@@ -651,45 +705,47 @@ export function NewDashboardHomepage() {
             </div>
           </>
         )
-      case "Flights":
-        return (
-          <>
-            {/* Flight Type Selection */}
-            <div className="mb-4 flex flex-wrap gap-4">
-              <div className="flex items-center space-x-2 bg-[#29383E] px-4 py-2 rounded-lg">
-                <Checkbox
-                  id="one-way"
-                  checked={flightType === "One Way"}
-                  onCheckedChange={(checked) => checked && setFlightType("One Way")}
-                  className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
-                />
-                <label htmlFor="one-way" className="text-sm font-medium text-white cursor-pointer">
-                  One Way
-                </label>
-              </div>
-              <div className="flex items-center space-x-2 bg-[#29383E] px-4 py-2 rounded-lg">
-                <Checkbox
-                  id="round-trip"
-                  checked={flightType === "Round Trip"}
-                  onCheckedChange={(checked) => checked && setFlightType("Round Trip")}
-                  className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
-                />
-                <label htmlFor="round-trip" className="text-sm font-medium text-white cursor-pointer">
-                  Round Trip
-                </label>
-              </div>
-              <div className="flex items-center space-x-2 bg-[#29383E] px-4 py-2 rounded-lg">
-                <Checkbox
-                  id="multi-city"
-                  checked={flightType === "Multi-City"}
-                  onCheckedChange={(checked) => checked && setFlightType("Multi-City")}
-                  className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
-                />
-                <label htmlFor="multi-city" className="text-sm font-medium text-white cursor-pointer">
-                  Multi-City
-                </label>
-              </div>
-            </div>
+             case "Flights":
+         return (
+           <>
+             {/* Flight Type Selection */}
+             <div className="mb-4 bg-[#29383E] rounded-lg p-4">
+               <div className="flex justify-between">
+                 <div className="flex items-center space-x-2">
+                   <Checkbox
+                     id="one-way"
+                     checked={flightType === "One Way"}
+                     onCheckedChange={(checked) => checked && setFlightType("One Way")}
+                     className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
+                   />
+                   <label htmlFor="one-way" className="text-sm font-medium text-white cursor-pointer">
+                     One Way
+                   </label>
+                 </div>
+                 <div className="flex items-center space-x-2">
+                   <Checkbox
+                     id="round-trip"
+                     checked={flightType === "Round Trip"}
+                     onCheckedChange={(checked) => checked && setFlightType("Round Trip")}
+                     className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
+                   />
+                   <label htmlFor="round-trip" className="text-sm font-medium text-white cursor-pointer">
+                     Round Trip
+                   </label>
+                 </div>
+                 <div className="flex items-center space-x-2">
+                   <Checkbox
+                     id="multi-city"
+                     checked={flightType === "Multi-City"}
+                     onCheckedChange={(checked) => checked && setFlightType("Multi-City")}
+                     className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#29383E]"
+                   />
+                   <label htmlFor="multi-city" className="text-sm font-medium text-white cursor-pointer">
+                     Multi City
+                   </label>
+                 </div>
+               </div>
+             </div>
 
             <div
               className="flex flex-col lg:flex-row p-3 gap-3"

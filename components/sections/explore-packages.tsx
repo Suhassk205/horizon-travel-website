@@ -175,11 +175,11 @@ export function ExplorePackages() {
                   {/* Heart Icon */}
                   <button
                     onClick={() => toggleLike(pkg.id)}
-                    className="absolute top-4 right-4 w-10 h-10 bg-black/40 rounded-[15px] flex items-center justify-center hover:bg-black/60 transition-colors"
+                    className="absolute top-4 right-4 w-16 h-16 bg-black/40 rounded-[15px] flex items-center justify-center hover:bg-black/60 transition-colors"
                     aria-label="Like package"
                   >
                     <Heart
-                      className={`w-6 h-6 ${
+                      className={`w-8 h-8 ${
                         likedPackages.includes(pkg.id) ? "text-white fill-current" : "text-white"
                       }`}
                     />
@@ -226,8 +226,23 @@ export function ExplorePackages() {
                   <div className="flex items-end justify-between">
                     <div>
                       <div className="flex items-baseline">
-                        <span className="text-2xl font-bold font-gilroy text-[#ff6600]">{pkg.currency}</span>
-                        <span className="text-2xl font-bold font-gilroy text-white">{pkg.price}</span>
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          width="24" 
+                          height="24" 
+                          viewBox="0 0 36 37" 
+                          fill="none"
+                          style={{ width: '24px', height: '24px' }}
+                        >
+                          <path 
+                            d="M27 7.84094H10.5H15C16.5913 7.84094 18.1174 8.47308 19.2426 9.5983C20.3679 10.7235 21 12.2496 21 13.8409C21 15.4322 20.3679 16.9584 19.2426 18.0836C18.1174 19.2088 16.5913 19.8409 15 19.8409H10.5L19.5 28.8409M10.5 13.8409H27" 
+                            stroke="#F56600" 
+                            strokeWidth="3" 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                        <span className="text-2xl font-bold font-gilroy text-white ml-1">{pkg.price}</span>
                         <span className="text-sm ml-1 font-gilroy text-[rgba(230,226,195,1)]">Per Person</span>
                       </div>
                       <p className="text-xs font-gilroy text-[rgba(230,226,195,1)]">Includes taxes and fees</p>
@@ -252,10 +267,10 @@ export function ExplorePackages() {
       </div>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Explore More Button */}
-        <div className="text-center mt-8">
-          <Button className="bg-[#ff6600] hover:bg-[#e55a00] text-white px-6 py-2 rounded-md font-gilroy text-sm">
+        <div className="flex justify-center mt-12">
+          <button className="bg-[#ff6b00] hover:bg-[#e55a00] text-white px-8 py-3 rounded-md font-gilroy font-medium transition-colors text-lg">
             Explore More
-          </Button>
+          </button>
         </div>
       </div>
     </section>
