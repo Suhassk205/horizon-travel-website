@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronRight, ChevronDown, ArrowUp } from "lucide-react"
+import { ArrowUp } from "lucide-react"
 
 export function FAQ() {
   const [openItems, setOpenItems] = useState<number[]>([])
@@ -88,32 +88,108 @@ export function FAQ() {
             return (
               <div
                 key={item.id}
-                className="bg-white border-b border-gray-200 rounded-[10px] overflow-hidden shadow-sm"
+                className="bg-white rounded-[10px] overflow-hidden shadow-sm"
+                style={{
+                  borderBottom: "1px solid #D9D9D9",
+                }}
               >
                 {/* Question Header - Exact Figma Styling */}
                 <button
                   onClick={() => toggleItem(item.id)}
-                  className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition-colors duration-300"
+                  className="w-full flex items-center justify-between text-left transition-all duration-300"
+                  style={{
+                    padding: "20px",
+                    backgroundColor: "#FFFFFF",
+                  }}
                 >
                   {/* Question Text - Exact Figma Typography */}
-                  <span className="text-lg font-semibold font-gilroy text-[#16242A] tracking-[-0.02em] leading-[22px]">
+                  <span
+                    style={{
+                      color: "#16242A",
+                      fontSize: "18px",
+                      fontFamily: "Gilroy",
+                      fontStyle: "normal",
+                      fontWeight: "600",
+                      lineHeight: "normal",
+                      letterSpacing: "-0.36px",
+                      textTransform: "capitalize",
+                    }}
+                  >
                     {item.question}
                   </span>
 
-                  {/* Chevron Icon - Exact Figma Styling */}
-                  <div className="flex-shrink-0">
+                  {/* Custom Plus/Minus Icon - Exact Figma Design */}
+                  <div className="flex-shrink-0" style={{ width: "13.5px", height: "13.5px" }}>
                     {isOpen ? (
-                      <ChevronDown className="w-5 h-5 text-black transition-transform duration-300" />
+                      // Minus icon (horizontal line only)
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <line
+                          x1="2"
+                          y1="7"
+                          x2="12"
+                          y2="7"
+                          stroke="black"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                      </svg>
                     ) : (
-                      <ChevronRight className="w-5 h-5 text-black transition-transform duration-300" />
+                      // Plus icon (horizontal and vertical lines)
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <line
+                          x1="2"
+                          y1="7"
+                          x2="12"
+                          y2="7"
+                          stroke="black"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                        <line
+                          x1="7"
+                          y1="2"
+                          x2="7"
+                          y2="12"
+                          stroke="black"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                      </svg>
                     )}
                   </div>
                 </button>
 
                 {/* Answer Content - Exact Figma Styling */}
                 {isOpen && (
-                  <div className="px-5 pb-5">
-                    <p className="text-base text-gray-700 leading-relaxed font-gilroy">
+                  <div
+                    className="px-5 pb-5"
+                    style={{
+                      paddingLeft: "20px",
+                      paddingRight: "20px",
+                      paddingBottom: "20px",
+                    }}
+                  >
+                    <p
+                      style={{
+                        color: "#16242A",
+                        fontSize: "16px",
+                        fontFamily: "Gilroy",
+                        fontWeight: "400",
+                        lineHeight: "24px",
+                      }}
+                    >
                       {item.answer}
                     </p>
                   </div>

@@ -16,7 +16,7 @@ const blogData = [
   {
     id: 2,
     title: "Chasing Sunsets In Santorini",
-    description: "Experience the magic of Santorini's legendary sunsets from the best viewpoints across the island.",
+    description: "Master the art of smart packing with tips for stress-free and Master the art of smart packing with tips for stress-free and Master the art of smart packing with tips for stress-free...",
     date: "1 day ago",
     author: "Tarun Singh",
     authorImage: "/images/tarunsingh.png",
@@ -26,7 +26,7 @@ const blogData = [
   {
     id: 3,
     title: "Packing Like A Pro: Essentials Only",
-    description: "Master the art of smart packing with these essential tips for stress-free travel.",
+    description: "Master the art of smart packing with tips for stress-free and Master the art of smart packing with tips for stress-free and Master the art of smart packing with tips for stress-free...",
     date: "07 May 2025",
     author: "Tarun Singh",
     authorImage: "/images/tarunsingh.png",
@@ -107,47 +107,109 @@ export function BlogsSection() {
             </div>
           </div>
           
-          {/* Other Blogs */}
+          {/* Right Side - Two Blog Cards Stacked */}
           <div className="lg:w-1/2 flex flex-col gap-5">
             {blogData.slice(1).map((blog) => (
-              <div key={blog.id} className="bg-[#EDEFF2] rounded-2xl p-4 h-full">
-                 <div className="bg-white rounded-xl p-4 flex gap-5 h-full shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
-                    <div className="w-2/5 rounded-lg overflow-hidden flex-shrink-0">
-                      <Image
-                        src={blog.image}
-                        alt={blog.title}
-                        width={240}
-                        height={220}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="flex-1 flex flex-col">
-                      <div className="flex justify-between items-center gap-2.5 text-sm text-[#16242A] tracking-tighter mb-2">
-                        <span>{blog.date}</span>
-                        <div className="flex items-center gap-2">
-                          <Image
-                            src={blog.authorImage}
-                            alt={blog.author}
-                            width={28}
-                            height={28}
-                            className="rounded-full object-cover"
-                          />
-                          <span className="capitalize">{blog.author}</span>
-                        </div>
-                      </div>
-                      <div className="flex flex-col gap-1.5 mb-auto">
-                        <h4 className="text-base font-semibold text-[#16242A] capitalize leading-normal tracking-tight">
-                          {blog.title}
-                        </h4>
-                        <p className="text-sm text-[#717171] leading-tight line-clamp-3">
-                          {blog.description}
-                        </p>
-                      </div>
-                      <button className="text-[#FF6A00] text-sm font-semibold self-start hover:underline mt-2">
-                        Read more
-                      </button>
-                    </div>
+              <div key={blog.id} className="bg-white rounded-[20px] p-4 shadow-sm">
+                <div className="flex gap-5 h-full">
+                  {/* Image - Left Side */}
+                  <div className="w-[269px] h-[253px] rounded-[10px] overflow-hidden flex-shrink-0">
+                    <Image
+                      src={blog.image}
+                      alt={blog.title}
+                      width={269}
+                      height={253}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
+                  
+                  {/* Content - Right Side */}
+                  <div className="flex-1 flex flex-col">
+                    {/* Date and Author Row */}
+                    <div className="flex justify-between items-center mb-2">
+                      <span
+                        style={{
+                          color: "#16242A",
+                          fontSize: "14px",
+                          fontFamily: "Gilroy",
+                          fontWeight: "500",
+                          letterSpacing: "-0.28px",
+                          lineHeight: "16.98px",
+                        }}
+                      >
+                        {blog.date}
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <Image
+                          src={blog.authorImage}
+                          alt={blog.author}
+                          width={32}
+                          height={32}
+                          className="rounded-full object-cover"
+                        />
+                        <span
+                          style={{
+                            color: "#16242A",
+                            fontSize: "14px",
+                            fontFamily: "Gilroy",
+                            fontWeight: "500",
+                            letterSpacing: "-0.28px",
+                            lineHeight: "16.98px",
+                            textTransform: "capitalize",
+                          }}
+                        >
+                          {blog.author}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    {/* Title */}
+                                         <h4
+                       className="mb-5"
+                       style={{
+                         color: "#16242A",
+                         fontSize: "16px",
+                         fontFamily: "Gilroy",
+                         fontWeight: "600",
+                         letterSpacing: "-0.32px",
+                         lineHeight: "19.6px",
+                         textTransform: "capitalize",
+                       }}
+                     >
+                      {blog.title}
+                    </h4>
+                    
+                                         {/* Description */}
+                     <p
+                       className="mb-3 flex-1"
+                       style={{
+                         color: "#717171",
+                         fontSize: "14px",
+                         fontFamily: "Gilroy",
+                         fontWeight: "500",
+                         lineHeight: "30px",
+                       }}
+                     >
+                       {blog.description}
+                     </p>
+                     
+                     {/* Read More Button */}
+                     <button
+                       style={{
+                         color: "#FF6A00",
+                         fontSize: "16px",
+                         fontFamily: "Gilroy",
+                         fontWeight: "600",
+                         letterSpacing: "-0.32px",
+                         lineHeight: "19.6px",
+                         textTransform: "capitalize",
+                       }}
+                       className="self-start hover:underline"
+                     >
+                       Read more
+                     </button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

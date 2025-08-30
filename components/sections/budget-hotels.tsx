@@ -80,7 +80,7 @@ export function BudgetHotels() {
             style={{
               color: "#16242A",
               fontSize: "42px",
-              fontFamily: "Gilroy",
+              fontFamily: "Gilroy, sans-serif",
               fontWeight: "600",
               wordWrap: "break-word",
             }}
@@ -92,7 +92,7 @@ export function BudgetHotels() {
             style={{
               color: "black",
               fontSize: "18px",
-              fontFamily: "Gilroy",
+              fontFamily: "Gilroy, sans-serif",
               fontWeight: "500",
               wordWrap: "break-word",
             }}
@@ -112,49 +112,175 @@ export function BudgetHotels() {
             {hotels.map((hotel) => (
               <div
                 key={hotel.id}
-                className="bg-white rounded-lg shadow-lg transition-all duration-300 group w-[424px] flex-shrink-0"
+                className="bg-white rounded-[10px] shadow-sm transition-all duration-300 group w-[424px] flex-shrink-0"
                 style={{ scrollSnapAlign: "start" }}
               >
-                <div className="relative h-52 overflow-hidden rounded-t-lg">
+                {/* Hotel Image */}
+                <div className="relative h-[204px] overflow-hidden rounded-t-[10px]">
                   <Image
                     src={hotel.image || "/placeholder.svg?height=192&width=300"}
                     alt={hotel.name}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
+                  
+                  {/* Heart Icon */}
                   <button
                     onClick={() => toggleLike(hotel.id)}
-                    className="absolute top-4 right-4 w-10 h-10 bg-black/40 rounded-[15px] flex items-center justify-center hover:bg-black/60 transition-colors"
+                    className="absolute top-4 right-4 w-16 h-16 bg-black/40 rounded-[15px] flex items-center justify-center hover:bg-black/60 transition-colors"
                     aria-label="Like hotel"
                   >
                     <Heart
-                      className={`w-6 h-6 ${
+                      className={`w-8 h-8 ${
                         likedHotels.includes(hotel.id) ? "text-white fill-current" : "text-white"
                       }`}
                     />
                   </button>
                 </div>
 
+                {/* Content Section */}
                 <div className="p-4">
-                  <h3 className="text-lg font-bold font-gilroy text-gray-800">{hotel.name}</h3>
-                  <p className="text-sm text-gray-500 mb-4 font-gilroy">{hotel.location}</p>
+                  {/* Hotel Name and Location */}
+                  <div className="mb-4">
+                    <h3
+                      style={{
+                        color: "#16242A",
+                        fontSize: "22px",
+                        fontFamily: "Gilroy, sans-serif",
+                        fontWeight: "600",
+                        letterSpacing: "-0.44px",
+                        lineHeight: "25.78px",
+                        textAlign: "left",
+                      }}
+                    >
+                      {hotel.name}
+                    </h3>
+                    <p
+                      style={{
+                        color: "#004849",
+                        fontSize: "16px",
+                        fontFamily: "Gilroy, sans-serif",
+                        fontWeight: "500",
+                        lineHeight: "32px",
+                        textAlign: "left",
+                      }}
+                    >
+                      {hotel.location}
+                    </p>
+                  </div>
 
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <div className="flex items-baseline">
-                        <span className="text-2xl font-bold font-gilroy">{hotel.currency} {hotel.price}</span>
-                        <span className="text-sm text-gray-500 ml-1 font-gilroy">Per Person</span>
+                  {/* Price and Booking Info */}
+                  <div className="flex justify-between items-start mb-2">
+                    {/* Price Section */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-9 h-9 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
+                          <path d="M27.6323 7.5H11.1323H15.6323C17.2236 7.5 18.7497 8.13214 19.875 9.25736C21.0002 10.3826 21.6323 11.9087 21.6323 13.5C21.6323 15.0913 21.0002 16.6174 19.875 17.7426C18.7497 18.8679 17.2236 19.5 15.6323 19.5H11.1323L20.1323 28.5M11.1323 13.5H27.6323" stroke="#F56600" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
                       </div>
-                      <p className="text-xs text-gray-500 font-gilroy">Includes taxes</p>
+                      <div className="flex items-baseline gap-2">
+                        <span
+                          style={{
+                            color: "#16242A",
+                            fontSize: "32px",
+                            fontFamily: "Gilroy, sans-serif",
+                            fontWeight: "600",
+                            letterSpacing: "-0.64px",
+                            lineHeight: "39.2px",
+                          }}
+                        >
+                          {hotel.price}
+                        </span>
+                        <span
+                          style={{
+                            color: "#004849",
+                            fontSize: "16px",
+                            fontFamily: "Gilroy, sans-serif",
+                            fontWeight: "500",
+                            lineHeight: "32px",
+                          }}
+                        >
+                          Per Person
+                        </span>
+                      </div>
                     </div>
+
+                    {/* Booking Fees */}
                     <div className="text-right">
-                      <p className="text-sm text-gray-600 font-gilroy">
-                        <span className="font-bold text-gray-800">{hotel.currency} {hotel.bookingFees}</span> Booking Fees
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-5.5 h-5.5 flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 37 36" fill="none">
+                            <path d="M27.6323 7.5H11.1323H15.6323C17.2236 7.5 18.7497 8.13214 19.875 9.25736C21.0002 10.3826 21.6323 11.9087 21.6323 13.5C21.6323 15.0913 21.0002 16.6174 19.875 17.7426C18.7497 18.8679 17.2236 19.5 15.6323 19.5H11.1323L20.1323 28.5M11.1323 13.5H27.6323" stroke="#F56600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <span
+                          style={{
+                            color: "#004849",
+                            fontSize: "20px",
+                            fontFamily: "Gilroy, sans-serif",
+                            fontWeight: "600",
+                            letterSpacing: "-0.4px",
+                            lineHeight: "23.44px",
+                          }}
+                        >
+                          {hotel.bookingFees}
+                        </span>
+                      </div>
+                      <p
+                        style={{
+                          color: "#004849",
+                          fontSize: "16px",
+                          fontFamily: "Gilroy, sans-serif",
+                          fontWeight: "500",
+                          lineHeight: "18.75px",
+                        }}
+                      >
+                        Booking Fees
                       </p>
-                      <Button className="bg-[#F56600] hover:bg-[#e05a00] text-white px-4 py-2 mt-1 text-sm font-gilroy font-normal rounded-md">
-                        Book Now
-                      </Button>
                     </div>
+                  </div>
+
+                  {/* Includes Taxes */}
+                  <p
+                    style={{
+                      color: "#004849",
+                      fontSize: "16px",
+                      fontFamily: "Gilroy, sans-serif",
+                      fontWeight: "500",
+                      lineHeight: "19.41px",
+                      marginBottom: "8px",
+                      textAlign: "left",
+                    }}
+                  >
+                    Includes taxes
+                  </p>
+
+                  {/* Book Now Button */}
+                  <div className="flex justify-end">
+                    <button
+                      className="bg-[#F56600] hover:bg-[#e05a00] text-white rounded-[5px] transition-colors"
+                      style={{
+                        display: "flex",
+                        width: "111.519px",
+                        height: "48.411px",
+                        padding: "20px 40px",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        gap: "4px",
+                        flexShrink: "0",
+                        borderRadius: "5px",
+                        background: "#F56600",
+                        color: "#FFF",
+                        fontFamily: "Gilroy-SemiBold",
+                        fontSize: "16px",
+                        fontStyle: "normal",
+                        fontWeight: "400",
+                        lineHeight: "normal",
+                      }}
+                    >
+                      Book Now
+                    </button>
                   </div>
                 </div>
               </div>
@@ -173,7 +299,17 @@ export function BudgetHotels() {
 
         {/* Explore More Button */}
         <div className="text-center mt-12">
-          <Button className="bg-[#FF6A00] hover:bg-[#e05a00] text-white px-8 py-3 text-base font-gilroy font-normal rounded-lg capitalize">
+          <Button 
+            className="bg-[#F66600] hover:bg-[#e05a00] text-white px-10 py-4 rounded-[10px] uppercase"
+            style={{
+              fontSize: "16px",
+              fontFamily: "Gilroy, sans-serif",
+              fontWeight: "600",
+              width: "172px",
+              height: "52px",
+              letterSpacing: "-0.32px",
+            }}
+          >
             Explore More
           </Button>
         </div>
