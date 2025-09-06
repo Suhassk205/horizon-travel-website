@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, Home } from "lucide-react"
+import { ArrowLeft, Home, Star, Clock, MapPin } from "lucide-react"
 import NavBar from "./nav-bar"
 
 export function AllOffersPage() {
@@ -17,7 +17,7 @@ export function AllOffersPage() {
             {/* Left side - Back button and breadcrumb */}
             <div className="flex items-center gap-4">
               <Link
-                href="/dashboard"
+                href="/"
                 className="flex items-center gap-2 text-gray-600 hover:text-[#ff6a00] transition-colors"
               >
                 <ArrowLeft className="w-5 h-5" />
@@ -26,8 +26,8 @@ export function AllOffersPage() {
 
               <div className="flex items-center gap-2 text-sm text-gray-500">
                 <Home className="w-4 h-4" />
-                <Link href="/dashboard" className="hover:text-[#ff6a00] transition-colors">
-                  Dashboard
+                <Link href="/" className="hover:text-[#ff6a00] transition-colors">
+                  Home
                 </Link>
                 <span>/</span>
                 <span className="text-gray-900 font-medium">All Offers</span>
@@ -72,97 +72,9 @@ export function AllOffersPage() {
 
       {/* Text Section */}
       <div className="px-4 py-6 max-w-7xl mx-auto">
-        <p className="text-center text-gray-800 max-w-4xl mx-auto">
-          Refer your friends to join Phoenix Fly and both enjoy exclusive rewards. Discover new destinations, create
-          unforgettable memories, and start referring today!
+        <p className="text-center text-gray-800 max-w-4xl mx-auto text-lg">
+          Discover exclusive travel deals, early bird discounts, and special packages designed to make your dream vacation more affordable than ever.
         </p>
-      </div>
-
-      {/* How It Works Section */}
-      <div className="px-4 py-16 max-w-7xl mx-auto">
-        {/* Main Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">How It Works</h2>
-        </div>
-
-        {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Step 1 */}
-          <div className="text-center">
-            <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-blue-100 flex items-center justify-center">
-              <Image
-                src="/placeholder.svg?height=120&width=120"
-                alt="Person making bookings"
-                width={120}
-                height={120}
-                className="rounded-full"
-              />
-            </div>
-            <div className="mb-2">
-              <span className="text-[#ff6a00] font-semibold text-sm tracking-wider">STEP 1</span>
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Make Bookings</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Book from our multiple range of packages curated for you.
-            </p>
-          </div>
-
-          {/* Step 2 */}
-          <div className="text-center">
-            <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-blue-100 flex items-center justify-center">
-              <Image
-                src="/placeholder.svg?height=120&width=120"
-                alt="Person earning reward points"
-                width={120}
-                height={120}
-                className="rounded-full"
-              />
-            </div>
-            <div className="mb-2">
-              <span className="text-[#ff6a00] font-semibold text-sm tracking-wider">STEP 2</span>
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Earn Reward Points</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Earn rewards points on every booking you make with us.
-            </p>
-          </div>
-
-          {/* Step 3 */}
-          <div className="text-center">
-            <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-blue-100 flex items-center justify-center">
-              <Image
-                src="/placeholder.svg?height=120&width=120"
-                alt="Person redeeming rewards"
-                width={120}
-                height={120}
-                className="rounded-full"
-              />
-            </div>
-            <div className="mb-2">
-              <span className="text-[#ff6a00] font-semibold text-sm tracking-wider">STEP 3</span>
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Redeem Rewards</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">Redeem 100% points on your next travel booking.</p>
-          </div>
-
-          {/* Step 4 */}
-          <div className="text-center">
-            <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-blue-100 flex items-center justify-center">
-              <Image
-                src="/placeholder.svg?height=120&width=120"
-                alt="Person earning more rewards"
-                width={120}
-                height={120}
-                className="rounded-full"
-              />
-            </div>
-            <div className="mb-2">
-              <span className="text-[#ff6a00] font-semibold text-sm tracking-wider">STEP 4</span>
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Keep Earning More!</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">Continue to earn reward points on every booking.</p>
-          </div>
-        </div>
       </div>
 
       {/* All Offers Section */}
@@ -173,78 +85,78 @@ export function AllOffersPage() {
           <p className="text-gray-600 text-lg">Discover the exclusive offers to make your next trip even better.</p>
         </div>
 
-        {/* Phoenix Fly Rewards - Full Width Top Section */}
+        {/* Early Bird Special - Full Width Top Section */}
         <div className="bg-white rounded-lg p-8 mb-8 shadow-sm">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="flex-1">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Phoenix Fly Rewards</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Early Bird Special</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Turn every trip into a reward – earn points, unlock perks, and elevate your travel experience with
-                Phoenix Fly Rewards.
+                Book your next adventure 30 days in advance and save up to 25% on all travel packages. 
+                Limited time offer for early planners!
               </p>
               <button className="bg-[#ff6a00] hover:bg-[#e55a00] text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-                Explore More
+                Book Now
               </button>
             </div>
             <div className="flex-1 flex justify-center">
               <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=200&width=300"
-                  alt="Phoenix Fly Rewards Cards"
+                  src="/images/early-bird-offer.jpeg"
+                  alt="Early Bird Travel Offer"
                   width={300}
                   height={200}
-                  className="object-contain"
+                  className="object-contain rounded-lg"
                 />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Middle Row - Refer & Earn and Tag & Earn Side by Side */}
+        {/* Middle Row - Family Package and Group Discount Side by Side */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Refer & Earn Rewards */}
+          {/* Family Package Deal */}
           <div className="bg-white rounded-lg p-8 shadow-sm">
             <div className="flex flex-col items-center text-center gap-6">
               <div>
                 <Image
-                  src="/placeholder.svg?height=150&width=200"
-                  alt="Refer and Earn"
+                  src="/images/family-package.jpeg"
+                  alt="Family Travel Package"
                   width={200}
                   height={150}
-                  className="object-contain"
+                  className="object-contain rounded-lg"
                 />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Refer & Earn Rewards</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Family Package Deal</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Refer. Earn. Repeat. Travel benefits made better with friends.
+                  Special 20% discount on family packages. Kids under 12 travel free!
                 </p>
                 <button className="bg-[#ff6a00] hover:bg-[#e55a00] text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-                  Refer Now
+                  Book Family Trip
                 </button>
               </div>
             </div>
           </div>
 
-          {/* Tag & Earn Rewards */}
+          {/* Group Booking Discount */}
           <div className="bg-white rounded-lg p-8 shadow-sm">
             <div className="flex flex-col items-center text-center gap-6">
               <div>
                 <Image
-                  src="/placeholder.svg?height=150&width=200"
-                  alt="Tag and Earn"
+                  src="/images/group-booking.jpeg"
+                  alt="Group Travel Booking"
                   width={200}
                   height={150}
-                  className="object-contain"
+                  className="object-contain rounded-lg"
                 />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Tag & Earn Rewards</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Group Booking Discount</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Show off your adventures and unlock surprise rewards.
+                  Book for 8+ people and get up to 30% off on your entire group trip.
                 </p>
                 <button className="bg-[#ff6a00] hover:bg-[#e55a00] text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-                  Tag Us Now
+                  Plan Group Trip
                 </button>
               </div>
             </div>
@@ -253,57 +165,57 @@ export function AllOffersPage() {
 
         {/* Bottom Row - Three Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* 16th Night Reward */}
+          {/* Weekend Getaway */}
           <div className="bg-white rounded-lg p-8 shadow-sm text-center">
             <div className="mb-6">
               <Image
-                src="/placeholder.svg?height=120&width=160"
-                alt="16th Night Reward"
+                src="/images/weekend-getaway.jpeg"
+                alt="Weekend Getaway"
                 width={160}
                 height={120}
-                className="mx-auto object-contain"
+                className="mx-auto object-contain rounded-lg"
               />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-3">16th Night Reward</h3>
-            <p className="text-gray-600 mb-6 text-sm">Get 50% off on your 16th night!</p>
+            <h3 className="text-lg font-bold text-gray-900 mb-3">Weekend Getaway</h3>
+            <p className="text-gray-600 mb-6 text-sm">Special weekend packages starting from ₹5,999 per person</p>
             <button className="bg-[#ff6a00] hover:bg-[#e55a00] text-white px-4 py-2 rounded-lg font-semibold transition-colors text-sm">
-              Start Booking
+              Book Weekend
             </button>
           </div>
 
-          {/* Group Booking Rewards */}
+          {/* International Flights */}
           <div className="bg-white rounded-lg p-8 shadow-sm text-center">
             <div className="mb-6">
               <Image
-                src="/placeholder.svg?height=120&width=160"
-                alt="Group Booking Rewards"
+                src="/images/international-flights.jpeg"
+                alt="International Flights"
                 width={160}
                 height={120}
-                className="mx-auto object-contain"
+                className="mx-auto object-contain rounded-lg"
               />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-3">Group Booking Rewards</h3>
-            <p className="text-gray-600 mb-6 text-sm">Up to 50% off after 10 Bookings!</p>
+            <h3 className="text-lg font-bold text-gray-900 mb-3">International Flights</h3>
+            <p className="text-gray-600 mb-6 text-sm">Up to 40% off on international flight bookings</p>
             <button className="bg-[#ff6a00] hover:bg-[#e55a00] text-white px-4 py-2 rounded-lg font-semibold transition-colors text-sm">
-              Start Booking
+              Book Flights
             </button>
           </div>
 
-          {/* Cruise Vouchers */}
+          {/* Hotel Stays */}
           <div className="bg-white rounded-lg p-8 shadow-sm text-center">
             <div className="mb-6">
               <Image
-                src="/placeholder.svg?height=120&width=160"
-                alt="Cruise Vouchers"
+                src="/images/hotel-stays.jpeg"
+                alt="Hotel Stays"
                 width={160}
                 height={120}
-                className="mx-auto object-contain"
+                className="mx-auto object-contain rounded-lg"
               />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-3">Cruise Vouchers</h3>
-            <p className="text-gray-600 mb-6 text-sm">Get INR 1000 cruise voucher after 10 bookings.</p>
+            <h3 className="text-lg font-bold text-gray-900 mb-3">Hotel Stays</h3>
+            <p className="text-gray-600 mb-6 text-sm">Get 2 nights free on every 5-night hotel booking</p>
             <button className="bg-[#ff6a00] hover:bg-[#e55a00] text-white px-4 py-2 rounded-lg font-semibold transition-colors text-sm">
-              Start Booking
+              Book Hotels
             </button>
           </div>
         </div>

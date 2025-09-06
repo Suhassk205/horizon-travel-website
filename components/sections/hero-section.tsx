@@ -181,12 +181,11 @@ export function HeroSection() {
             <div className="relative">
               <div
                 className="flex items-center space-x-1 text-[#16242A] cursor-pointer hover:opacity-80 transition-opacity"
-                onClick={() => setShowOffersDropdown(!showOffersDropdown)}
+                onClick={() => router.push("/offers")}
               >
                 <span className="text-base font-semibold font-gilroy leading-[30px]">Offers</span>
                 <ChevronDown className="w-5 h-5" />
               </div>
-              {/* Dropdown for Offers remains the same */}
             </div>
 
             <span className="text-base text-[#16242A] font-semibold font-gilroy leading-[30px] cursor-pointer hover:opacity-80">
@@ -207,6 +206,7 @@ export function HeroSection() {
             {/* Signup Button with Pop-up */}
             <div className="relative">
               <Button
+                onClick={() => router.push("/auth/app/signup")}
                 className="bg-[#29383E] hover:bg-[#1f2b30] text-white px-6 h-10 rounded-lg font-semibold font-gilroy text-sm transition-colors flex items-center justify-center"
               >
                 Signup
@@ -235,6 +235,7 @@ export function HeroSection() {
               </div>
             </div>
             <Button
+              onClick={() => router.push("/auth/app/login")}
               className="bg-[#29383e]/40 text-[#16242A] px-6 h-10 rounded-lg font-semibold font-gilroy text-sm backdrop-blur-[3px] flex items-center justify-center hover:bg-[#29383e]/60 transition-colors"
             >
               Login

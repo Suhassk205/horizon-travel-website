@@ -1,4 +1,6 @@
-import { ReferralForm } from "@/components/_auth/referral-form"
+"use client"
+
+import ReferralForm from "./referral-form"
 
 export default function ReferralPage() {
   return <ReferralForm />

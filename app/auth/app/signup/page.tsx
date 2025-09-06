@@ -1,4 +1,6 @@
-import { HorizonSignup } from "@/components/_auth/horizon-signup"
+"use client"
+
+import HorizonSignup from "../../horizon-signup"
 
 export default function SignupPage() {
   return <HorizonSignup />

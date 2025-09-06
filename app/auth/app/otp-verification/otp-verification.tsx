@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 
-export function OTPVerification() {
+export default function OtpVerification() {
   const [otp, setOtp] = useState(["", "", "", "", ""])
   const [resendTimer, setResendTimer] = useState(21)
   const [canResend, setCanResend] = useState(false)
@@ -66,13 +66,13 @@ export function OTPVerification() {
       // Here you would verify the OTP with your backend
       console.log("Verifying OTP:", otpCode)
       // Navigate to change password page after successful OTP verification
-      router.push("/change-password")
+      router.push("/auth/app/change-password")
     }
   }
 
   // Handle change phone number
   const handleChangePhoneNumber = () => {
-    router.push("/login")
+    router.push("/auth/app/login")
   }
 
   return (
@@ -80,7 +80,7 @@ export function OTPVerification() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-05-30%20at%2016.36.30-pBBcWxVSbrD2HRKwvhk4kDNgv8it88.jpeg"
+          src="/images/tuscan-landscape.jpg"
           alt="Beautiful Tuscan landscape with rolling hills and cypress trees at sunset"
           fill
           className="object-cover"
