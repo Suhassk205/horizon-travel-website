@@ -294,9 +294,9 @@ export function HeroSection() {
         </div>
 
         {/* Hero Section */}
-        <div className={`flex flex-col items-center justify-center px-6 pt-10 pb-40`}>
+        <div className={`flex flex-col items-center justify-center px-6 pt-32 pb-40`}>
           <h2 className="text-white text-center tracking-wide font-semibold font-gilroy text-2xl">One Adventure At A Time</h2>
-          <div className="h-[200px] overflow-hidden mb-16 flex items-center justify-center">
+          <div className="h-[200px] overflow-hidden mb-8 flex items-center justify-center">
             <h1
               className={`text-white leading-none tracking-wide uppercase text-center font-bold font-gilroy transition-transform duration-500 ease-in-out`}
               style={{ 
