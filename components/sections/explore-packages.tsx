@@ -177,7 +177,7 @@ export function ExplorePackages() {
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-black/00 to-transparent" />
 
               {/* Content Overlay */}
               <div
@@ -204,65 +204,225 @@ export function ExplorePackages() {
                 </div>
 
                 {/* Bottom Section */}
-                <div className="space-y-4 mt-auto">
-                  {/* Spacer to push content down */}
-                  <div className="h-10" />
-
-                  {/* Duration Badge - NEW POSITION */}
-                  <div className="bg-black/50 text-white px-3 text-sm font-gilroy font-medium backdrop-blur-sm w-fit rounded mb-0 py-1">
-                    {pkg.duration}
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    {/* Duration Badge - NEW POSITION */}
+                  <div 
+                    style={{
+                      paddingLeft: 16, 
+                      paddingRight: 16, 
+                      paddingTop: 8, 
+                      paddingBottom: 8, 
+                      background: 'rgba(0, 0, 0, 0.50)', 
+                      borderRadius: 10, 
+                      justifyContent: 'center', 
+                      alignItems: 'center', 
+                      display: 'inline-flex'
+                    }}
+                  >
+                    <div 
+                      style={{
+                        color: 'white', 
+                        fontSize: 16, 
+                        fontFamily: 'Gilroy', 
+                        fontWeight: '400', 
+                        wordWrap: 'break-word'
+                      }}
+                    >
+                      {pkg.duration}
+                    </div>
+                  </div>
                   </div>
 
                   {/* Title and Location */}
                   <div>
-                    <h3 className="text-xl font-bold font-gilroy text-white leading-tight mb-px">{pkg.title}</h3>
-                    <p className="text-white/80 text-sm font-gilroy">{pkg.location}</p>
+                    <h3 
+                      className="font-semibold font-gilroy"
+                      style={{ fontSize: '22px', color: '#FFFFFF' }}
+                    >
+                      {pkg.title}
+                    </h3>
+                    <p className="mb-4 font-gilroy font-medium" style={{ color: '#E6E2C3' }}>{pkg.location}</p>
                   </div>
 
                   {/* Package Details */}
-                  <div className="grid grid-cols-4 gap-2 pt-0 mb-0">
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Plane className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">{pkg.flights} Flights</span>
+                  <div className="flex gap-3 pt-0 mb-0">
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/mdi_flight.svg" alt="Flight" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        {pkg.flights} Flights
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Building2 className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">{pkg.hotels} Hotels</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/Group.svg" alt="Hotel" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        {pkg.hotels} Hotels
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Mountain className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">{pkg.activities} Activities</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/trekkingg.svg" alt="Activity" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        {pkg.activities} Activities
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Car className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">{pkg.transfers} Transfers</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/mdi_cab.svg" alt="Transfer" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        {pkg.transfers} Transfers
+                      </div>
                     </div>
                   </div>
 
                   {/* Price and Book Button */}
                   <div className="flex items-end justify-between">
                     <div>
-                      <div className="flex items-baseline">
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          width="24" 
-                          height="24" 
-                          viewBox="0 0 36 37" 
-                          fill="none"
-                          style={{ width: '24px', height: '24px' }}
-                        >
-                          <path 
-                            d="M27 7.84094H10.5H15C16.5913 7.84094 18.1174 8.47308 19.2426 9.5983C20.3679 10.7235 21 12.2496 21 13.8409C21 15.4322 20.3679 16.9584 19.2426 18.0836C18.1174 19.2088 16.5913 19.8409 15 19.8409H10.5L19.5 28.8409M10.5 13.8409H27" 
-                            stroke="#F56600" 
-                            strokeWidth="3" 
-                            strokeLinecap="round" 
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                        <span className="text-2xl font-bold font-gilroy text-white ml-1">{pkg.price}</span>
-                        <span className="text-sm ml-1 font-gilroy text-[rgba(230,226,195,1)]">Per Person</span>
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="flex items-center">
+                          <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="36" 
+                            height="37" 
+                            viewBox="0 0 36 37" 
+                            fill="none"
+                            style={{ width: '36px', height: '36px' }}
+                          >
+                            <path 
+                              d="M27 7.84094H10.5H15C16.5913 7.84094 18.1174 8.47308 19.2426 9.5983C20.3679 10.7235 21 12.2496 21 13.8409C21 15.4322 20.3679 16.9584 19.2426 18.0836C18.1174 19.2088 16.5913 19.8409 15 19.8409H10.5L19.5 28.8409M10.5 13.8409H27" 
+                              stroke="#F56600" 
+                              strokeWidth="3" 
+                              strokeLinecap="round" 
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                          <span 
+                            className="font-gilroy"
+                            style={{
+                              color: 'white',
+                              fontSize: 32,
+                              fontWeight: '550',
+                              wordWrap: 'break-word',
+                              marginLeft: '2px'
+                            }}
+                          >
+                            {pkg.price}
+                          </span>
+                        </div>
+                        <span className="font-gilroy font-medium text-base" style={{ color: '#E6E2C3', marginTop: '10px' }}>Per Person</span>
                       </div>
-                      <p className="text-xs font-gilroy text-[rgba(230,226,195,1)]">Includes taxes and fees</p>
+                      <div className="flex items-center" style={{ marginTop: '-8px' }}>
+                        <p 
+                          className="font-gilroy"
+                          style={{
+                            color: '#E6E2C3',
+                            fontSize: 16,
+                            fontWeight: '400',
+                            whiteSpace: 'nowrap',
+                            paddingLeft: '5px'
+                          }}
+                        >
+                          Includes taxes
+                        </p>
+                      </div>
                     </div>
                     <Button className="bg-[#ff6600] hover:bg-[#e55a00] text-white px-4 py-1.5 text-sm rounded-lg font-gilroy font-medium shadow-lg">
                       Book Now

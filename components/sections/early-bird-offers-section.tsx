@@ -70,32 +70,175 @@ export function EarlyBirdOffersSection() {
                   <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
                 </div>
 
+                {/* Gradient Overlay */}
+                <div 
+                  className="absolute inset-0 rounded-2xl"
+                  style={{
+                    background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 27.56%, rgba(0, 0, 0, 0.79) 70.08%, rgba(0, 0, 0, 0.90) 100%)'
+                  }}
+                />
+
                 {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="absolute bottom-6 left-6 right-6 text-white">
                   {/* Duration Badge */}
-                  <div className="w-fit bg-black/70 text-white px-3 py-1 rounded-md mb-2">
-                    <span className="text-sm font-gilroy font-medium">6N/7D</span>
+                  <div 
+                    style={{
+                      paddingLeft: 16, 
+                      paddingRight: 16, 
+                      paddingTop: 8, 
+                      paddingBottom: 8, 
+                      background: 'rgba(0, 0, 0, 0.50)', 
+                      borderRadius: 10, 
+                      justifyContent: 'center', 
+                      alignItems: 'center', 
+                      display: 'inline-flex'
+                    }}
+                  >
+                    <div 
+                      style={{
+                        color: 'white', 
+                        fontSize: 16, 
+                        fontFamily: 'Gilroy', 
+                        fontWeight: '400', 
+                        wordWrap: 'break-word'
+                      }}
+                    >
+                      6N/7D
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold font-gilroy text-white mb-1">Shimla, Kullu, Manali in Winters</h3>
-                  <p className="text-gray-200 mb-4 font-gilroy">Himachal Pradesh</p>
+                  <h3 
+                    className="font-semibold font-gilroy"
+                    style={{ fontSize: '22px', color: '#FFFFFF' }}
+                  >
+                    Shimla, Kullu, Manali in Winters
+                  </h3>
+                  <p className="mb-4 font-gilroy font-medium" style={{ color: '#E6E2C3' }}>Himachal Pradesh</p>
 
                   {/* Package Details */}
-                  <div className="grid grid-cols-4 gap-2 mb-4">
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Plane className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">2 Flights</span>
+                  <div className="flex gap-3 pt-0 mb-4">
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/mdi_flight.svg" alt="Flight" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        2 Flights
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Building2 className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">11 Hotels</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/Group.svg" alt="Hotel" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        11 Hotels
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Mountain className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">5 Activities</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/trekkingg.svg" alt="Activity" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        5 Activities
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Car className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">4 Transfers</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/mdi_cab.svg" alt="Transfer" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        4 Transfers
+                      </div>
                     </div>
                   </div>
 
@@ -117,15 +260,39 @@ export function EarlyBirdOffersSection() {
                           strokeLinejoin="round"
                         />
                       </svg>
-                      <span className="text-white text-3xl font-bold font-gilroy ml-1">
+                      <span 
+                        className="font-gilroy"
+                        style={{
+                          color: 'white',
+                          fontSize: 32,
+                          fontWeight: '550',
+                          wordWrap: 'break-word',
+                          marginLeft: '2px'
+                        }}
+                      >
                         5,999
                       </span>
                     </div>
-                    <span className="text-gray-300 line-through font-gilroy text-sm">₹12,999</span>
-                    <span className="text-gray-300 text-sm font-gilroy">Per Person</span>
+                    <span className="line-through font-gilroy font-medium text-lg" style={{ color: '#E6E2C3', marginTop: '10px' }}>
+                      ₹12,999
+                    </span>
+                    <span className="font-gilroy font-medium text-base" style={{ color: '#E6E2C3', marginTop: '10px' }}>Per Person</span>
                   </div>
 
-                  <p className="text-gray-300 text-sm font-gilroy">Includes taxes</p>
+                  <div className="flex items-center" style={{ marginTop: '-8px' }}>
+                    <p 
+                      className="font-gilroy"
+                      style={{
+                        color: '#E6E2C3',
+                        fontSize: 16,
+                        fontWeight: '400',
+                        whiteSpace: 'nowrap',
+                        paddingLeft: '5px'
+                      }}
+                    >
+                      Includes taxes
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -156,32 +323,175 @@ export function EarlyBirdOffersSection() {
                   <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
                 </div>
 
+                {/* Gradient Overlay */}
+                <div 
+                  className="absolute inset-0 rounded-2xl"
+                  style={{
+                    background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 27.56%, rgba(0, 0, 0, 0.79) 70.08%, rgba(0, 0, 0, 0.90) 100%)'
+                  }}
+                />
+
                 {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="absolute bottom-6 left-6 right-6 text-white">
                   {/* Duration Badge */}
-                  <div className="w-fit bg-black/70 text-white px-3 py-1 rounded-md mb-2">
-                    <span className="text-sm font-gilroy font-medium">6N/7D</span>
+                  <div 
+                    style={{
+                      paddingLeft: 16, 
+                      paddingRight: 16, 
+                      paddingTop: 8, 
+                      paddingBottom: 8, 
+                      background: 'rgba(0, 0, 0, 0.50)', 
+                      borderRadius: 10, 
+                      justifyContent: 'center', 
+                      alignItems: 'center', 
+                      display: 'inline-flex'
+                    }}
+                  >
+                    <div 
+                      style={{
+                        color: 'white', 
+                        fontSize: 16, 
+                        fontFamily: 'Gilroy', 
+                        fontWeight: '400', 
+                        wordWrap: 'break-word'
+                      }}
+                    >
+                      6N/7D
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold font-gilroy text-white mb-1">The Desert Odyssey</h3>
-                  <p className="text-gray-200 mb-4 font-gilroy">Rajasthan</p>
+                  <h3 
+                    className="font-semibold font-gilroy"
+                    style={{ fontSize: '22px', color: '#FFFFFF' }}
+                  >
+                    The Desert Odyssey
+                  </h3>
+                  <p className="mb-4 font-gilroy font-medium" style={{ color: '#E6E2C3' }}>Rajasthan</p>
 
                   {/* Package Details */}
-                  <div className="grid grid-cols-4 gap-2 mb-4">
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Plane className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">2 Flights</span>
+                  <div className="flex gap-3 pt-0 mb-4">
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/mdi_flight.svg" alt="Flight" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        2 Flights
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Building2 className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">11 Hotels</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/Group.svg" alt="Hotel" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        11 Hotels
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Mountain className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">5 Activities</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/trekkingg.svg" alt="Activity" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        5 Activities
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Car className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">4 Transfers</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/mdi_cab.svg" alt="Transfer" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        4 Transfers
+                      </div>
                     </div>
                   </div>
 
@@ -203,15 +513,39 @@ export function EarlyBirdOffersSection() {
                           strokeLinejoin="round"
                         />
                       </svg>
-                      <span className="text-white text-3xl font-bold font-gilroy ml-1">
+                      <span 
+                        className="font-gilroy"
+                        style={{
+                          color: 'white',
+                          fontSize: 32,
+                          fontWeight: '550',
+                          wordWrap: 'break-word',
+                          marginLeft: '2px'
+                        }}
+                      >
                         5,999
                       </span>
                     </div>
-                    <span className="text-gray-300 line-through font-gilroy text-sm">₹12,999</span>
-                    <span className="text-gray-300 text-sm font-gilroy">Per Person</span>
+                    <span className="line-through font-gilroy font-medium text-lg" style={{ color: '#E6E2C3', marginTop: '10px' }}>
+                      ₹12,999
+                    </span>
+                    <span className="font-gilroy font-medium text-base" style={{ color: '#E6E2C3', marginTop: '10px' }}>Per Person</span>
                   </div>
 
-                  <p className="text-gray-300 text-sm font-gilroy">Includes taxes</p>
+                  <div className="flex items-center" style={{ marginTop: '-8px' }}>
+                    <p 
+                      className="font-gilroy"
+                      style={{
+                        color: '#E6E2C3',
+                        fontSize: 16,
+                        fontWeight: '400',
+                        whiteSpace: 'nowrap',
+                        paddingLeft: '5px'
+                      }}
+                    >
+                      Includes taxes
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -234,32 +568,175 @@ export function EarlyBirdOffersSection() {
                   <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
                 </div>
 
+                {/* Gradient Overlay */}
+                <div 
+                  className="absolute inset-0 rounded-2xl"
+                  style={{
+                    background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 27.56%, rgba(0, 0, 0, 0.79) 70.08%, rgba(0, 0, 0, 0.90) 100%)'
+                  }}
+                />
+
                 {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="absolute bottom-6 left-6 right-6 text-white">
                   {/* Duration Badge */}
-                  <div className="w-fit bg-black/70 text-white px-3 py-1 rounded-md mb-2">
-                    <span className="text-sm font-gilroy font-medium">5N/6D</span>
+                  <div 
+                    style={{
+                      paddingLeft: 16, 
+                      paddingRight: 16, 
+                      paddingTop: 8, 
+                      paddingBottom: 8, 
+                      background: 'rgba(0, 0, 0, 0.50)', 
+                      borderRadius: 10, 
+                      justifyContent: 'center', 
+                      alignItems: 'center', 
+                      display: 'inline-flex'
+                    }}
+                  >
+                    <div 
+                      style={{
+                        color: 'white', 
+                        fontSize: 16, 
+                        fontFamily: 'Gilroy', 
+                        fontWeight: '400', 
+                        wordWrap: 'break-word'
+                      }}
+                    >
+                      5N/6D
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold font-gilroy text-white mb-1">Coastal Paradise</h3>
-                  <p className="text-gray-200 mb-4 font-gilroy">Goa</p>
+                  <h3 
+                    className="font-semibold font-gilroy"
+                    style={{ fontSize: '22px', color: '#FFFFFF' }}
+                  >
+                    Coastal Paradise
+                  </h3>
+                  <p className="mb-4 font-gilroy font-medium" style={{ color: '#E6E2C3' }}>Goa</p>
 
                   {/* Package Details */}
                   <div className="grid grid-cols-4 gap-2 mb-4">
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Plane className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">2 Flights</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/mdi_flight.svg" alt="Flight" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        2 Flights
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Building2 className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">8 Hotels</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/Group.svg" alt="Hotel" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        8 Hotels
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Mountain className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">4 Activities</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/trekkingg.svg" alt="Activity" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        4 Activities
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Car className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">3 Transfers</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/mdi_cab.svg" alt="Transfer" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        3 Transfers
+                      </div>
                     </div>
                   </div>
 
@@ -281,15 +758,39 @@ export function EarlyBirdOffersSection() {
                           strokeLinejoin="round"
                         />
                       </svg>
-                      <span className="text-white text-3xl font-bold font-gilroy ml-1">
+                      <span 
+                        className="font-gilroy"
+                        style={{
+                          color: 'white',
+                          fontSize: 32,
+                          fontWeight: '550',
+                          wordWrap: 'break-word',
+                          marginLeft: '2px'
+                        }}
+                      >
                         4,999
                       </span>
                     </div>
-                    <span className="text-gray-300 line-through font-gilroy text-sm">₹10,999</span>
-                    <span className="text-gray-300 text-sm font-gilroy">Per Person</span>
+                    <span className="line-through font-gilroy font-medium text-lg" style={{ color: '#E6E2C3', marginTop: '10px' }}>
+                      ₹10,999
+                    </span>
+                    <span className="font-gilroy font-medium text-base" style={{ color: '#E6E2C3', marginTop: '10px' }}>Per Person</span>
                   </div>
 
-                  <p className="text-gray-300 text-sm font-gilroy">Includes taxes</p>
+                  <div className="flex items-center" style={{ marginTop: '-8px' }}>
+                    <p 
+                      className="font-gilroy"
+                      style={{
+                        color: '#E6E2C3',
+                        fontSize: 16,
+                        fontWeight: '400',
+                        whiteSpace: 'nowrap',
+                        paddingLeft: '5px'
+                      }}
+                    >
+                      Includes taxes
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -312,32 +813,175 @@ export function EarlyBirdOffersSection() {
                   <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
                 </div>
 
+                {/* Gradient Overlay */}
+                <div 
+                  className="absolute inset-0 rounded-2xl"
+                  style={{
+                    background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 27.56%, rgba(0, 0, 0, 0.79) 70.08%, rgba(0, 0, 0, 0.90) 100%)'
+                  }}
+                />
+
                 {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="absolute bottom-6 left-6 right-6 text-white">
                   {/* Duration Badge */}
-                  <div className="w-fit bg-black/70 text-white px-3 py-1 rounded-md mb-2">
-                    <span className="text-sm font-gilroy font-medium">7N/8D</span>
+                  <div 
+                    style={{
+                      paddingLeft: 16, 
+                      paddingRight: 16, 
+                      paddingTop: 8, 
+                      paddingBottom: 8, 
+                      background: 'rgba(0, 0, 0, 0.50)', 
+                      borderRadius: 10, 
+                      justifyContent: 'center', 
+                      alignItems: 'center', 
+                      display: 'inline-flex'
+                    }}
+                  >
+                    <div 
+                      style={{
+                        color: 'white', 
+                        fontSize: 16, 
+                        fontFamily: 'Gilroy', 
+                        fontWeight: '400', 
+                        wordWrap: 'break-word'
+                      }}
+                    >
+                      7N/8D
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold font-gilroy text-white mb-1">Mountain Retreat</h3>
-                  <p className="text-gray-200 mb-4 font-gilroy">Kashmir</p>
+                  <h3 
+                    className="font-semibold font-gilroy"
+                    style={{ fontSize: '22px', color: '#FFFFFF' }}
+                  >
+                    Mountain Retreat
+                  </h3>
+                  <p className="mb-4 font-gilroy font-medium" style={{ color: '#E6E2C3' }}>Kashmir</p>
 
                   {/* Package Details */}
-                  <div className="grid grid-cols-4 gap-2 mb-4">
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Plane className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">2 Flights</span>
+                  <div className="flex gap-3 pt-0 mb-4">
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/mdi_flight.svg" alt="Flight" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        2 Flights
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Building2 className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">12 Hotels</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/Group.svg" alt="Hotel" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        12 Hotels
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Mountain className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">6 Activities</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/trekkingg.svg" alt="Activity" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        6 Activities
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Car className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">5 Transfers</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/mdi_cab.svg" alt="Transfer" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        5 Transfers
+                      </div>
                     </div>
                   </div>
 
@@ -359,15 +1003,39 @@ export function EarlyBirdOffersSection() {
                           strokeLinejoin="round"
                         />
                       </svg>
-                      <span className="text-white text-3xl font-bold font-gilroy ml-1">
+                      <span 
+                        className="font-gilroy"
+                        style={{
+                          color: 'white',
+                          fontSize: 32,
+                          fontWeight: '550',
+                          wordWrap: 'break-word',
+                          marginLeft: '2px'
+                        }}
+                      >
                         7,999
                       </span>
                     </div>
-                    <span className="text-gray-300 line-through font-gilroy text-sm">₹15,999</span>
-                    <span className="text-gray-300 text-sm font-gilroy">Per Person</span>
+                    <span className="line-through font-gilroy font-medium text-lg" style={{ color: '#E6E2C3', marginTop: '10px' }}>
+                      ₹15,999
+                    </span>
+                    <span className="font-gilroy font-medium text-base" style={{ color: '#E6E2C3', marginTop: '10px' }}>Per Person</span>
                   </div>
 
-                  <p className="text-gray-300 text-sm font-gilroy">Includes taxes</p>
+                  <div className="flex items-center" style={{ marginTop: '-8px' }}>
+                    <p 
+                      className="font-gilroy"
+                      style={{
+                        color: '#E6E2C3',
+                        fontSize: 16,
+                        fontWeight: '400',
+                        whiteSpace: 'nowrap',
+                        paddingLeft: '5px'
+                      }}
+                    >
+                      Includes taxes
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -390,32 +1058,175 @@ export function EarlyBirdOffersSection() {
                   <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
                 </div>
 
+                {/* Gradient Overlay */}
+                <div 
+                  className="absolute inset-0 rounded-2xl"
+                  style={{
+                    background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 27.56%, rgba(0, 0, 0, 0.79) 70.08%, rgba(0, 0, 0, 0.90) 100%)'
+                  }}
+                />
+
                 {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="absolute bottom-6 left-6 right-6 text-white">
                   {/* Duration Badge */}
-                  <div className="w-fit bg-black/70 text-white px-3 py-1 rounded-md mb-2">
-                    <span className="text-sm font-gilroy font-medium">5N/6D</span>
+                  <div 
+                    style={{
+                      paddingLeft: 16, 
+                      paddingRight: 16, 
+                      paddingTop: 8, 
+                      paddingBottom: 8, 
+                      background: 'rgba(0, 0, 0, 0.50)', 
+                      borderRadius: 10, 
+                      justifyContent: 'center', 
+                      alignItems: 'center', 
+                      display: 'inline-flex'
+                    }}
+                  >
+                    <div 
+                      style={{
+                        color: 'white', 
+                        fontSize: 16, 
+                        fontFamily: 'Gilroy', 
+                        fontWeight: '400', 
+                        wordWrap: 'break-word'
+                      }}
+                    >
+                      5N/6D
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold font-gilroy text-white mb-1">Tropical Island Escape</h3>
-                  <p className="text-gray-200 mb-4 font-gilroy">Andaman & Nicobar</p>
+                  <h3 
+                    className="font-semibold font-gilroy"
+                    style={{ fontSize: '22px', color: '#FFFFFF' }}
+                  >
+                    Tropical Island Escape
+                  </h3>
+                  <p className="mb-4 font-gilroy font-medium" style={{ color: '#E6E2C3' }}>Andaman & Nicobar</p>
 
                   {/* Package Details */}
-                  <div className="grid grid-cols-4 gap-2 mb-4">
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Plane className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">2 Flights</span>
+                  <div className="flex gap-3 pt-0 mb-4">
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/mdi_flight.svg" alt="Flight" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        2 Flights
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Building2 className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">7 Hotels</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/Group.svg" alt="Hotel" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        7 Hotels
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Mountain className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">6 Activities</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/trekkingg.svg" alt="Activity" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        6 Activities
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md">
-                      <Car className="w-5 h-5 text-[#ff6b00] mb-1" />
-                      <span className="text-xs font-gilroy text-gray-300">3 Transfers</span>
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        paddingLeft: 6,
+                        paddingRight: 6,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        background: 'rgba(0, 0, 0, 0.33)',
+                        borderRadius: 10,
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 4,
+                        display: 'inline-flex'
+                      }}
+                    >
+                      <div style={{width: 18, height: 18, position: 'relative'}}>
+                        <img src="/images/mdi_cab.svg" alt="Transfer" style={{width: '100%', height: '100%'}} />
+                      </div>
+                      <div style={{
+                        textAlign: 'center',
+                        color: 'white',
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: '400',
+                        wordWrap: 'break-word'
+                      }}>
+                        3 Transfers
+                      </div>
                     </div>
                   </div>
 
@@ -437,15 +1248,39 @@ export function EarlyBirdOffersSection() {
                           strokeLinejoin="round"
                         />
                       </svg>
-                      <span className="text-white text-3xl font-bold font-gilroy ml-1">
+                      <span 
+                        className="font-gilroy"
+                        style={{
+                          color: 'white',
+                          fontSize: 32,
+                          fontWeight: '550',
+                          wordWrap: 'break-word',
+                          marginLeft: '2px'
+                        }}
+                      >
                         12,999
                       </span>
                     </div>
-                    <span className="text-gray-300 line-through font-gilroy text-sm">₹18,999</span>
-                    <span className="text-gray-300 text-sm font-gilroy">Per Person</span>
+                    <span className="line-through font-gilroy font-medium text-lg" style={{ color: '#E6E2C3', marginTop: '10px' }}>
+                      ₹18,999
+                    </span>
+                    <span className="font-gilroy font-medium text-base" style={{ color: '#E6E2C3', marginTop: '10px' }}>Per Person</span>
                   </div>
 
-                  <p className="text-gray-300 text-sm font-gilroy">Includes taxes</p>
+                  <div className="flex items-center" style={{ marginTop: '-8px' }}>
+                    <p 
+                      className="font-gilroy"
+                      style={{
+                        color: '#E6E2C3',
+                        fontSize: 16,
+                        fontWeight: '400',
+                        whiteSpace: 'nowrap',
+                        paddingLeft: '5px'
+                      }}
+                    >
+                      Includes taxes
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

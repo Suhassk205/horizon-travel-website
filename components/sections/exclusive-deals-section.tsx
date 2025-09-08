@@ -47,12 +47,12 @@ const dealsData = [
     originalPrice: 12999,
     duration: "6N/7D",
     inclusions: [
-      { icon: Plane, text: "2 Flights" },
-      { icon: Building2, text: "11 Hotels" },
-      { icon: Mountain, text: "5 Activities" },
-      { icon: Car, text: "4 Transfers" },
+      { type: "flight", text: "2 Flights" },
+      { type: "hotel", text: "11 Hotels" },
+      { type: "activity", text: "5 Activities" },
+      { type: "transfer", text: "4 Transfers" },
     ],
-    imageUrl: "/images/mountain-lake-paradise.jpeg",
+    imageUrl: "/mountain-landscape.jpeg",
     timer: "Ends in 11h : 32m : 45s",
   },
   {
@@ -302,14 +302,50 @@ const ExclusiveDealsSection = () => {
                     <p className="mb-4 font-gilroy font-medium" style={{ color: '#E6E2C3' }}>{deal.location}</p>
 
                     {deal.inclusions && (
-                      <div className="grid grid-cols-4 gap-2 pt-0 mb-4">
+                      <div className="flex gap-3 pt-0 mb-4">
                         {deal.inclusions.map((inclusion, i) => (
                           <div
                             key={i}
-                            className="flex flex-col items-center bg-black/70 px-2 py-1 rounded-md"
+                            style={{
+                              width: '100%',
+                              height: '100%',
+                              paddingLeft: 6,
+                              paddingRight: 6,
+                              paddingTop: 10,
+                              paddingBottom: 10,
+                              background: 'rgba(0, 0, 0, 0.33)',
+                              borderRadius: 10,
+                              flexDirection: 'column',
+                              justifyContent: 'center',
+                              alignItems: 'center',
+                              gap: 4,
+                              display: 'inline-flex'
+                            }}
                           >
-                            <inclusion.icon className="w-5 h-5 text-[#ff6b00] mb-1" />
-                            <span className="text-xs font-gilroy font-medium text-gray-300">{inclusion.text}</span>
+                            <div style={{width: 18, height: 18, position: 'relative'}}>
+                              {inclusion.type === 'flight' && (
+                                <img src="/images/mdi_flight.svg" alt="Flight" style={{width: '100%', height: '100%'}} />
+                              )}
+                              {inclusion.type === 'hotel' && (
+                                <img src="/images/Group.svg" alt="Hotel" style={{width: '100%', height: '100%'}} />
+                              )}
+                              {inclusion.type === 'activity' && (
+                                <img src="/images/trekkingg.svg" alt="Activity" style={{width: '100%', height: '100%'}} />
+                              )}
+                              {inclusion.type === 'transfer' && (
+                                <img src="/images/mdi_cab.svg" alt="Transfer" style={{width: '100%', height: '100%'}} />
+                              )}
+                            </div>
+                            <div style={{
+                              textAlign: 'center',
+                              color: 'white',
+                              fontSize: 12,
+                              fontFamily: 'Gilroy',
+                              fontWeight: '400',
+                              wordWrap: 'break-word'
+                            }}>
+                              {inclusion.text}
+                            </div>
                           </div>
                         ))}
                       </div>
