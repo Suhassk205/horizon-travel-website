@@ -16,7 +16,7 @@ export function ExperienceExtraordinarySection() {
   }, [])
 
   return (
-    <div className="bg-white py-16 px-6">
+    <div className="bg-gray-50 py-16 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">

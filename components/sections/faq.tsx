@@ -48,7 +48,7 @@ export function FAQ() {
   }
 
   return (
-    <section className="py-20 bg-gray-50 relative">
+    <section className="py-20 bg-gray-300 relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section - Exact Figma Typography */}
         <div className="text-center mb-16">

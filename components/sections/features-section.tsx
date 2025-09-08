@@ -1,6 +1,6 @@
 export function FeaturesSection() {
   return (
-    <section className="relative min-h-screen bg-white overflow-hidden py-20">
+    <section className="relative min-h-screen bg-gray-50 overflow-hidden py-20">
       {/* Background Airplane Silhouette - Centered for responsiveness */}
       <div className="absolute top-[-55px] left-1/2 transform -translate-x-1/2 w-[993.73px] h-[422.32px] opacity-70 z-0">
         {/* NOTE: Using a placeholder. A real transparent silhouette PNG would look better. */}

@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export function NewsletterSignup() {
   return (
-    <section className="relative w-full h-[600px] overflow-hidden flex items-center justify-center">
+    <section className="relative w-full h-[600px] overflow-hidden flex items-center justify-center bg-gray-50">
       {/* Rectangle Overlay with Background Image and Gradient */}
       <div
         className="relative rounded-[20px] overflow-hidden"

@@ -88,7 +88,8 @@ export function PromotionalCarousel() {
   )
 
   return (
-    <div className="w-full max-w-6xl mx-auto my-12">
+    <section className="bg-gray-50 py-12">
+      <div className="w-full max-w-6xl mx-auto">
       <Carousel
         setApi={setApi}
         className="w-full"
@@ -138,6 +139,7 @@ export function PromotionalCarousel() {
           />
         ))}
       </div>
-    </div>
+      </div>
+    </section>
   )
 }

@@ -89,7 +89,7 @@ const ExploreRegions = () => {
   }
 
   return (
-    <section className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden">
+    <section className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden bg-gray-50">
       {/* Header Section */}
       <div className="text-center py-16 px-4">
         <h2

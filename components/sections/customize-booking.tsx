@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export function CustomizeBooking() {
   return (
-    <section className="relative w-full py-16 overflow-hidden bg-white">
+    <section className="relative w-full py-16 overflow-hidden bg-gray-50">
       <div className="text-center mb-12">
         <h2
           className="mb-4"
