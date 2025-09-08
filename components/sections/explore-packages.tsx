@@ -126,19 +126,36 @@ export function ExplorePackages() {
 
         {/* Filter Tabs */}
         <div className="flex justify-center mb-8 w-[940px] h-[82px] p-[10px]">
-          <div className="flex space-x-[50px]">
+          <div style={{width: '100%', height: '100%', padding: 10, justifyContent: 'flex-start', alignItems: 'flex-start', gap: 50, display: 'inline-flex'}}>
             {tabs.map((tab) => (
-              <button
+              <div
                 key={tab}
-                onClick={() => setActiveTab(tab)} // Set active tab on click
-                className={`w-[144px] h-[62px] rounded-[10px] pt-[20px] pr-[30px] pb-[20px] pl-[30px] text-sm font-gilroy font-medium transition-all shadow-2xl ${
-                  activeTab === tab
-                    ? "bg-[#ff6600] text-white"
-                    : "bg-white border border-white text-gray-600 hover:text-gray-900"
-                }`}
+                onClick={() => setActiveTab(tab)}
+                style={{
+                  width: 144,
+                  paddingLeft: 30,
+                  paddingRight: 30,
+                  paddingTop: 20,
+                  paddingBottom: 20,
+                  background: activeTab === tab ? '#FF6A00' : 'white',
+                  borderRadius: 10,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: 10,
+                  display: 'flex',
+                  cursor: 'pointer'
+                }}
               >
-                {tab}
-              </button>
+                <div style={{
+                  color: activeTab === tab ? 'white' : '#66757A',
+                  fontSize: 20,
+                  fontFamily: 'Gilroy',
+                  fontWeight: '600',
+                  whiteSpace: 'nowrap'
+                }}>
+                  {tab}
+                </div>
+              </div>
             ))}
           </div>
         </div>
