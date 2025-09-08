@@ -54,7 +54,7 @@ export function BlogsSection() {
             Phoenix Fly Blogs
           </h2>
           <p
-            className="max-w-2xl mx-auto"
+            className="max-w-3xl mx-auto"
             style={{
               color: "#29383E",
               fontSize: "18px",

@@ -119,23 +119,54 @@ const ExploreRegions = () => {
         </p>
 
         {/* Tab Toggle */}
-        <div className="flex justify-center mb-8">
-          <div className="bg-gray-100 rounded-full p-1 flex">
+        <div className="flex justify-center -mb-20">
+          <div style={{width: 410, height: 68, position: 'relative'}}>
+            <div style={{width: 410, height: 68, left: 0, top: 0, position: 'absolute', background: '#EBEBEB', borderRadius: 62.96}} />
+            <div 
+              style={{
+                width: 192, 
+                height: 52, 
+                left: selectedTab === "india" ? 8 : 210, 
+                top: 8, 
+                position: 'absolute', 
+                background: 'white', 
+                borderRadius: 50,
+                transition: 'left 0.3s ease-in-out'
+              }} 
+            />
             <button
               onClick={() => handleTabChange("india")}
-              className={`px-8 py-3 rounded-full font-medium font-gilroy transition-all duration-300 ${
-                selectedTab === "india" ? "bg-orange-500 text-white shadow-md" : "text-gray-600 hover:text-gray-900"
-              }`}
+              style={{
+                left: 86, 
+                top: 22, 
+                position: 'absolute', 
+                color: selectedTab === "india" ? '#FF6A00' : '#16242A', 
+                fontSize: 16, 
+                fontFamily: 'Gilroy', 
+                fontWeight: '600', 
+                wordWrap: 'break-word',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer'
+              }}
             >
               India
             </button>
             <button
               onClick={() => handleTabChange("international")}
-              className={`px-8 py-3 rounded-full font-medium font-gilroy transition-all duration-300 ${
-                selectedTab === "international"
-                  ? "bg-orange-500 text-white shadow-md"
-                  : "text-gray-600 hover:text-gray-900"
-              }`}
+              style={{
+                left: 260, 
+                top: 22, 
+                position: 'absolute', 
+                color: selectedTab === "international" ? '#FF6A00' : '#16242A', 
+                fontSize: 16, 
+                fontFamily: 'Gilroy', 
+                fontWeight: '600', 
+                wordWrap: 'break-word',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer'
+              }}
             >
               International
             </button>
