@@ -1,5 +1,6 @@
 "use client"
 
+import { Fullscreen } from "lucide-react"
 import Image from "next/image"
 
 export function Gallery() {
@@ -9,7 +10,7 @@ export function Gallery() {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2
-            className="mb-4"
+            className="mb-0"
             style={{
               color: "#16242A",
               fontSize: "42px",
@@ -40,20 +41,13 @@ export function Gallery() {
           <Image
             src="/images/image list.png"
             alt="A collage of travel photos from happy customers"
-            width={1920}
-            height={1080}
+            width={1672}
+            height={284}
             className="w-full h-auto object-cover"
           />
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center space-x-2 text-gray-400">
-            <div className="w-12 h-px bg-gray-300"></div>
-            <span className="text-sm font-medium font-gilroy">Share your travel moments with us</span>
-            <div className="w-12 h-px bg-gray-300"></div>
-          </div>
-        </div>
+        
       </div>
     </section>
   )

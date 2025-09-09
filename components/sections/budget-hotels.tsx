@@ -270,7 +270,7 @@ export function BudgetHotels() {
           {/* Right Navigation Arrow */}
           <button
             onClick={() => scroll("right")}
-            className="absolute top-1/3 -right-4 transform -translate-y-1/2 bg-[#FF6A00] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors z-10"
+            className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-[#FF6A00] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors z-10"
             aria-label="Next hotels"
           >
             <ArrowRight className="w-6 h-6 text-white" />

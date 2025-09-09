@@ -15,12 +15,12 @@ export function EarlyBirdOffersSection() {
   }
 
   return (
-    <div className="bg-gray-50 py-16 px-6">
+    <div className="bg-gray-50 py-17">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 px-6">
           <h2
-            className="mb-4"
+            className="mb-0"
             style={{
               color: "#16242A",
               fontSize: "42px",
@@ -46,7 +46,7 @@ export function EarlyBirdOffersSection() {
         </div>
 
         {/* Early Bird Offers Carousel */}
-        <div className="relative">
+        <div className="relative px-8">
           <div
             ref={scrollContainerRef}
             className="flex gap-6 overflow-x-auto scrollbar-hide py-8 my-[-2rem]"
@@ -104,7 +104,7 @@ export function EarlyBirdOffersSection() {
                       }}
                     >
                       6N/7D
-                    </div>
+                  </div>
                   </div>
                   <h3 
                     className="font-semibold font-gilroy"
@@ -135,7 +135,7 @@ export function EarlyBirdOffersSection() {
                     >
                       <div style={{width: 18, height: 18, position: 'relative'}}>
                         <img src="/images/mdi_flight.svg" alt="Flight" style={{width: '100%', height: '100%'}} />
-                      </div>
+                    </div>
                       <div style={{
                         textAlign: 'center',
                         color: 'white',
@@ -145,7 +145,7 @@ export function EarlyBirdOffersSection() {
                         wordWrap: 'break-word'
                       }}>
                         2 Flights
-                      </div>
+                    </div>
                     </div>
                     <div
                       style={{
@@ -357,7 +357,7 @@ export function EarlyBirdOffersSection() {
                       }}
                     >
                       6N/7D
-                    </div>
+                  </div>
                   </div>
                   <h3 
                     className="font-semibold font-gilroy"
@@ -388,7 +388,7 @@ export function EarlyBirdOffersSection() {
                     >
                       <div style={{width: 18, height: 18, position: 'relative'}}>
                         <img src="/images/mdi_flight.svg" alt="Flight" style={{width: '100%', height: '100%'}} />
-                      </div>
+                    </div>
                       <div style={{
                         textAlign: 'center',
                         color: 'white',
@@ -398,7 +398,7 @@ export function EarlyBirdOffersSection() {
                         wordWrap: 'break-word'
                       }}>
                         2 Flights
-                      </div>
+                    </div>
                     </div>
                     <div
                       style={{
@@ -602,7 +602,7 @@ export function EarlyBirdOffersSection() {
                       }}
                     >
                       5N/6D
-                    </div>
+                  </div>
                   </div>
                   <h3 
                     className="font-semibold font-gilroy"
@@ -633,7 +633,7 @@ export function EarlyBirdOffersSection() {
                     >
                       <div style={{width: 18, height: 18, position: 'relative'}}>
                         <img src="/images/mdi_flight.svg" alt="Flight" style={{width: '100%', height: '100%'}} />
-                      </div>
+                    </div>
                       <div style={{
                         textAlign: 'center',
                         color: 'white',
@@ -643,7 +643,7 @@ export function EarlyBirdOffersSection() {
                         wordWrap: 'break-word'
                       }}>
                         2 Flights
-                      </div>
+                    </div>
                     </div>
                     <div
                       style={{
@@ -847,7 +847,7 @@ export function EarlyBirdOffersSection() {
                       }}
                     >
                       7N/8D
-                    </div>
+                  </div>
                   </div>
                   <h3 
                     className="font-semibold font-gilroy"
@@ -878,7 +878,7 @@ export function EarlyBirdOffersSection() {
                     >
                       <div style={{width: 18, height: 18, position: 'relative'}}>
                         <img src="/images/mdi_flight.svg" alt="Flight" style={{width: '100%', height: '100%'}} />
-                      </div>
+                    </div>
                       <div style={{
                         textAlign: 'center',
                         color: 'white',
@@ -888,7 +888,7 @@ export function EarlyBirdOffersSection() {
                         wordWrap: 'break-word'
                       }}>
                         2 Flights
-                      </div>
+                    </div>
                     </div>
                     <div
                       style={{
@@ -1092,7 +1092,7 @@ export function EarlyBirdOffersSection() {
                       }}
                     >
                       5N/6D
-                    </div>
+                  </div>
                   </div>
                   <h3 
                     className="font-semibold font-gilroy"
@@ -1123,7 +1123,7 @@ export function EarlyBirdOffersSection() {
                     >
                       <div style={{width: 18, height: 18, position: 'relative'}}>
                         <img src="/images/mdi_flight.svg" alt="Flight" style={{width: '100%', height: '100%'}} />
-                      </div>
+                    </div>
                       <div style={{
                         textAlign: 'center',
                         color: 'white',
@@ -1133,7 +1133,7 @@ export function EarlyBirdOffersSection() {
                         wordWrap: 'break-word'
                       }}>
                         2 Flights
-                      </div>
+                    </div>
                     </div>
                     <div
                       style={{
@@ -1289,6 +1289,7 @@ export function EarlyBirdOffersSection() {
           {/* Navigation Arrow - Right */}
           <button
             onClick={() => scroll("right")}
+            style={{ right: '12px' }}
             className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-[#FF6A00] text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors shadow-lg z-10"
             aria-label="Next offers"
           >
@@ -1303,6 +1304,9 @@ export function EarlyBirdOffersSection() {
           </button>
         </div>
       </div>
+      
+      {/* Extended Background to Fill Gap */}
+      <div className="bg-gray-50 h-16"></div>
     </div>
   )
 }

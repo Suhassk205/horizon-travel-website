@@ -97,7 +97,7 @@ export function ExploreThemesSection() {
   return (
     <section className="bg-gray-50 py-20">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h2 
             style={{
               color: '#16242A',
@@ -110,7 +110,7 @@ export function ExploreThemesSection() {
             Explore Our Themes
           </h2>
           <p 
-            className="mt-2"
+            className="mt-0"
             style={{
               color: '#16242A',
               fontSize: '18px',
@@ -124,10 +124,10 @@ export function ExploreThemesSection() {
           </p>
         </div>
 
-        <div className="relative">
+        <div className="relative px-8">
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide pb-4"
+            className="flex gap-[10px] overflow-x-auto scrollbar-hide pb-4"
           >
             {themes.map((theme, index) => (
               <div key={theme.id} className="flex-shrink-0 w-[258px]">
@@ -168,7 +168,7 @@ export function ExploreThemesSection() {
           </div>
           <button
             onClick={scroll}
-            className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-[#FF6A00] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors z-10"
+            className="absolute top-[160px] right-2 transform -translate-y-1/2 bg-[#FF6A00] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors z-10"
           >
             <ArrowRight size={24} />
           </button>

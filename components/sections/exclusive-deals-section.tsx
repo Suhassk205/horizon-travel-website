@@ -118,7 +118,7 @@ const ExclusiveDealsSection = () => {
         >
           Exclusive Deals & Offers
         </h2>
-        <div className="bg-white rounded-2xl p-6 max-w-7xl mx-auto">
+        <div className="bg-white rounded-2xl py-6 px-4 max-w-[1200px] mx-auto">
                     <div 
             style={{
               width: '100%', 
@@ -439,7 +439,7 @@ const ExclusiveDealsSection = () => {
             </div>
             <button
               onClick={() => scroll("right")}
-              className="absolute top-1/2 -right-8 transform -translate-y-1/2 bg-[#FF6A00] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors z-10"
+              className="absolute top-1/2 -right-5 transform -translate-y-1/2 bg-[#FF6A00] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors z-10"
             >
               <ArrowRight size={24} />
             </button>

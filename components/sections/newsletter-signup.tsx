@@ -10,7 +10,7 @@ export function NewsletterSignup() {
         className="relative rounded-[20px] overflow-hidden"
         style={{
           width: "1200px",
-          height: "600px",
+          height: "530px",
         }}
       >
         {/* Background Image limited to this box */}
@@ -34,6 +34,7 @@ export function NewsletterSignup() {
           <div className="space-y-2.5">
             <h2 
               className="text-6xl font-bold font-gilroy capitalize leading-tight"
+              style={{ fontWeight: '600' }}
             >
               Stay in the Loop, <br /> Travel Smarter
             </h2>
@@ -48,6 +49,9 @@ export function NewsletterSignup() {
               type="email"
               placeholder="Enter Your Email"
               className="w-[476px] h-[70px] bg-white/90 rounded-2xl border-0 px-5 text-lg font-gilroy text-gray-800 placeholder:text-gray-400"
+              style={{ fontSize: '18px',
+                fontWeight: '500'
+               }}
             />
             <Button 
               className="h-[70px] px-10 text-lg bg-[#FF6A00] hover:bg-[#FF6A00]/90 rounded-2xl font-gilroy"

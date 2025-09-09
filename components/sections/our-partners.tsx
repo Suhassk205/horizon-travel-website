@@ -39,7 +39,7 @@ export function OurPartners() {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2
-            className="mb-4"
+            className="mb-0"
             style={{
               color: "#16242A",
               fontSize: "42px",
@@ -78,16 +78,11 @@ export function OurPartners() {
             ))}
           </div>
         </div>
-
-        {/* Decorative Element */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center space-x-2 text-gray-400">
-            <div className="w-12 h-px bg-gray-300"></div>
-            <span className="text-sm font-medium font-gilroy">Trusted by leading hospitality brands</span>
-            <div className="w-12 h-px bg-gray-300"></div>
-          </div>
-        </div>
       </div>
+
+
+       
+
 
       {/* Custom CSS for Infinite Scroll Animation */}
       <style jsx>{`
@@ -100,7 +95,7 @@ export function OurPartners() {
           }
         }
 
-        .animate-scroll-left {
+        .animate-scroll-left {  
           animation: scroll-left 20s linear infinite;
           width: calc(300% + 96px); /* 3x width for seamless loop + margin compensation */
         }

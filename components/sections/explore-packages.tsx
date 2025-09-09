@@ -436,7 +436,7 @@ export function ExplorePackages() {
         {/* Navigation Arrows */}
         <button
           onClick={scroll}
-          className="absolute top-1/3 -right-4 transform -translate-y-1/2 bg-[#FF6A00] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors z-10"
+          className="absolute top-[250px] -right-4 transform -translate-y-1/2 bg-[#FF6A00] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors z-10"
           aria-label="See more packages"
         >
           <ArrowRight className="h-6 w-6" />

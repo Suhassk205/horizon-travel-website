@@ -41,7 +41,7 @@ export function BlogsSection() {
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2
-            className="mb-4"
+            className="mb-0"
             style={{
               color: "#16242A",
               fontSize: "42px",

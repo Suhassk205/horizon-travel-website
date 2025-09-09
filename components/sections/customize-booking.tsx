@@ -4,9 +4,9 @@ import Image from "next/image"
 export function CustomizeBooking() {
   return (
     <section className="relative w-full py-16 overflow-hidden bg-gray-50">
-      <div className="text-center mb-12">
+      <div className="text-center">
         <h2
-          className="mb-4"
+          className="mb-1"
           style={{
             color: "#16242A",
             fontSize: "42px",
@@ -19,7 +19,7 @@ export function CustomizeBooking() {
           Customize Your Booking
         </h2>
         <p
-          className="max-w-3xl mx-auto mb-8"
+          className="max-w-3xl mx-auto mb-6"
           style={{
             color: "#29383E",
             fontSize: "18px",
@@ -34,16 +34,27 @@ export function CustomizeBooking() {
         
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl grid grid-cols-1 lg:grid-cols-2 bg-white shadow-lg">
+      <div className="flex justify-center">
+        <div 
+          className="relative overflow-hidden rounded-3xl grid grid-cols-1 lg:grid-cols-2 bg-white shadow-lg"
+          style={{
+            width: "1200px",
+            height: "622px"
+          }}
+        >
           {/* Left Column */}
           <div 
-            className="flex flex-col justify-center p-12"
+            className="flex flex-col justify-center items-left text-left p-12"
             style={{ background: 'linear-gradient(113deg, #FFD9BD 0%, #B3E5F1 100%)' }}
           >
             <h3 
               className="text-5xl font-bold font-gilroy text-[#16242A] mb-6 leading-tight capitalize"
+              style={{
+                fontSize: 48,
+                fontWeight: '600'
+              }}
             >
+
               Let our experts <br/>tailor a <span className="text-[#FF6A00]">customized <br/>package</span> <br/>that caters to <br/>your preferences
             </h3>
             <div className="flex items-center gap-2.5">

@@ -78,14 +78,14 @@ export function Footer() {
           <>
             <div className="space-y-4">
               {footerLinks[title].slice(0, 8).map((link) => (
-                <a key={link} href="#" className="block text-lg font-gilroy font-normal text-[#16242A] hover:text-orange-500 transition-colors">
+                <a key={link} href="#" className="block text-lg font-gilroy font-medium text-[#16242A] hover:text-orange-500 transition-colors">
                   {link}
                 </a>
               ))}
             </div>
             <div className="space-y-4">
               {footerLinks[title].slice(8).map((link) => (
-                <a key={link} href="#" className="block text-lg font-gilroy font-normal text-[#16242A] hover:text-orange-500 transition-colors">
+                <a key={link} href="#" className="block text-lg font-gilroy font-medium text-[#16242A] hover:text-orange-500 transition-colors">
                   {link}
                 </a>
               ))}
@@ -93,7 +93,7 @@ export function Footer() {
           </>
         ) : (
           footerLinks[title].map((link) => (
-            <a key={link} href="#" className="block text-lg font-gilroy font-normal text-[#16242A] hover:text-orange-500 transition-colors">
+            <a key={link} href="#" className="block text-lg font-gilroy font-medium text-[#16242A] hover:text-orange-500 transition-colors">
               {link}
             </a>
           ))
@@ -148,7 +148,7 @@ export function Footer() {
               <path d="M154.171 8.11456C156.509 8.11456 158.398 8.85839 159.839 10.3461C161.28 11.8337 162 13.8759 162 16.4726V28.9284H157.596V16.9189C157.596 15.4041 157.188 14.2411 156.373 13.4296C155.557 12.6181 154.443 12.2124 153.029 12.2124C151.48 12.2124 150.229 12.6993 149.278 13.673C148.326 14.6197 147.851 16.0804 147.851 18.0549V28.9284H143.447V8.64201H147.851V11.2387C149.183 9.15593 151.29 8.11456 154.171 8.11456Z" fill="#16242A"/>
             </svg>
           </div>
-          <p className="text-center max-w-3xl font-gilroy" style={{ color: "#16242A", fontSize: "18px", fontFamily: "Gilroy", fontWeight: "400", lineHeight: "24px", letterSpacing: "-0.36px", textTransform: "capitalize" }}>
+          <p className="text-center max-w-3xl font-semibold font-gilroy" style={{ color: "#16242A", fontSize: "18px", fontFamily: "Gilroy", fontWeight: "600", lineHeight: "24px", letterSpacing: "-0.36px", textTransform: "capitalize" }}>
             For the dreamers, explorers, and memory-makers — your journey starts here.
           </p>
         </div>
@@ -161,11 +161,11 @@ export function Footer() {
             <div className="space-y-4">
               <div className="flex items-center space-x-2.5">
                 <Mail className="w-6 h-6 text-[#FF6A00]" />
-                <span className="text-lg font-normal font-gilroy text-[#16242A]">phoenixflytravel@gmail.com</span>
+                <span className="text-lg font-medium font-gilroy text-[#16242A]">phoenixflytravel@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2.5">
                 <Phone className="w-6 h-6 text-[#FF6A00]" />
-                <span className="text-lg font-normal font-gilroy text-[#16242A]">+91-8861524428</span>
+                <span className="text-lg font-medium font-gilroy text-[#16242A]">+91-8861524428</span>
               </div>
             </div>
           </div>
@@ -176,7 +176,7 @@ export function Footer() {
 
             <div className="flex items-center space-x-2.5">
               <MapPin className="w-6 h-6 text-[#FF6A00]" />
-              <span className="text-lg font-normal font-gilroy text-[#16242A]">
+              <span className="text-lg font-semibold font-gilroy text-[#16242A]">
                 3rd Floor, Above United Medicals, Ramdev Galli, Belagavi - 590010
               </span>
             </div>
@@ -185,13 +185,21 @@ export function Footer() {
           {/* Social Media */}
           <div className="text-center">
             <h4 className="text-lg font-bold font-gilroy text-[#16242A] uppercase mb-3">Follow Us</h4>
-            <div className="flex items-center space-x-4 font-normal">
+            <div className="flex items-center space-x-4 font-medium">
               <SocialIcon href="Facebook"><FacebookIcon /></SocialIcon>
               <SocialIcon href="Instagram"><InstagramIcon /></SocialIcon>
               <SocialIcon href="Twitter"><TwitterIcon /></SocialIcon>
+              <SocialIcon href="WhatsApp"><WhatsAppIcon /></SocialIcon>
               <SocialIcon href="Youtube"><YoutubeIcon /></SocialIcon>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Copyright Section */}
+      <div style={{width: '100%', height: '100%', background: 'rgba(217, 217, 217, 0.30)'}}>
+        <div style={{width: '100%', textAlign: 'center', color: 'black', fontSize: 16, fontFamily: 'Gilroy', fontWeight: '600', wordWrap: 'break-word', padding: '20px'}}>
+          © 2025 Phoenix Fly | All Rights Reserved
         </div>
       </div>
     </footer>

@@ -93,7 +93,7 @@ const ExploreRegions = () => {
       {/* Header Section */}
       <div className="text-center py-16 px-4">
         <h2
-          className="mb-4"
+          className="mb-0"
           style={{
             color: "#16242A",
             fontSize: "42px",

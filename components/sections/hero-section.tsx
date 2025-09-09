@@ -66,20 +66,28 @@ type Regions = {
 
 const regions: Regions = {
   india: [
-    { id: "goa", title: "Goa" },
     { id: "kerala", title: "Kerala" },
-    { id: "rajasthan", title: "Rajasthan" },
+    { id: "goa", title: "Goa" },
     { id: "himachal", title: "Himachal Pradesh" },
-    { id: "andaman", title: "Andaman & Nicobar" },
-    { id: "ladakh", title: "Ladakh" },
+    { id: "gujarat", title: "Gujarat" },
+    { id: "tamil-nadu", title: "Tamil Nadu" },
+    { id: "rajasthan", title: "Rajasthan" },
+    { id: "jammu-kashmir", title: "Jammu & Kashmir" },
+    { id: "karnataka", title: "Karnataka" },
+    { id: "madhya-pradesh", title: "Madhya Pradesh" },
+    { id: "meghalaya", title: "Meghalaya" },
   ],
   international: [
     { id: "dubai", title: "Dubai" },
     { id: "thailand", title: "Thailand" },
     { id: "maldives", title: "Maldives" },
-    { id: "europe", title: "Europe" },
-    { id: "bali", title: "Bali" },
     { id: "singapore", title: "Singapore" },
+    { id: "bali", title: "Bali" },
+    { id: "switzerland", title: "Switzerland" },
+    { id: "malaysia", title: "Malaysia" },
+    { id: "mauritius", title: "Mauritius" },
+    { id: "sri-lanka", title: "Sri Lanka" },
+    { id: "vietnam", title: "Vietnam" },
   ],
 }
 
@@ -128,10 +136,37 @@ export function HeroSection() {
     return () => clearInterval(popupInterval) // Cleanup on component unmount
   }, [])
 
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element
+      if (!target.closest('[data-dropdown]')) {
+        setShowDestinationDropdown(false)
+        setShowExploreExtraordinaryDropdown(false)
+        setShowOffersDropdown(false)
+      }
+    }
+
+    if (showDestinationDropdown || showExploreExtraordinaryDropdown || showOffersDropdown) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [showDestinationDropdown, showExploreExtraordinaryDropdown, showOffersDropdown])
+
   const displayedRegions =
     activeDestinationTab === "all"
       ? [...regions.india, ...regions.international]
       : regions[activeDestinationTab as keyof typeof regions]
+  
+  // Debug logging
+  useEffect(() => {
+    console.log('Active tab changed to:', activeDestinationTab);
+    console.log('Displayed regions count:', displayedRegions.length);
+    console.log('First few regions:', displayedRegions.slice(0, 3).map(r => r.title));
+  }, [activeDestinationTab, displayedRegions])
 
   const handleSearch = () => {
     console.log("Search button clicked!")
@@ -150,7 +185,7 @@ export function HeroSection() {
       </div>
 
       {/* New Header */}
-      <header className="relative z-10">
+      <header className="relative z-50">
         <nav className="flex items-center justify-between px-12 py-4">
           <div className="flex items-center space-x-2">
             <img src="/images/horizon-logo1.jpeg" alt="Horizon Logo" className="w-8 h-8 object-contain" />
@@ -159,14 +194,154 @@ export function HeroSection() {
 
           <div className="flex items-center space-x-8">
             {/* Navigation Links */}
-            <div
-              className="flex items-center space-x-1 text-[#16242A] cursor-pointer hover:opacity-80 transition-opacity"
-              onClick={() => setShowDestinationDropdown(!showDestinationDropdown)}
-            >
-              <span className="text-base font-semibold font-gilroy leading-[30px]">Destination</span>
-              <ChevronDown className="w-5 h-5" />
+            <div className="relative">
+              <div
+                className="flex items-center gap-[2px] text-[#16242A] cursor-pointer hover:opacity-80 transition-opacity"
+                onClick={() => setShowDestinationDropdown(!showDestinationDropdown)}
+                data-dropdown
+              >
+                <span className="text-base font-semibold font-gilroy leading-[30px]">Destination</span>
+                <ChevronDown 
+                  className={`w-5 h-5 transition-transform duration-300 ease-out ${
+                    showDestinationDropdown ? 'rotate-180' : ''
+                  }`}
+                />
+              </div>
+              
+              {/* Destination Dropdown Menu - Positioned below button */}
+              <div
+                className={`absolute left-0 top-full mt-2 bg-white rounded-[10px] transition-all duration-300 ease-out ${
+                  showDestinationDropdown
+                    ? "opacity-100 translate-y-0 scale-100"
+                    : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
+                }`}
+                style={{
+                  width: '822px',
+                  padding: '25px',
+                  boxShadow: showDestinationDropdown ? '0px 8px 32px rgba(0, 0, 0, 0.12)' : '0px 4px 16px rgba(0, 0, 0, 0.08)',
+                  transformOrigin: 'top left',
+                  zIndex: 100,
+                }}
+                data-dropdown
+              >
+                {/* Tab Headers */}
+                <div className="flex items-center gap-10 mb-[35px]">
+                  <button
+                    className={`font-gilroy font-semibold transition-all duration-200 ${
+                      activeDestinationTab === "india" 
+                        ? "text-[#FF6A00]" 
+                        : "text-[#16242A] opacity-50 hover:opacity-75"
+                    }`}
+                    style={{ 
+                      fontSize: '20px',
+                      letterSpacing: '-0.8px',
+                      lineHeight: '24.5px'
+                    }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      console.log('India tab clicked');
+                      setActiveDestinationTab("india");
+                    }}
+                  >
+                    India
+                  </button>
+                  <button
+                    className={`font-gilroy font-semibold transition-all duration-200 ${
+                      activeDestinationTab === "international" 
+                        ? "text-[#FF6A00]" 
+                        : "text-[#16242A] opacity-50 hover:opacity-75"
+                    }`}
+                    style={{ 
+                      fontSize: '20px',
+                      letterSpacing: '-0.8px',
+                      lineHeight: '24.5px'
+                    }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      console.log('International tab clicked');
+                      setActiveDestinationTab("international");
+                    }}
+                  >
+                    International
+                  </button>
+                  <button
+                    className={`font-gilroy font-semibold transition-all duration-200 ${
+                      activeDestinationTab === "all" 
+                        ? "text-[#FF6A00]" 
+                        : "text-[#16242A] opacity-50 hover:opacity-75"
+                    }`}
+                    style={{ 
+                      fontSize: '20px',
+                      letterSpacing: '-0.8px',
+                      lineHeight: '24.5px'
+                    }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      console.log('All tab clicked, current tab:', activeDestinationTab);
+                      setActiveDestinationTab("all");
+                      console.log('Tab should now be: all');
+                    }}
+                  >
+                    All
+                  </button>
+                </div>
+                
+                {/* Destination Grid */}
+                <div className="grid gap-x-[68px]" style={{ gridTemplateColumns: '1fr 1fr' }}>
+                  {/* Left Column */}
+                  <div className="flex flex-col">
+                    {displayedRegions.slice(0, Math.ceil(displayedRegions.length / 2)).map((region: Region) => (
+                      <div
+                        key={region.id}
+                        className="group flex items-center gap-0 py-[15px] cursor-pointer transition-all duration-200 hover:bg-[#F5F5F5] px-[10px] -mx-[10px] rounded-md"
+                        onClick={() => {
+                          console.log(`Selected destination: ${region.title}`);
+                          setShowDestinationDropdown(false);
+                        }}
+                      >
+                        <ChevronRight className="w-5 h-5 text-[#A3A3A3] group-hover:text-[#FF6A00] transition-colors duration-200" />
+                        <span 
+                          className="font-gilroy font-semibold text-[#16242A] group-hover:text-[#FF6A00] transition-colors duration-200"
+                          style={{ 
+                            fontSize: '18px',
+                            letterSpacing: '-0.72px',
+                            lineHeight: '22px'
+                          }}
+                        >
+                          {region.title}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Right Column */}
+                  <div className="flex flex-col">
+                    {displayedRegions.slice(Math.ceil(displayedRegions.length / 2)).map((region: Region) => (
+                      <div
+                        key={region.id}
+                        className="group flex items-center gap-0 py-[15px] cursor-pointer transition-all duration-200 hover:bg-[#F5F5F5] px-[10px] -mx-[10px] rounded-md"
+                        onClick={() => {
+                          console.log(`Selected destination: ${region.title}`);
+                          setShowDestinationDropdown(false);
+                        }}
+                      >
+                        <ChevronRight className="w-5 h-5 text-[#A3A3A3] group-hover:text-[#FF6A00] transition-colors duration-200" />
+                        <span 
+                          className="font-gilroy font-semibold text-[#16242A] group-hover:text-[#FF6A00] transition-colors duration-200"
+                          style={{ 
+                            fontSize: '18px',
+                            letterSpacing: '-0.72px',
+                            lineHeight: '22px'
+                          }}
+                        >
+                          {region.title}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
-
             <div className="relative">
               <div
                 className="flex items-center space-x-1 text-[#16242A] cursor-pointer hover:opacity-80 transition-opacity"
@@ -245,53 +420,7 @@ export function HeroSection() {
       </header>
 
       {/* Content */}
-      <div className="relative z-10">
-        {/* Destination Dropdown Menu */}
-        <div
-          className={`absolute left-1/2 transform -translate-x-1/2 top-[80px] p-6 bg-white rounded-lg shadow-lg z-50 w-[800px] transition-all duration-300 ease-in-out ${
-            showDestinationDropdown
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 -translate-y-4 pointer-events-none"
-          }`}
-        >
-          <div className="flex space-x-6 mb-6">
-            <button
-              className={`text-lg font-semibold font-gilroy ${
-                activeDestinationTab === "india" ? "text-[#E06A00]" : "text-gray-500"
-              }`}
-              onClick={() => setActiveDestinationTab("india")}
-            >
-              India
-            </button>
-            <button
-              className={`text-lg font-semibold font-gilroy ${
-                activeDestinationTab === "international" ? "text-[#E06A00]" : "text-gray-500"
-              }`}
-              onClick={() => setActiveDestinationTab("international")}
-            >
-              International
-            </button>
-            <button
-              className={`text-lg font-semibold font-gilroy ${
-                activeDestinationTab === "all" ? "text-[#E06A00]" : "text-gray-500"
-              }`}
-              onClick={() => setActiveDestinationTab("all")}
-            >
-              All
-            </button>
-          </div>
-          <div className="grid grid-cols-3 gap-x-8 gap-y-4">
-            {displayedRegions.map((region: Region) => (
-              <div
-                key={region.id}
-                className="flex items-center space-x-2 text-gray-800 cursor-pointer hover:text-[#E06A00]"
-              >
-                <ChevronRight className="w-4 h-4 text-gray-500" />
-                <span className="text-base font-medium font-gilroy">{region.title}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="relative z-[5]">
 
         {/* Hero Section */}
         <div className={`flex flex-col items-center justify-center px-6 pt-32 pb-40`}>

@@ -122,23 +122,26 @@ export function PromotionalCarousel() {
                       {slide.buttonText}
                     </Button>
                   </div>
+                  
+                  {/* Pagination Dots - Inside Slide */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                    {slides.map((_, dotIndex) => (
+                      <button
+                        key={dotIndex}
+                        onClick={() => scrollTo(dotIndex)}
+                        className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                          current === dotIndex ? "bg-[#FF6A00]" : "bg-white/50"
+                        }`}
+                        aria-label={`Go to slide ${dotIndex + 1}`}
+                      />
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             </CarouselItem>
           ))}
         </CarouselContent>
       </Carousel>
-      <div className="flex justify-center items-center gap-2 mt-4">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => scrollTo(index)}
-            className={`w-2.5 h-2.5 rounded-full ${
-              current === index ? "bg-[#FF6A00]" : "bg-gray-300"
-            }`}
-          />
-        ))}
-      </div>
       </div>
     </section>
   )

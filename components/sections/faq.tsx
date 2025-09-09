@@ -51,9 +51,9 @@ export function FAQ() {
     <section className="py-20 bg-gray-50 relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section - Exact Figma Typography */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2
-            className="mb-4"
+            className="mb-2"
             style={{
               color: "#16242A",
               fontSize: "42px",
@@ -81,7 +81,7 @@ export function FAQ() {
         </div>
 
         {/* FAQ Items - Exact Figma Layout */}
-        <div className="space-y-2.5">
+        <div className="flex flex-col gap-2.5" style={{ paddingLeft: "80px", paddingRight: "320px" }}>
           {faqData.map((item) => {
             const isOpen = openItems.includes(item.id)
 
@@ -90,29 +90,34 @@ export function FAQ() {
                 key={item.id}
                 className="bg-white rounded-[10px] overflow-hidden shadow-sm"
                 style={{
+                  width: "810px",
                   borderBottom: "1px solid #D9D9D9",
                 }}
               >
                 {/* Question Header - Exact Figma Styling */}
                 <button
                   onClick={() => toggleItem(item.id)}
-                  className="w-full flex items-center justify-between text-left transition-all duration-300"
+                  className="w-full transition-all duration-300"
                   style={{
-                    padding: "20px",
-                    backgroundColor: "#FFFFFF",
+                    width: '100%',
+                    height: '100%',
+                    padding: 20,
+                    background: 'white',
+                    borderRadius: 10,
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    display: 'inline-flex'
                   }}
                 >
                   {/* Question Text - Exact Figma Typography */}
                   <span
                     style={{
-                      color: "#16242A",
-                      fontSize: "18px",
-                      fontFamily: "Gilroy",
-                      fontStyle: "normal",
-                      fontWeight: "600",
-                      lineHeight: "normal",
-                      letterSpacing: "-0.36px",
-                      textTransform: "capitalize",
+                      color: '#16242A',
+                      fontSize: 18,
+                      fontFamily: 'Gilroy',
+                      fontWeight: '600',
+                      textTransform: 'capitalize',
+                      wordWrap: 'break-word'
                     }}
                   >
                     {item.question}

@@ -16,12 +16,12 @@ export function ExperienceExtraordinarySection() {
   }, [])
 
   return (
-    <div className="bg-gray-50 py-16 px-6">
+    <div className="bg-gray-50 py-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 
-            className="mb-4"
+            className="mb-0"
             style={{
               color: '#16242A',
               fontSize: '42px',
@@ -33,7 +33,12 @@ export function ExperienceExtraordinarySection() {
           >
             Experience the Extraordinary
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-gilroy">
+          <p
+            className="text-lg black-600 max-w-3xl mx-auto font-gilroy"
+            style={{
+              fontWeight: '500'
+            }}
+          >
             Immerse yourself in extraordinary journeys tailored to your style
           </p>
         </div>
@@ -107,6 +112,20 @@ export function ExperienceExtraordinarySection() {
                     </div>
                   </div>
                 </div>
+                
+                {/* Pagination Dots - Inside Slide */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                  {Array.from({ length: totalSlides }).map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                        index === currentSlide ? "bg-[#ff6a00]" : "bg-white/50"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
 
               {/* Slide 2 */}
@@ -170,6 +189,20 @@ export function ExperienceExtraordinarySection() {
                       Explore Now
                     </div>
                   </div>
+                </div>
+                
+                {/* Pagination Dots - Inside Slide */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                  {Array.from({ length: totalSlides }).map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                        index === currentSlide ? "bg-[#ff6a00]" : "bg-white/50"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
                 </div>
               </div>
 
@@ -235,6 +268,20 @@ export function ExperienceExtraordinarySection() {
                     </div>
                   </div>
                 </div>
+                
+                {/* Pagination Dots - Inside Slide */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                  {Array.from({ length: totalSlides }).map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                        index === currentSlide ? "bg-[#ff6a00]" : "bg-white/50"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
 
               {/* Slide 4 */}
@@ -298,6 +345,20 @@ export function ExperienceExtraordinarySection() {
                       Explore Now
                     </div>
                   </div>
+                </div>
+                
+                {/* Pagination Dots - Inside Slide */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                  {Array.from({ length: totalSlides }).map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                        index === currentSlide ? "bg-[#ff6a00]" : "bg-white/50"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
                 </div>
               </div>
 
@@ -363,6 +424,20 @@ export function ExperienceExtraordinarySection() {
                     </div>
                   </div>
                 </div>
+                
+                {/* Pagination Dots - Inside Slide */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                  {Array.from({ length: totalSlides }).map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                        index === currentSlide ? "bg-[#ff6a00]" : "bg-white/50"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
 
               {/* Slide 6 */}
@@ -427,23 +502,24 @@ export function ExperienceExtraordinarySection() {
                     </div>
                   </div>
                 </div>
+                
+                {/* Pagination Dots - Inside Slide */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                  {Array.from({ length: totalSlides }).map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                        index === currentSlide ? "bg-[#ff6a00]" : "bg-white/50"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-
-          {/* Pagination Dots */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {Array.from({ length: totalSlides }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                  index === currentSlide ? "bg-[#ff6a00]" : "bg-gray-300"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
+          
         </div>
       </div>
     </div>
