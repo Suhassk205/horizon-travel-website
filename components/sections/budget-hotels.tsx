@@ -74,9 +74,9 @@ export function BudgetHotels() {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h2
-            className="mb-4"
+            className="mb-2"
             style={{
               color: "#16242A",
               fontSize: "42px",
@@ -106,7 +106,7 @@ export function BudgetHotels() {
           {/* Hotel Cards */}
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide px-4"
+            className="flex gap-3 overflow-x-auto scrollbar-hide px-4"
             style={{ scrollSnapType: "x mandatory" }}
           >
             {hotels.map((hotel) => (
@@ -116,12 +116,12 @@ export function BudgetHotels() {
                 style={{ scrollSnapAlign: "start" }}
               >
                 {/* Hotel Image */}
-                <div className="relative h-[204px] overflow-hidden rounded-t-[10px]">
+                <div className="relative h-[204px] overflow-hidden rounded-t-[10px] m-2">
                   <Image
                     src={hotel.image || "/placeholder.svg?height=192&width=300"}
                     alt={hotel.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover rounded-xl"
                   />
                   
                   {/* Heart Icon */}
@@ -141,7 +141,7 @@ export function BudgetHotels() {
                 {/* Content Section */}
                 <div className="p-4">
                   {/* Hotel Name and Location */}
-                  <div className="mb-4">
+                  <div className="mb-1">
                     <h3
                       style={{
                         color: "#16242A",
@@ -170,10 +170,10 @@ export function BudgetHotels() {
                   </div>
 
                   {/* Price and Booking Info */}
-                  <div className="flex justify-between items-start mb-0">
+                  <div className="flex justify-between items-start mb-1">
                     {/* Price Section */}
                     <div className="flex items-center gap-0">
-                      <div className="w-9 h-9 flex items-center justify-center">
+                      <div className="w-9 h-9 flex items-center justify-center" style={{ marginLeft: "-8px" }}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
                           <path d="M27.6323 7.5H11.1323H15.6323C17.2236 7.5 18.7497 8.13214 19.875 9.25736C21.0002 10.3826 21.6323 11.9087 21.6323 13.5C21.6323 15.0913 21.0002 16.6174 19.875 17.7426C18.7497 18.8679 17.2236 19.5 15.6323 19.5H11.1323L20.1323 28.5M11.1323 13.5H27.6323" stroke="#F56600" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
@@ -232,7 +232,7 @@ export function BudgetHotels() {
                             fontFamily: "Gilroy, sans-serif",
                             fontWeight: "500",
                             lineHeight: "18.75px",
-                            marginLeft: "8px",
+                            marginLeft: "7px",
                           }}
                         >
                           Booking Fees
@@ -242,7 +242,7 @@ export function BudgetHotels() {
                   </div>
 
                   {/* Bottom Section with Includes Taxes and Book Now Button */}
-                  <div className="flex justify-between items-end -mt-2">
+                  <div className="flex justify-between items-end -mt-5">
                     {/* Includes Taxes */}
                     <p
                       style={{
@@ -270,7 +270,7 @@ export function BudgetHotels() {
           {/* Right Navigation Arrow */}
           <button
             onClick={() => scroll("right")}
-            className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-[#FF6A00] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors z-10"
+            className="absolute top-1/2 -right-6 transform -translate-y-1/2 bg-[#FF6A00] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors z-10"
             aria-label="Next hotels"
           >
             <ArrowRight className="w-6 h-6 text-white" />
