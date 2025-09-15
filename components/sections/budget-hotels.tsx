@@ -141,8 +141,9 @@ export function BudgetHotels() {
                 {/* Content Section */}
                 <div className="p-4">
                   {/* Hotel Name and Location */}
-                  <div className="mb-1">
+                  <div className={`-mt-1 mb-2 hotel-info-${hotel.id}`}>
                     <h3
+                      className={`hotel-name-${hotel.id}`}
                       style={{
                         color: "#16242A",
                         fontSize: "22px",
@@ -156,6 +157,7 @@ export function BudgetHotels() {
                       {hotel.name}
                     </h3>
                     <p
+                      className={`hotel-location-${hotel.id}`}
                       style={{
                         color: "#004849",
                         fontSize: "16px",

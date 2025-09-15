@@ -15,7 +15,7 @@ export function FeaturesSection() {
       {/* Right Image from Figma */}
       <div className="absolute" style={{width: '394.93px', height: '418.45px', top: '295px', left: '-80px', zIndex: 10}}>
         <img
-          src="/images/right-img.png"
+          src="/images/right-img.svg"
           alt="Decorative right image"
           className="w-full h-full object-contain"
         />
@@ -24,7 +24,7 @@ export function FeaturesSection() {
       {/* Left Image from Figma */}
       <div className="absolute" style={{width: '491.19px', height: '512.09px', top: '310px', right: '-80px', zIndex: 10}}>
         <img
-          src="/images/left-img.png"
+          src="/images/left-img.svg"
           alt="Decorative left image"
           className="w-full h-full object-contain"
         />
