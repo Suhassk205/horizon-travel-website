@@ -399,7 +399,7 @@ export function HeroSection() {
               >
                 <div className="w-10 h-10 bg-[#FF6A00] rounded-full flex items-center justify-center">
                   <Image
-                    src="/images/iconamoon_discount-fill.png"
+                    src="/images/iconamoon_discount-fill.svg"
                     alt="Discount"
                     width={24}
                     height={24}

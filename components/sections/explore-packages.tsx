@@ -166,7 +166,7 @@ export function ExplorePackages() {
           {packages.map((pkg) => (
             <div
               key={pkg.id}
-              className="flex-shrink-0 h-[450px] relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+              className="flex-shrink-0 h-[450px] relative rounded-3xl overflow-hidden shadow-lg group cursor-pointer"
               style={{ width: "calc((1200px - 2 * 16px) / 3)" }}
             >
               {/* Background Image */}

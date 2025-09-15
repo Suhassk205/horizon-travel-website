@@ -4,6 +4,7 @@ import { useRef } from "react"
 import Image from "next/image"
 import { ArrowRight, Plane, Building2, Car, Mountain } from "lucide-react"
 import HotelIcon from "@/public/images/hotel-icon-cards.svg"
+import DiscountIcon from "@/public/images/iconamoon_discount-fill.svg"
 
 export function EarlyBirdOffersSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -66,9 +67,9 @@ export function EarlyBirdOffersSection() {
                 />
 
                 {/* Early Bird Badge */}
-                <div className="absolute top-4 right-4 bg-[#ff6b00] text-white px-4 py-2 rounded-full flex items-center gap-2">
-                  <Image src="/images/iconamoon_discount-fill.png" alt="Discount" width={16} height={16} />
-                  <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
+                <div className="absolute top-4 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2.5">
+                  <DiscountIcon className="h-5 w-5 text-white" />
+                  <span className="font-gilroy text-[16px] font-medium text-white">Early Bird Offer</span>
                 </div>
 
                 {/* Gradient Overlay */}
@@ -319,9 +320,9 @@ export function EarlyBirdOffersSection() {
                 />
 
                 {/* Early Bird Badge */}
-                <div className="absolute top-4 right-4 bg-[#ff6b00] text-white px-4 py-2 rounded-full flex items-center gap-2">
-                  <Image src="/images/iconamoon_discount-fill.png" alt="Discount" width={16} height={16} />
-                  <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
+                <div className="absolute top-4 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2.5">
+                  <DiscountIcon className="h-5 w-5 text-white" />
+                  <span className="font-gilroy text-[16px] font-medium text-white">Early Bird Offer</span>
                 </div>
 
                 {/* Gradient Overlay */}
@@ -564,9 +565,9 @@ export function EarlyBirdOffersSection() {
                 />
 
                 {/* Early Bird Badge */}
-                <div className="absolute top-4 right-4 bg-[#ff6b00] text-white px-4 py-2 rounded-full flex items-center gap-2">
-                  <Image src="/images/iconamoon_discount-fill.png" alt="Discount" width={16} height={16} />
-                  <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
+                <div className="absolute top-4 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2.5">
+                    <DiscountIcon className="h-5 w-5 text-white" />
+                  <span className="font-gilroy text-[16px] font-medium text-white">Early Bird Offer</span>
                 </div>
 
                 {/* Gradient Overlay */}
@@ -809,9 +810,9 @@ export function EarlyBirdOffersSection() {
                 />
 
                 {/* Early Bird Badge */}
-                <div className="absolute top-4 right-4 bg-[#ff6b00] text-white px-4 py-2 rounded-full flex items-center gap-2">
-                  <Image src="/images/iconamoon_discount-fill.png" alt="Discount" width={16} height={16} />
-                  <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
+                <div className="absolute top-4 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2.5">
+                  <DiscountIcon className="h-5 w-5 text-white" />
+                  <span className="font-gilroy text-[16px] font-medium text-white">Early Bird Offer</span>
                 </div>
 
                 {/* Gradient Overlay */}
@@ -1054,9 +1055,9 @@ export function EarlyBirdOffersSection() {
                 />
 
                 {/* Early Bird Badge */}
-                <div className="absolute top-4 right-4 bg-[#ff6b00] text-white px-4 py-2 rounded-full flex items-center gap-2">
-                  <Image src="/images/iconamoon_discount-fill.png" alt="Discount" width={16} height={16} />
-                  <span className="text-sm font-gilroy font-medium">Early Bird Offer</span>
+                <div className="absolute top-4 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2.5">
+                    <DiscountIcon className="h-5 w-5 text-white" />
+                  <span className="font-gilroy text-[16px] font-medium text-white">Early Bird Offer</span>
                 </div>
 
                 {/* Gradient Overlay */}
