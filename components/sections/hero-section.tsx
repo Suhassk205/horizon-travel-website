@@ -401,8 +401,8 @@ export function HeroSection() {
                   <Image
                     src="/images/iconamoon_discount-fill.svg"
                     alt="Discount"
-                    width={24}
-                    height={24}
+                    width={28}
+                    height={28}
                   />
                 </div>
                 <div className="flex flex-col">

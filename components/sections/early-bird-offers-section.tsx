@@ -67,7 +67,7 @@ export function EarlyBirdOffersSection() {
                 />
 
                 {/* Early Bird Badge */}
-                <div className="absolute top-4 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2.5">
+                <div className="absolute top-3 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2">
                   <DiscountIcon className="h-5 w-5 text-white" />
                   <span className="font-gilroy text-[16px] font-medium text-white">Early Bird Offer</span>
                 </div>
@@ -305,8 +305,8 @@ export function EarlyBirdOffersSection() {
               style={{ scrollSnapAlign: "start" }}
             >
               {/* Summer Sale Banner */}
-              <div className="absolute top-[-10px] left-[-10px] w-[128px] h-[121px] z-10">
-                <Image src="/images/Vector 33.png" alt="Summer sale banner" layout="fill" />
+              <div className="absolute top-[-12px] left-[-15px] w-[128px] h-[121px] z-10">
+                <Image src="/images/Vector 33.svg" alt="Summer sale banner" layout="fill" />
                 <span className="absolute top-[75px] left-[12px] transform -rotate-45 origin-top-left text-[#16242A] text-sm font-gilroy font-bold">
                   SUMMER SALE!
                 </span>
@@ -320,7 +320,7 @@ export function EarlyBirdOffersSection() {
                 />
 
                 {/* Early Bird Badge */}
-                <div className="absolute top-4 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2.5">
+                <div className="absolute top-3 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2">
                   <DiscountIcon className="h-5 w-5 text-white" />
                   <span className="font-gilroy text-[16px] font-medium text-white">Early Bird Offer</span>
                 </div>
@@ -565,7 +565,7 @@ export function EarlyBirdOffersSection() {
                 />
 
                 {/* Early Bird Badge */}
-                <div className="absolute top-4 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2.5">
+                <div className="absolute top-3 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2">
                     <DiscountIcon className="h-5 w-5 text-white" />
                   <span className="font-gilroy text-[16px] font-medium text-white">Early Bird Offer</span>
                 </div>
@@ -810,7 +810,7 @@ export function EarlyBirdOffersSection() {
                 />
 
                 {/* Early Bird Badge */}
-                <div className="absolute top-4 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2.5">
+                <div className="absolute top-3 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2">
                   <DiscountIcon className="h-5 w-5 text-white" />
                   <span className="font-gilroy text-[16px] font-medium text-white">Early Bird Offer</span>
                 </div>
@@ -1055,7 +1055,7 @@ export function EarlyBirdOffersSection() {
                 />
 
                 {/* Early Bird Badge */}
-                <div className="absolute top-4 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2.5">
+                <div className="absolute top-3 right-4 inline-flex items-center justify-start gap-1 rounded-[16px] bg-[#FF6A00] px-5 py-2">
                     <DiscountIcon className="h-5 w-5 text-white" />
                   <span className="font-gilroy text-[16px] font-medium text-white">Early Bird Offer</span>
                 </div>
