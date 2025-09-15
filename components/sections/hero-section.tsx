@@ -176,9 +176,11 @@ export function HeroSection() {
     <div className="relative">
       {/* Background Image - This will be removed or replaced based on new design */}
       <div
-        className="absolute inset-0 bg-cover bg-top bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-no-repeat"
         style={{
           backgroundImage: "url('/winter-landscape.jpg')",
+          filter: 'brightness(1.15)',
+          backgroundPosition: "center 11%",
         }}
       >
         <div className="absolute inset-0 bg-black/20"></div>
@@ -186,195 +188,197 @@ export function HeroSection() {
 
       {/* New Header */}
       <header className="relative z-50">
-        <nav className="flex items-center justify-between px-12 py-4">
-          <div className="flex items-center space-x-2">
-            <img src="/images/horizon-logo1.jpeg" alt="Horizon Logo" className="w-8 h-8 object-contain" />
-            <span className="text-2xl font-bold font-gilroy text-[#16242A]">Horizon</span>
-          </div>
+        <nav className="flex items-center justify-between pl-[90px] pr-[95px] pt-[15px] pb-4">
+          <div className="flex items-center gap-[25px]">
+            <div className="flex items-center space-x-[3px]">
+              <img src="/images/horizon-logo1.jpeg" alt="Horizon Logo" className="w-[24px] h-[24px] text-[#16242A]" />
+              <span className="text-[24px] font-semibold font-gilroy text-[#16242A] tracking-[-1.2px]">Horizon</span>
+            </div>
 
-          <div className="flex items-center space-x-8">
-            {/* Navigation Links */}
-            <div className="relative">
-              <div
-                className="flex items-center gap-[2px] text-[#16242A] cursor-pointer hover:opacity-80 transition-opacity"
-                onClick={() => setShowDestinationDropdown(!showDestinationDropdown)}
-                data-dropdown
-              >
-                <span className="text-base font-semibold font-gilroy leading-[30px]">Destination</span>
-                <ChevronDown 
-                  className={`w-5 h-5 transition-transform duration-300 ease-out ${
-                    showDestinationDropdown ? 'rotate-180' : ''
-                  }`}
-                />
-              </div>
-              
-              {/* Destination Dropdown Menu - Positioned below button */}
-              <div
-                className={`absolute left-0 top-full mt-2 bg-white rounded-[10px] transition-all duration-300 ease-out ${
-                  showDestinationDropdown
-                    ? "opacity-100 translate-y-0 scale-100"
-                    : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
-                }`}
-                style={{
-                  width: '822px',
-                  padding: '25px',
-                  boxShadow: showDestinationDropdown ? '0px 8px 32px rgba(0, 0, 0, 0.12)' : '0px 4px 16px rgba(0, 0, 0, 0.08)',
-                  transformOrigin: 'top left',
-                  zIndex: 100,
-                }}
-                data-dropdown
-              >
-                {/* Tab Headers */}
-                <div className="flex items-center gap-10 mb-[35px]">
-                  <button
-                    className={`font-gilroy font-semibold transition-all duration-200 ${
-                      activeDestinationTab === "india" 
-                        ? "text-[#FF6A00]" 
-                        : "text-[#16242A] opacity-50 hover:opacity-75"
+            <div className="flex items-center space-x-[28px]">
+              {/* Navigation Links */}
+              <div className="relative">
+                <div
+                  className="flex items-center gap-[2px] text-[#16242A] cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => setShowDestinationDropdown(!showDestinationDropdown)}
+                  data-dropdown
+                >
+                    <span className="text-[16px] font-semibold font-gilroy leading-[24px]">Destination</span>
+                  <ChevronDown 
+                    className={`w-[20px] h-[20px] transition-transform duration-300 ease-out ${
+                      showDestinationDropdown ? 'rotate-180' : ''
                     }`}
-                    style={{ 
-                      fontSize: '20px',
-                      letterSpacing: '-0.8px',
-                      lineHeight: '24.5px'
-                    }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      console.log('India tab clicked');
-                      setActiveDestinationTab("india");
-                    }}
-                  >
-                    India
-                  </button>
-                  <button
-                    className={`font-gilroy font-semibold transition-all duration-200 ${
-                      activeDestinationTab === "international" 
-                        ? "text-[#FF6A00]" 
-                        : "text-[#16242A] opacity-50 hover:opacity-75"
-                    }`}
-                    style={{ 
-                      fontSize: '20px',
-                      letterSpacing: '-0.8px',
-                      lineHeight: '24.5px'
-                    }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      console.log('International tab clicked');
-                      setActiveDestinationTab("international");
-                    }}
-                  >
-                    International
-                  </button>
-                  <button
-                    className={`font-gilroy font-semibold transition-all duration-200 ${
-                      activeDestinationTab === "all" 
-                        ? "text-[#FF6A00]" 
-                        : "text-[#16242A] opacity-50 hover:opacity-75"
-                    }`}
-                    style={{ 
-                      fontSize: '20px',
-                      letterSpacing: '-0.8px',
-                      lineHeight: '24.5px'
-                    }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      console.log('All tab clicked, current tab:', activeDestinationTab);
-                      setActiveDestinationTab("all");
-                      console.log('Tab should now be: all');
-                    }}
-                  >
-                    All
-                  </button>
+                  />
                 </div>
                 
-                {/* Destination Grid */}
-                <div className="grid gap-x-[68px]" style={{ gridTemplateColumns: '1fr 1fr' }}>
-                  {/* Left Column */}
-                  <div className="flex flex-col">
-                    {displayedRegions.slice(0, Math.ceil(displayedRegions.length / 2)).map((region: Region) => (
-                      <div
-                        key={region.id}
-                        className="group flex items-center gap-0 py-[15px] cursor-pointer transition-all duration-200 hover:bg-[#F5F5F5] px-[10px] -mx-[10px] rounded-md"
-                        onClick={() => {
-                          console.log(`Selected destination: ${region.title}`);
-                          setShowDestinationDropdown(false);
-                        }}
-                      >
-                        <ChevronRight className="w-5 h-5 text-[#A3A3A3] group-hover:text-[#FF6A00] transition-colors duration-200" />
-                        <span 
-                          className="font-gilroy font-semibold text-[#16242A] group-hover:text-[#FF6A00] transition-colors duration-200"
-                          style={{ 
-                            fontSize: '18px',
-                            letterSpacing: '-0.72px',
-                            lineHeight: '22px'
-                          }}
-                        >
-                          {region.title}
-                        </span>
-                      </div>
-                    ))}
+                {/* Destination Dropdown Menu - Positioned below button */}
+                <div
+                  className={`absolute left-0 top-full mt-2 bg-white rounded-[10px] transition-all duration-300 ease-out ${
+                    showDestinationDropdown
+                      ? "opacity-100 translate-y-0 scale-100"
+                      : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
+                  }`}
+                  style={{
+                    width: '822px',
+                    padding: '25px',
+                    boxShadow: showDestinationDropdown ? '0px 8px 32px rgba(0, 0, 0, 0.12)' : '0px 4px 16px rgba(0, 0, 0, 0.08)',
+                    transformOrigin: 'top left',
+                    zIndex: 100,
+                  }}
+                  data-dropdown
+                >
+                  {/* Tab Headers */}
+                  <div className="flex items-center gap-10 mb-[35px]">
+                    <button
+                      className={`font-gilroy font-semibold transition-all duration-200 ${
+                        activeDestinationTab === "india" 
+                          ? "text-[#FF6A00]" 
+                          : "text-[#16242A] opacity-50 hover:opacity-75"
+                      }`}
+                      style={{ 
+                        fontSize: '20px',
+                        letterSpacing: '-0.8px',
+                        lineHeight: '24.5px'
+                      }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        console.log('India tab clicked');
+                        setActiveDestinationTab("india");
+                      }}
+                    >
+                      India
+                    </button>
+                    <button
+                      className={`font-gilroy font-semibold transition-all duration-200 ${
+                        activeDestinationTab === "international" 
+                          ? "text-[#FF6A00]" 
+                          : "text-[#16242A] opacity-50 hover:opacity-75"
+                      }`}
+                      style={{ 
+                        fontSize: '20px',
+                        letterSpacing: '-0.8px',
+                        lineHeight: '24.5px'
+                      }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        console.log('International tab clicked');
+                        setActiveDestinationTab("international");
+                      }}
+                    >
+                      International
+                    </button>
+                    <button
+                      className={`font-gilroy font-semibold transition-all duration-200 ${
+                        activeDestinationTab === "all" 
+                          ? "text-[#FF6A00]" 
+                          : "text-[#16242A] opacity-50 hover:opacity-75"
+                      }`}
+                      style={{ 
+                        fontSize: '20px',
+                        letterSpacing: '-0.8px',
+                        lineHeight: '24.5px'
+                      }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        console.log('All tab clicked, current tab:', activeDestinationTab);
+                        setActiveDestinationTab("all");
+                        console.log('Tab should now be: all');
+                      }}
+                    >
+                      All
+                    </button>
                   </div>
                   
-                  {/* Right Column */}
-                  <div className="flex flex-col">
-                    {displayedRegions.slice(Math.ceil(displayedRegions.length / 2)).map((region: Region) => (
-                      <div
-                        key={region.id}
-                        className="group flex items-center gap-0 py-[15px] cursor-pointer transition-all duration-200 hover:bg-[#F5F5F5] px-[10px] -mx-[10px] rounded-md"
-                        onClick={() => {
-                          console.log(`Selected destination: ${region.title}`);
-                          setShowDestinationDropdown(false);
-                        }}
-                      >
-                        <ChevronRight className="w-5 h-5 text-[#A3A3A3] group-hover:text-[#FF6A00] transition-colors duration-200" />
-                        <span 
-                          className="font-gilroy font-semibold text-[#16242A] group-hover:text-[#FF6A00] transition-colors duration-200"
-                          style={{ 
-                            fontSize: '18px',
-                            letterSpacing: '-0.72px',
-                            lineHeight: '22px'
+                  {/* Destination Grid */}
+                  <div className="grid gap-x-[68px]" style={{ gridTemplateColumns: '1fr 1fr' }}>
+                    {/* Left Column */}
+                    <div className="flex flex-col">
+                      {displayedRegions.slice(0, Math.ceil(displayedRegions.length / 2)).map((region: Region) => (
+                        <div
+                          key={region.id}
+                          className="group flex items-center gap-0 py-[15px] cursor-pointer transition-all duration-200 hover:bg-[#F5F5F5] px-[10px] -mx-[10px] rounded-md"
+                          onClick={() => {
+                            console.log(`Selected destination: ${region.title}`);
+                            setShowDestinationDropdown(false);
                           }}
                         >
-                          {region.title}
-                        </span>
-                      </div>
-                    ))}
+                          <ChevronRight className="w-5 h-5 text-[#A3A3A3] group-hover:text-[#FF6A00] transition-colors duration-200" />
+                          <span 
+                            className="font-gilroy font-semibold text-[#16242A] group-hover:text-[#FF6A00] transition-colors duration-200"
+                            style={{ 
+                              fontSize: '18px',
+                              letterSpacing: '-0.72px',
+                              lineHeight: '22px'
+                            }}
+                          >
+                            {region.title}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* Right Column */}
+                    <div className="flex flex-col">
+                      {displayedRegions.slice(Math.ceil(displayedRegions.length / 2)).map((region: Region) => (
+                        <div
+                          key={region.id}
+                          className="group flex items-center gap-0 py-[15px] cursor-pointer transition-all duration-200 hover:bg-[#F5F5F5] px-[10px] -mx-[10px] rounded-md"
+                          onClick={() => {
+                            console.log(`Selected destination: ${region.title}`);
+                            setShowDestinationDropdown(false);
+                          }}
+                        >
+                          <ChevronRight className="w-5 h-5 text-[#A3A3A3] group-hover:text-[#FF6A00] transition-colors duration-200" />
+                          <span 
+                            className="font-gilroy font-semibold text-[#16242A] group-hover:text-[#FF6A00] transition-colors duration-200"
+                            style={{ 
+                              fontSize: '18px',
+                              letterSpacing: '-0.72px',
+                              lineHeight: '22px'
+                            }}
+                          >
+                            {region.title}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="relative">
-              <div
-                className="flex items-center space-x-1 text-[#16242A] cursor-pointer hover:opacity-80 transition-opacity"
-                onClick={() => setShowExploreExtraordinaryDropdown(!showExploreExtraordinaryDropdown)}
-              >
-                <span className="text-base font-semibold font-gilroy leading-[30px]">Explore Extraordinary</span>
-                <ChevronDown className="w-5 h-5" />
+              <div className="relative">
+                <div
+                  className="flex items-center space-x-0 text-[#16242A] cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => setShowExploreExtraordinaryDropdown(!showExploreExtraordinaryDropdown)}
+                >
+                  <span className="text-[16px] font-semibold font-gilroy leading-[24px]">Explore Extraordinary</span>
+                  <ChevronDown className="w-5 h-5" />
+                </div>
+                {/* Dropdown for Explore Extraordinary remains the same */}
               </div>
-              {/* Dropdown for Explore Extraordinary remains the same */}
-            </div>
 
-            <div className="relative">
-              <div
-                className="flex items-center space-x-1 text-[#16242A] cursor-pointer hover:opacity-80 transition-opacity"
-                onClick={() => router.push("/offers")}
-              >
-                <span className="text-base font-semibold font-gilroy leading-[30px]">Offers</span>
-                <ChevronDown className="w-5 h-5" />
+              <div className="relative">
+                <div
+                  className="flex items-center space-x-0 text-[#16242A] cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => router.push("/offers")}
+                >
+                  <span className="text-[16px] font-semibold font-gilroy leading-[24px]">Offers</span>
+                  <ChevronDown className="w-5 h-5" />
+                </div>
               </div>
-            </div>
 
-            <span className="text-base text-[#16242A] font-semibold font-gilroy leading-[30px] cursor-pointer hover:opacity-80">
-              Support
-            </span>
-            <span className="text-base text-[#16242A] font-semibold font-gilroy leading-[30px] cursor-pointer hover:opacity-80">
-              Review & Ratings
-            </span>
-            <span className="text-base text-[#16242A] font-semibold font-gilroy leading-[30px] cursor-pointer hover:opacity-80">
-              About Us
-            </span>
-             <span className="text-base text-[#16242A] font-semibold font-gilroy leading-[30px] cursor-pointer hover:opacity-80">
-              Blogs
-            </span>
+              <span className="text-[16px] text-[#16242A] font-semibold font-gilroy cursor-pointer hover:opacity-80">
+                Support
+              </span>
+              <span className="text-[16px] text-[#16242A] font-semibold font-gilroy cursor-pointer hover:opacity-80">
+                Review & Ratings
+              </span>
+              <span className="text-[16px] text-[#16242A] font-semibold font-gilroy cursor-pointer hover:opacity-80">
+                About Us
+              </span>
+               <span className="text-[16px] text-[#16242A] font-semibold font-gilroy cursor-pointer hover:opacity-80">
+                Blogs
+              </span>
+            </div>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -382,7 +386,7 @@ export function HeroSection() {
             <div className="relative">
               <Button
                 onClick={() => router.push("/auth/app/signup")}
-                className="bg-[#29383E] hover:bg-[#1f2b30] text-white px-6 h-10 rounded-lg font-semibold font-gilroy text-sm transition-colors flex items-center justify-center"
+                className="bg-[#29383E] hover:bg-[#1f2b30] text-white px-6 h-[40px] rounded-lg font-medium font-gilroy text-sm transition-colors flex items-center justify-center"
               >
                 Signup
               </Button>
@@ -411,7 +415,7 @@ export function HeroSection() {
             </div>
             <Button
               onClick={() => router.push("/auth/app/login")}
-              className="bg-[#29383e]/40 text-[#16242A] px-6 h-10 rounded-lg font-semibold font-gilroy text-sm backdrop-blur-[3px] flex items-center justify-center hover:bg-[#29383e]/60 transition-colors"
+              className="bg-[#29383e]/40 text-[#16242A] px-6 h-[40px] rounded-lg font-medium font-gilroy text-sm backdrop-blur-[3px] flex items-center justify-center hover:bg-[#29383e]/60 transition-colors"
             >
               Login
             </Button>
@@ -423,11 +427,11 @@ export function HeroSection() {
       <div className="relative z-[5]">
 
         {/* Hero Section */}
-        <div className={`flex flex-col items-center justify-center px-6 pt-32 pb-40`}>
-          <h2 className="text-white text-center tracking-wide font-semibold font-gilroy text-2xl">One Adventure At A Time</h2>
-          <div className="h-[200px] overflow-hidden mb-8 flex items-center justify-center">
+          <div className={`flex flex-col items-center justify-center px-6 pt-[110px] pb-[160px]`}>
+          <h2 className="text-white text-center font-semibold font-gilroy text-[28px] tracking-tighter">One Adventure At A Time</h2>
+          <div className="h-[200px] overflow-hidden mb-[20px] flex items-center justify-center">
             <h1
-              className={`text-white leading-none tracking-wide uppercase text-center font-bold font-gilroy transition-transform duration-500 ease-in-out`}
+              className={`text-white leading-none tracking-tighter uppercase text-center font-bold font-gilroy transition-transform duration-500 ease-in-out`}
               style={{ 
                 transform: `translateY(${translateY}%)`,
                 fontSize: '180px',
@@ -442,7 +446,7 @@ export function HeroSection() {
           <div className="flex flex-col">
             {activeCategory === "Flights" && (
               <div
-                className="flex items-center flex-wrap gap-x-6 gap-y-3 p-3 mb-1"
+                className="flex items-center flex-wrap gap-x-6 gap-y-3 p-2 mb-1"
                 style={{
                   background: "rgba(1, 1, 1, 0.56)",
                   borderRadius: "8px",
@@ -578,7 +582,7 @@ export function HeroSection() {
               >
                 <div className="flex items-center gap-2">
                   <img
-                    src="/images/icon-hotel.png"
+                    src="/images/material-symbols_hotel.svg"
                     alt="Hotel icon"
                     className="w-5 h-5"
                     style={{ filter: activeCategory === "Hotels" ? "none" : "brightness(0) invert(1)" }}
@@ -609,7 +613,7 @@ export function HeroSection() {
               >
                 <div className="flex items-center gap-2">
                   <img
-                    src="/images/icon-cab.png"
+                    src="/images/fluent_vehicle-cab.svg"
                     alt="Cab icon"
                     className="w-5 h-5"
                     style={{ filter: activeCategory === "Cabs" ? "none" : "brightness(0) invert(1)" }}
@@ -640,7 +644,7 @@ export function HeroSection() {
               >
                 <div className="flex items-center gap-2">
                   <img
-                    src="/images/icon-activities.png"
+                    src="/images/material-symbols_activities.svg"
                     alt="Activities icon"
                     className="w-5 h-5"
                     style={{ filter: activeCategory === "Activities" ? "none" : "brightness(0) invert(1)" }}
@@ -671,7 +675,7 @@ export function HeroSection() {
               >
                 <div className="flex items-center gap-2">
                   <img
-                    src="/images/icon-train.png"
+                    src="/images/ic_outline-train.svg"
                     alt="Train icon"
                     className="w-5 h-5"
                     style={{ filter: activeCategory === "Trains" ? "none" : "brightness(0) invert(1)" }}
@@ -702,7 +706,7 @@ export function HeroSection() {
               >
                 <div className="flex items-center gap-2">
                   <img
-                    src="/images/icon-bus.png"
+                    src="/images/ion_bus.svg"
                     alt="Bus icon"
                     className="w-5 h-5"
                     style={{ filter: activeCategory === "Buses" ? "none" : "brightness(0) invert(1)" }}
@@ -733,9 +737,9 @@ export function HeroSection() {
               >
                 <div className="flex items-center gap-2">
                   <img
-                    src="/images/icon-flight.png"
+                    src="/images/mdi_airplane.svg"
                     alt="Plane icon"
-                    className="w-5 h-5"
+                    className="w-6 h-6"
                     style={{ filter: activeCategory === "Flights" ? "none" : "brightness(0) invert(1)" }}
                   />
                   <span
@@ -764,7 +768,7 @@ export function HeroSection() {
               >
                 <div className="flex items-center gap-2">
                   <img
-                    src="/images/icon-cruise.png"
+                    src="/images/Group.svg"
                     alt="Cruise icon"
                     className="w-5 h-5"
                     style={{ filter: activeCategory === "Cruise" ? "none" : "brightness(0) invert(1)" }}
@@ -793,9 +797,9 @@ export function HeroSection() {
               }}
             >
               {activeCategory === "Hotels" ? (
-                <div className="flex p-3 gap-1">
+                <div className="flex p-1 gap-[10px]">
                   {/* Search Your Desired Hotels */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "445px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "445px" }}>
                     <label
                       className="text-xs mb-1"
                       style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -811,7 +815,7 @@ export function HeroSection() {
                   </div>
 
                   {/* Check-In */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "195px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "195px" }}>
                     <label
                       className="text-xs mb-1"
                       style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -825,12 +829,12 @@ export function HeroSection() {
                         className="outline-none w-full bg-transparent"
                         style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                       />
-                      <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                      <img src="/images/mdi_calendar (1).svg" alt="calendar icon" className="w-5 h-5" />
                     </div>
                   </div>
 
                   {/* Check-Out */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "195px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "195px" }}>
                     <label
                       className="text-xs mb-1"
                       style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -844,12 +848,12 @@ export function HeroSection() {
                         className="outline-none w-full bg-transparent"
                         style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                       />
-                      <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                      <img src="/images/mdi_calendar (1).svg" alt="calendar icon" className="w-5 h-5" />
                     </div>
                   </div>
 
                   {/* Travellers */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "195px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "195px" }}>
                     <label
                       className="text-xs mb-1"
                       style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -867,8 +871,8 @@ export function HeroSection() {
                   {/* Search Button */}
                   <div
                     style={{
-                      width: "180px",
-                      height: "54px",
+                      width: "143px",
+                      height: "64px",
                       paddingLeft: 10,
                       paddingRight: 10,
                       paddingTop: 26,
@@ -891,9 +895,9 @@ export function HeroSection() {
                 </div>
               ) : activeCategory === "Cabs" ? (
                 <div className="flex flex-col">
-                  <div className="flex p-3 gap-1">
+                  <div className="flex p-1 gap-[10px]">
                     {/* Pickup */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "190px" }}>
+                    <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "190px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -912,7 +916,7 @@ export function HeroSection() {
                     </div>
 
                     {/* Drop-Off */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "190px" }}>
+                    <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "190px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -931,7 +935,7 @@ export function HeroSection() {
                     </div>
 
                     {/* Pickup Date */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "139px" }}>
+                    <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "139px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -945,12 +949,12 @@ export function HeroSection() {
                           className="outline-none w-full bg-transparent"
                           style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                         />
-                        <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                        <img src="/images/mdi_calendar (1).svg" alt="calendar icon" className="w-5 h-5" />
                       </div>
                     </div>
 
                     {/* Drop-Off Date */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "139px" }}>
+                    <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "139px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -964,12 +968,12 @@ export function HeroSection() {
                           className="outline-none w-full bg-transparent"
                           style={{ color: "#1E1E1E !important", fontSize: "16px !important", fontFamily: "Gilroy !important", fontWeight: "500 !important" }}
                         />
-                        <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                        <img src="/images/mdi_calendar (1).svg" alt="calendar icon" className="w-5 h-5" />
                       </div>
                     </div>
 
                     {/* Pickup Time */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "139px" }}>
+                    <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "139px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -988,7 +992,7 @@ export function HeroSection() {
                     </div>
 
                     {/* Drop-Off Time */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "139px" }}>
+                    <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "139px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1007,7 +1011,7 @@ export function HeroSection() {
                     </div>
 
                     {/* Travelers */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "129px" }}>
+                    <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "129px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1025,8 +1029,8 @@ export function HeroSection() {
                     {/* Search Button */}
                     <div
                       style={{
-                        width: "180px",
-                        height: "54px",
+                        width: "143px",
+                        height: "64px",
                         paddingLeft: 10,
                         paddingRight: 10,
                         paddingTop: 26,
@@ -1049,9 +1053,9 @@ export function HeroSection() {
                   </div>
                 </div>
               ) : activeCategory === "Activities" ? (
-                <div className="flex p-3 gap-1">
+                <div className="flex p-1 gap-[10px]">
                   {/* Search Your Desired Activity */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "850px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "850px" }}>
                     <label
                       className="text-xs mb-1"
                       style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1067,7 +1071,7 @@ export function HeroSection() {
                   </div>
 
                   {/* Travellers */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "256px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "256px" }}>
                     <label
                       className="text-xs mb-1"
                       style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1088,8 +1092,8 @@ export function HeroSection() {
                   {/* Search Button */}
                   <div
                     style={{
-                      width: "180px",
-                      height: "54px",
+                      width: "143px",
+                      height: "64px",
                       paddingLeft: 10,
                       paddingRight: 10,
                       paddingTop: 26,
@@ -1111,9 +1115,9 @@ export function HeroSection() {
                   </div>
                 </div>
               ) : activeCategory === "Buses" ? (
-                <div className="flex p-3 gap-1">
+                <div className="flex p-1 gap-[10px]">
                   {/* Leaving From */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "309px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "309px" }}>
                     <label
                       className="text-xs mb-1"
                       style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1132,22 +1136,14 @@ export function HeroSection() {
                   </div>
 
                   {/* Swap Icon */}
-                  <div className="flex items-center justify-center" style={{ width: "40px", height: "54px" }}>
+                  <div className="flex items-center justify-center" style={{ width: "40px", height: "64px" }}>
                     <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M7 16L17 16M17 16L13 12M17 16L13 20M17 8L7 8M7 8L11 4M7 8L11 12"
-                          stroke="white"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      <img src="/images/Group 1000001022.svg" alt="swap icon" />
                   </div>
                 </div>
 
                   {/* Destination */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "309px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "309px" }}>
                     <label
                       className="text-xs mb-1"
                       style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1166,7 +1162,7 @@ export function HeroSection() {
                   </div>
 
                   {/* Departure */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "209px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "209px" }}>
                     <label
                       className="text-xs mb-1"
                       style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1180,12 +1176,12 @@ export function HeroSection() {
                         className="text-sm outline-none w-full bg-transparent"
                         style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
                       />
-                      <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                      <img src="/images/mdi_calendar (1).svg" alt="calendar icon" className="w-5 h-5" />
                   </div>
                 </div>
 
                   {/* Travellers */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "209px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "209px" }}>
                     <label
                       className="text-xs mb-1"
                       style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1206,8 +1202,8 @@ export function HeroSection() {
                   {/* Search Button */}
                   <div
                     style={{
-                      width: "180px",
-                      height: "54px",
+                      width: "143px",
+                      height: "64px",
                       paddingLeft: 10,
                       paddingRight: 10,
                       paddingTop: 26,
@@ -1229,9 +1225,9 @@ export function HeroSection() {
                   </div>
                 </div>
               ) : activeCategory === "Cruise" ? (
-                <div className="flex p-3 gap-1">
+                <div className="flex p-1 gap-[10px]">
                   {/* Leaving From */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "287px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "287px" }}>
                     <label
                       className="text-xs mb-1"
                       style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1250,7 +1246,7 @@ export function HeroSection() {
                   </div>
 
                   {/* Destination */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "287px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "287px" }}>
                     <label
                       className="text-xs mb-1"
                       style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1269,7 +1265,7 @@ export function HeroSection() {
                   </div>
 
                   {/* Month */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "237px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "237px" }}>
                     <label
                       className="text-xs mb-1"
                       style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1288,7 +1284,7 @@ export function HeroSection() {
                 </div>
 
                   {/* Travelers */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "237px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "237px" }}>
                     <label
                       className="text-xs mb-1"
                       style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1309,8 +1305,8 @@ export function HeroSection() {
                   {/* Search Button */}
                   <div
                     style={{
-                      width: "180px",
-                      height: "54px",
+                      width: "143px",
+                      height: "64px",
                       paddingLeft: 10,
                       paddingRight: 10,
                       paddingTop: 26,
@@ -1334,9 +1330,9 @@ export function HeroSection() {
               ) : activeCategory === "Flights" ? (
                 <div className="flex flex-col">
                   {/* Main Search Form */}
-                  <div className="flex p-3 gap-1">
+                  <div className="flex p-1 gap-[10px]">
                     {/* Leaving From */}
-                    <div className="flex bg-white rounded-md px-3 py-2 h-[54px] flex-col gap-y-0 min-w-0" style={{ width: "280px" }}>
+                    <div className="flex bg-white rounded-md px-3 py-3 h-16 flex-col gap-y-0 min-w-0" style={{ width: "280px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1355,22 +1351,14 @@ export function HeroSection() {
                     </div>
 
                     {/* Swap Icon */}
-                    <div className="flex items-center justify-center w-10 h-[54px]">
+                    <div className="flex items-center justify-center w-10 h-16">
                       <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M7 16L17 16M17 16L13 12M17 16L13 20M17 8L7 8M7 8L11 4M7 8L11 12"
-                            stroke="white"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
+                        <img src="/images/Group 1000001022.svg" alt="swap icon" />
                       </div>
                     </div>
 
                     {/* Going To */}
-                    <div className="flex flex-col bg-white rounded-md py-2 px-4 h-14 min-w-0" style={{ width: "280px" }}>
+                    <div className="flex flex-col bg-white rounded-md py-3 px-4 h-16 min-w-0" style={{ width: "280px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1388,7 +1376,7 @@ export function HeroSection() {
                       </div>
                     </div>
                     {/* Depart */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] min-w-0" style={{ width: "150px" }}>
+                    <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16 min-w-0" style={{ width: "150px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1402,12 +1390,12 @@ export function HeroSection() {
                           className="text-sm outline-none w-full bg-transparent"
                           style={{ color: "#1E1E1E", fontSize: 16, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
                         />
-                        <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                        <img src="/images/mdi_calendar (1).svg" alt="calendar icon" className="w-5 h-5" />
                       </div>
                     </div>
 
                     {/* Travelers */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] min-w-0" style={{ width: "150px" }}>
+                    <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16 min-w-0" style={{ width: "150px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#626262", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1426,7 +1414,7 @@ export function HeroSection() {
                     </div>
 
                     {/* Class Type */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px] min-w-0" style={{ width: "150px" }}>
+                    <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16 min-w-0" style={{ width: "150px" }}>
                       <label
                         className="text-xs mb-1"
                         style={{ color: "#A3A3A3", fontSize: 14, fontFamily: "Gilroy", fontWeight: "500", wordWrap: "break-word" }}
@@ -1447,8 +1435,8 @@ export function HeroSection() {
                     {/* Search Button */}
                     <div
                       style={{
-                        width: "180px",
-                        height: "54px",
+                        width: "143px",
+                        height: "64px",
                         paddingLeft: 10,
                         paddingRight: 10,
                         paddingTop: 26,
@@ -1471,7 +1459,7 @@ export function HeroSection() {
                   </div>
                   {/* Fare Category Selection */}
                   <div
-                    className="flex flex-wrap items-center gap-x-6 gap-y-3 p-3 mt-3"
+                    className="flex flex-wrap items-center gap-x-6 gap-y-3 p-2 mt-3"
                     style={{
                       background: "rgba(1, 1, 1, 0.60)",
                       borderRadius: "10px",
@@ -1624,10 +1612,10 @@ export function HeroSection() {
                   </div>
                 </div>
               ) : (
-                  <div className="flex p-3 gap-1">
+                  <div className="flex p-1 gap-[10px]">
                     {/* Default form for other categories */}
                     {/* Leaving From */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "202px" }}>
+                    <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "224px" }}>
                     <label
                       htmlFor="packages-leaving-from"
                       className="text-xs mb-1"
@@ -1648,7 +1636,7 @@ export function HeroSection() {
                     </div>
 
                     {/* Destination */}
-                    <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "202px" }}>
+                    <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "211px" }}>
                     <label
                       htmlFor="packages-destination"
                       className="text-xs mb-1"
@@ -1669,7 +1657,7 @@ export function HeroSection() {
                   </div>
 
                   {/* Theme */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "172px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "202px" }}>
                   <label
                     htmlFor="packages-theme"
                     className="text-xs mb-1"
@@ -1690,7 +1678,7 @@ export function HeroSection() {
                   </div>
 
                   {/* From Date */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "151px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "130px" }}>
                   <label
                     htmlFor="packages-from-date"
                     className="text-xs mb-1"
@@ -1706,12 +1694,12 @@ export function HeroSection() {
                       placeholder="DD-MM"
                       className="outline-none w-full bg-transparent hero-input-field"
                     />
-                      <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                      <img src="/images/mdi_calendar (1).svg" alt="calendar icon" className="w-5 h-5" />
                   </div>
                 </div>
 
                   {/* To Date */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "151px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "130px" }}>
                   <label
                     htmlFor="packages-to-date"
                     className="text-xs mb-1"
@@ -1727,12 +1715,12 @@ export function HeroSection() {
                       placeholder="DD-MM"
                       className="outline-none w-full bg-transparent hero-input-field"
                     />
-                      <Calendar size={12} className="text-gray-800 ml-1 flex-shrink-0" />
+                      <img src="/images/mdi_calendar (1).svg" alt="calendar icon" className="w-5 h-5" />
                     </div>
                   </div>
 
                   {/* Travelers */}
-                  <div className="flex flex-col bg-white rounded-md px-3 py-2 h-[54px]" style={{ width: "172px" }}>
+                  <div className="flex flex-col bg-white rounded-md px-3 py-3 h-16" style={{ width: "160px" }}>
                   <label
                     htmlFor="packages-travelers"
                     className="text-xs mb-1"
@@ -1752,8 +1740,8 @@ export function HeroSection() {
                   {/* Search Button */}
                   <div
                   style={{
-                    width: "180px",
-                    height: "54px",
+                    width: "143px",
+                    height: "64px",
                     paddingLeft: 10,
                     paddingRight: 10,
                     paddingTop: 26,
@@ -1795,7 +1783,7 @@ export function HeroSection() {
                 }}
                 onClick={() => setAddFlightChecked(!addFlightChecked)}
               >
-                <div style={{ padding: 10, justifyContent: "flex-start", alignItems: "center", gap: 10, display: "flex" }}>
+                <div style={{ padding: 8, justifyContent: "flex-start", alignItems: "center", gap: 10, display: "flex" }}>
                   <div
                     style={{
                       width: 20,
@@ -1823,7 +1811,7 @@ export function HeroSection() {
                   )}
                   {activeCategory === "Hotels" && (
     <div
-                className="flex items-center mt-2 self-start space-x-4 p-3 self-start"
+                className="flex items-center mt-2 space-x-4 p-2 self-start"
       style={{
                   background: "rgba(1, 1, 1, 0.60)",
                   borderRadius: "10px",
@@ -1886,7 +1874,20 @@ export function HeroSection() {
                 </div>
             </div>
           </div>
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-50 to-transparent z-20" />
+      <div className="absolute bottom-0 inset-x-0 w-full z-20">
+        <svg width="100%" height="239" viewBox="0 0 1440 239" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <g filter="url(#filter0_f_1_11213)">
+          <path d="M-54.9984 257.687C405.93 332.734 1266 367.186 1634 221.186" stroke="#F9FAFB" strokeWidth="350"/>
+          </g>
+          <defs>
+          <filter id="filter0_f_1_11213" x="-141.121" y="0.520386" width="1897.66" height="554.811" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+          <feGaussianBlur stdDeviation="29" result="effect1_foregroundBlur_1_11213"/>
+          </filter>
+          </defs>
+        </svg>
+      </div>
     </div>
   )
 }
