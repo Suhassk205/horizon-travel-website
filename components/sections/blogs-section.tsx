@@ -68,7 +68,7 @@ export function BlogsSection() {
           </p>
         </div>
         
-        <div className="flex flex-col lg:flex-row gap-5 max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-5 max-w-[1200px] mx-auto">
           {/* Featured Blog */}
           <div className="lg:w-1/2 relative rounded-2xl overflow-hidden aspect-square">
             <Image
@@ -108,9 +108,9 @@ export function BlogsSection() {
           </div>
           
           {/* Right Side - Two Blog Cards Stacked */}
-          <div className="lg:w-1/2 flex flex-col gap-5">
+          <div className="flex flex-col gap-5" style={{ width: '590px' }}>
             {blogData.slice(1).map((blog) => (
-              <div key={blog.id} className="bg-white rounded-[20px] p-4 shadow-sm">
+              <div key={blog.id} className="bg-white rounded-[20px] p-4">
                 <div className="flex gap-5 h-full">
                   {/* Image - Left Side */}
                   <div className="w-[269px] h-[253px] rounded-[10px] overflow-hidden flex-shrink-0">

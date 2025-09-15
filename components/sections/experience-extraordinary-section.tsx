@@ -16,7 +16,7 @@ export function ExperienceExtraordinarySection() {
   }, [])
 
   return (
-    <div className="bg-gray-50 py-24 px-6">
+    <div className="bg-gray-50 pt-24 pb-32 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-8">
@@ -51,7 +51,7 @@ export function ExperienceExtraordinarySection() {
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {/* Slide 1 */}
-              <div className="w-full flex-shrink-0 relative h-[400px]">
+              <div className="w-full flex-shrink-0 relative h-[372px]">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 rounded-3xl"></div>
                 <img
                   src="/images/female-hiker-mountains.jpg"
@@ -114,13 +114,13 @@ export function ExperienceExtraordinarySection() {
                 </div>
                 
                 {/* Pagination Dots - Inside Slide */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-[10px] z-20">
                   {Array.from({ length: totalSlides }).map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentSlide(index)}
-                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                        index === currentSlide ? "bg-[#ff6a00]" : "bg-white/50"
+                      className={`w-[10px] h-[10px] rounded-full transition-colors duration-300 ${
+                        index === currentSlide ? "bg-[#FF6A00]" : "bg-[rgba(217,217,217,0.20)]"
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
@@ -129,7 +129,7 @@ export function ExperienceExtraordinarySection() {
               </div>
 
               {/* Slide 2 */}
-              <div className="w-full flex-shrink-0 relative h-[400px]">
+              <div className="w-full flex-shrink-0 relative h-[372px]">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 rounded-3xl"></div>
                 <img
                   src="/images/sunflower-field-wedding.jpeg"
@@ -192,13 +192,13 @@ export function ExperienceExtraordinarySection() {
                 </div>
                 
                 {/* Pagination Dots - Inside Slide */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-[10px] z-20">
                   {Array.from({ length: totalSlides }).map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentSlide(index)}
-                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                        index === currentSlide ? "bg-[#ff6a00]" : "bg-white/50"
+                      className={`w-[10px] h-[10px] rounded-full transition-colors duration-300 ${
+                        index === currentSlide ? "bg-[#FF6A00]" : "bg-[rgba(217,217,217,0.20)]"
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
@@ -207,7 +207,7 @@ export function ExperienceExtraordinarySection() {
               </div>
 
               {/* Slide 3 */}
-              <div className="w-full flex-shrink-0 relative h-[400px]">
+              <div className="w-full flex-shrink-0 relative h-[372px]">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 rounded-3xl"></div>
                 <img
                   src="/images/starry-mountain-night.jpeg"
@@ -270,13 +270,13 @@ export function ExperienceExtraordinarySection() {
                 </div>
                 
                 {/* Pagination Dots - Inside Slide */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-[10px] z-20">
                   {Array.from({ length: totalSlides }).map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentSlide(index)}
-                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                        index === currentSlide ? "bg-[#ff6a00]" : "bg-white/50"
+                      className={`w-[10px] h-[10px] rounded-full transition-colors duration-300 ${
+                        index === currentSlide ? "bg-[#FF6A00]" : "bg-[rgba(217,217,217,0.20)]"
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
@@ -285,7 +285,7 @@ export function ExperienceExtraordinarySection() {
               </div>
 
               {/* Slide 4 */}
-              <div className="w-full flex-shrink-0 relative h-[400px]">
+              <div className="w-full flex-shrink-0 relative h-[372px]">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 rounded-3xl"></div>
                 <img
                   src="/images/family-campfire-night.jpeg"
@@ -348,13 +348,13 @@ export function ExperienceExtraordinarySection() {
                 </div>
                 
                 {/* Pagination Dots - Inside Slide */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-[10px] z-20">
                   {Array.from({ length: totalSlides }).map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentSlide(index)}
-                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                        index === currentSlide ? "bg-[#ff6a00]" : "bg-white/50"
+                      className={`w-[10px] h-[10px] rounded-full transition-colors duration-300 ${
+                        index === currentSlide ? "bg-[#FF6A00]" : "bg-[rgba(217,217,217,0.20)]"
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
@@ -363,7 +363,7 @@ export function ExperienceExtraordinarySection() {
               </div>
 
               {/* Slide 5 */}
-              <div className="w-full flex-shrink-0 relative h-[400px]">
+              <div className="w-full flex-shrink-0 relative h-[372px]">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 rounded-3xl"></div>
                 <img
                   src="/images/modern-cultural-lobby.jpeg"
@@ -426,13 +426,13 @@ export function ExperienceExtraordinarySection() {
                 </div>
                 
                 {/* Pagination Dots - Inside Slide */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-[10px] z-20">
                   {Array.from({ length: totalSlides }).map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentSlide(index)}
-                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                        index === currentSlide ? "bg-[#ff6a00]" : "bg-white/50"
+                      className={`w-[10px] h-[10px] rounded-full transition-colors duration-300 ${
+                        index === currentSlide ? "bg-[#FF6A00]" : "bg-[rgba(217,217,217,0.20)]"
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
@@ -441,7 +441,7 @@ export function ExperienceExtraordinarySection() {
               </div>
 
               {/* Slide 6 */}
-              <div className="w-full flex-shrink-0 relative h-[400px]">
+                <div className="w-full flex-shrink-0 relative h-[372px]">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 rounded-3xl"></div>
                 <img
                   src="/images/wellness-beach-sunset.jpeg"
@@ -504,13 +504,13 @@ export function ExperienceExtraordinarySection() {
                 </div>
                 
                 {/* Pagination Dots - Inside Slide */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-[10px] z-20">
                   {Array.from({ length: totalSlides }).map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentSlide(index)}
-                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                        index === currentSlide ? "bg-[#ff6a00]" : "bg-white/50"
+                      className={`w-[10px] h-[10px] rounded-full transition-colors duration-300 ${
+                        index === currentSlide ? "bg-[#FF6A00]" : "bg-[rgba(217,217,217,0.20)]"
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                     />

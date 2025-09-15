@@ -176,7 +176,7 @@ const ExploreRegions = () => {
 
       {/* Regions Grid */}
       <div className="relative h-[600px]">
-        <div className="relative h-full flex gap-4 px-4 items-center justify-center z-10">
+        <div className="relative h-full flex gap-2 px-4 items-center justify-center z-10">
           {currentRegions.map((region, index) => {
             // Prioritize user hover over auto-animation
             const isActive =

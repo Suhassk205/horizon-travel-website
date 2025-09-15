@@ -33,10 +33,11 @@ export function NewsletterSignup() {
         <div className="absolute top-1/2 left-20 -translate-y-1/2 text-white z-10 space-y-8">
           <div className="space-y-2.5">
             <h2 
-              className="text-6xl font-bold font-gilroy capitalize leading-tight"
-              style={{ fontWeight: '600' }}
+              className="text-6xl font-bold font-gilroy capitalize"
+              style={{ fontWeight: '550', lineHeight: '1.1', letterSpacing: '-0.03em' }}
             >
-              Stay in the Loop, <br /> Travel Smarter
+              Stay in the Loop,<br />
+              <span style={{ display: 'inline-block', marginTop: '0.1em' }}>Travel Smarter</span>
             </h2>
             <p 
               className="text-2xl font-semibold font-gilroy capitalize opacity-70"

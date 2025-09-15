@@ -17,6 +17,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react"
+import HotelIcon from "@/public/images/hotel-icon-cards.svg"
 
 const categories = [
   "Deals",
@@ -327,7 +328,7 @@ const ExclusiveDealsSection = () => {
                                 <img src="/images/mdi_flight.svg" alt="Flight" style={{width: '100%', height: '100%'}} />
                               )}
                               {inclusion.type === 'hotel' && (
-                                <img src="/images/Group.svg" alt="Hotel" style={{width: '100%', height: '100%'}} />
+                                <HotelIcon className="text-white" style={{width: '100%', height: '100%'}} />
                               )}
                               {inclusion.type === 'activity' && (
                                 <img src="/images/trekkingg.svg" alt="Activity" style={{width: '100%', height: '100%'}} />

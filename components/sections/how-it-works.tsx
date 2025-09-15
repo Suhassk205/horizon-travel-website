@@ -1,4 +1,4 @@
-import Image from "next/image"
+import HowItWorksSvg from "@/public/images/How-it-works.svg"
 
 export function HowItWorks() {
   return (
@@ -6,14 +6,7 @@ export function HowItWorks() {
       <div className="mx-auto">
         {/* Use the complete How It Works design */}
         <div className="w-full flex justify-center">
-          <Image
-            src="/images/how-it-works-complete.png"
-            alt="How It Works - Customize and book your travel in 3 simple steps"
-            width={1500}
-            height={750}
-            className="object-contain w-full h-auto"
-            priority
-          />
+          <HowItWorksSvg className="object-contain w-full h-auto" />
         </div>
       </div>
     </section>

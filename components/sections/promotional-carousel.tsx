@@ -124,13 +124,13 @@ export function PromotionalCarousel() {
                   </div>
                   
                   {/* Pagination Dots - Inside Slide */}
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-[10px] z-20">
                     {slides.map((_, dotIndex) => (
                       <button
                         key={dotIndex}
                         onClick={() => scrollTo(dotIndex)}
-                        className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                          current === dotIndex ? "bg-[#FF6A00]" : "bg-white/50"
+                        className={`w-[10px] h-[10px] rounded-full transition-colors duration-300 ${
+                          current === dotIndex ? "bg-[#FF6A00]" : "bg-[rgba(217,217,217,0.20)]"
                         }`}
                         aria-label={`Go to slide ${dotIndex + 1}`}
                       />

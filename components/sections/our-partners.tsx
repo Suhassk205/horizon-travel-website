@@ -50,7 +50,17 @@ export function OurPartners() {
           >
             Our Partners
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-gilroy">
+          <p
+              className="max-w-3xl mx-auto"
+              style={{
+                color: "#29383E",
+                fontSize: "18px",
+                fontFamily: "Gilroy",
+              fontWeight: "500",
+              lineHeight: "32px",
+              wordWrap: "break-word",
+            }}
+          >
             Connecting and Growing with Our Trusted Network of Partners
           </p>
         </div>
@@ -64,14 +74,14 @@ export function OurPartners() {
             {duplicatedPartners.map((partner, index) => (
               <div
                 key={`${partner.name}-${index}`}
-                className="flex-shrink-0 mx-8 lg:mx-12 flex items-center justify-center h-20 transition-all duration-300 opacity-85 hover:opacity-100"
+                className="flex-shrink-0 mx-8 lg:mx-12 flex items-center justify-center h-50 transition-all duration-300 opacity-85 hover:opacity-100"
                 style={{ width: `${partner.width}px` }}
               >
                 <Image
                   src={partner.logo || "/placeholder.svg"}
                   alt={partner.alt}
                   width={partner.width}
-                  height={80}
+                  height={110}
                   className="max-w-full max-h-full object-contain"
                 />
               </div>

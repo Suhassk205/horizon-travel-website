@@ -10,6 +10,11 @@ const nextConfig = {
     unoptimized: true,
   },
   webpack: (config, { dev }) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+
     // Disable persistent filesystem cache to avoid ENOENT on Windows
     if (dev) {
       config.cache = false

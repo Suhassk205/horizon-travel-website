@@ -6,9 +6,9 @@ import Image from "next/image"
 export function Gallery() {
   return (
     <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="px-0">
         {/* Header Section */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 container mx-auto">
           <h2
             className="mb-0"
             style={{

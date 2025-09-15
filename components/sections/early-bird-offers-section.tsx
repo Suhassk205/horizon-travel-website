@@ -3,6 +3,7 @@
 import { useRef } from "react"
 import Image from "next/image"
 import { ArrowRight, Plane, Building2, Car, Mountain } from "lucide-react"
+import HotelIcon from "@/public/images/hotel-icon-cards.svg"
 
 export function EarlyBirdOffersSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -165,7 +166,7 @@ export function EarlyBirdOffersSection() {
                       }}
                     >
                       <div style={{width: 18, height: 18, position: 'relative'}}>
-                        <img src="/images/Group.svg" alt="Hotel" style={{width: '100%', height: '100%'}} />
+                        <HotelIcon className="text-white" style={{width: '100%', height: '100%'}} />
                       </div>
                       <div style={{
                         textAlign: 'center',
@@ -418,7 +419,7 @@ export function EarlyBirdOffersSection() {
                       }}
                     >
                       <div style={{width: 18, height: 18, position: 'relative'}}>
-                        <img src="/images/Group.svg" alt="Hotel" style={{width: '100%', height: '100%'}} />
+                        <HotelIcon className="text-white" style={{width: '100%', height: '100%'}} />
                       </div>
                       <div style={{
                         textAlign: 'center',
@@ -663,7 +664,7 @@ export function EarlyBirdOffersSection() {
                       }}
                     >
                       <div style={{width: 18, height: 18, position: 'relative'}}>
-                        <img src="/images/Group.svg" alt="Hotel" style={{width: '100%', height: '100%'}} />
+                        <HotelIcon className="text-white" style={{width: '100%', height: '100%'}} />
                       </div>
                       <div style={{
                         textAlign: 'center',
@@ -908,7 +909,7 @@ export function EarlyBirdOffersSection() {
                       }}
                     >
                       <div style={{width: 18, height: 18, position: 'relative'}}>
-                        <img src="/images/Group.svg" alt="Hotel" style={{width: '100%', height: '100%'}} />
+                        <HotelIcon className="text-white" style={{width: '100%', height: '100%'}} />
                       </div>
                       <div style={{
                         textAlign: 'center',
@@ -1153,7 +1154,7 @@ export function EarlyBirdOffersSection() {
                       }}
                     >
                       <div style={{width: 18, height: 18, position: 'relative'}}>
-                        <img src="/images/Group.svg" alt="Hotel" style={{width: '100%', height: '100%'}} />
+                        <HotelIcon className="text-white" style={{width: '100%', height: '100%'}} />
                       </div>
                       <div style={{
                         textAlign: 'center',

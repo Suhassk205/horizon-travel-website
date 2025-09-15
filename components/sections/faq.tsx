@@ -88,56 +88,37 @@ export function FAQ() {
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-[10px] overflow-hidden shadow-sm"
+                className="bg-white rounded-[10px] overflow-hidden"
                 style={{
-                  width: "810px",
-                  borderBottom: "1px solid #D9D9D9",
+                  width: "800px",
                 }}
               >
                 {/* Question Header - Exact Figma Styling */}
                 <button
                   onClick={() => toggleItem(item.id)}
-                  className="w-full transition-all duration-300"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    padding: 20,
-                    background: 'white',
-                    borderRadius: 10,
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    display: 'inline-flex'
-                  }}
+                  className="w-full p-5 flex justify-between items-center"
+                  style={{ height: "70px" }}
                 >
                   {/* Question Text - Exact Figma Typography */}
-                  <span
-                    style={{
-                      color: '#16242A',
-                      fontSize: 18,
-                      fontFamily: 'Gilroy',
-                      fontWeight: '600',
-                      textTransform: 'capitalize',
-                      wordWrap: 'break-word'
-                    }}
-                  >
+                  <span className="text-[#16242A] text-[18px] font-gilroy font-semibold capitalize text-left">
                     {item.question}
                   </span>
 
                   {/* Custom Plus/Minus Icon - Exact Figma Design */}
-                  <div className="flex-shrink-0" style={{ width: "13.5px", height: "13.5px" }}>
+                  <div className="flex-shrink-0" style={{ width: "18px", height: "18px" }}>
                     {isOpen ? (
                       // Minus icon (horizontal line only)
                       <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 14 14"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <line
-                          x1="2"
+                          x1="0"
                           y1="7"
-                          x2="12"
+                          x2="14"
                           y2="7"
                           stroke="black"
                           strokeWidth="2"
@@ -147,16 +128,16 @@ export function FAQ() {
                     ) : (
                       // Plus icon (horizontal and vertical lines)
                       <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 14 14"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <line
-                          x1="2"
+                          x1="0"
                           y1="7"
-                          x2="12"
+                          x2="14"
                           y2="7"
                           stroke="black"
                           strokeWidth="2"
@@ -164,9 +145,9 @@ export function FAQ() {
                         />
                         <line
                           x1="7"
-                          y1="2"
+                          y1="0"
                           x2="7"
-                          y2="12"
+                          y2="14"
                           stroke="black"
                           strokeWidth="2"
                           strokeLinecap="round"
